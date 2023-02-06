@@ -2,12 +2,13 @@ package com.mycompany.proyecto_inventario;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
 /**
  *
- * @author Usuario
+ * @author JorgeML01
  */
 public class Login extends javax.swing.JFrame {
 
@@ -29,7 +30,7 @@ public class Login extends javax.swing.JFrame {
             System.out.println("Creating table in given database...");
             stmt = conn.createStatement();
 
-            String sql = "CREATE TABLE "+ nombreTabla +""
+            String sql = "CREATE TABLE " + nombreTabla + ""
                     + " (id INTEGER not NULL, "
                     + " first_name VARCHAR(255), "
                     + " last_name VARCHAR(255), "
@@ -71,6 +72,7 @@ public class Login extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         crearTabla = new javax.swing.JButton();
         textFieldNombreTabla = new javax.swing.JTextField();
+        botonMostrarUsuarios = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -90,18 +92,27 @@ public class Login extends javax.swing.JFrame {
             }
         });
 
+        botonMostrarUsuarios.setText("Mostrar usuarios");
+        botonMostrarUsuarios.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                botonMostrarUsuariosMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(161, Short.MAX_VALUE)
-                .addComponent(crearTabla)
-                .addGap(152, 152, 152))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(textFieldNombreTabla, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(130, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(botonMostrarUsuarios, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(crearTabla, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(152, 152, 152))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -110,7 +121,9 @@ public class Login extends javax.swing.JFrame {
                 .addComponent(textFieldNombreTabla, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(59, 59, 59)
                 .addComponent(crearTabla)
-                .addGap(92, 92, 92))
+                .addGap(18, 18, 18)
+                .addComponent(botonMostrarUsuarios)
+                .addGap(52, 52, 52))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -136,6 +149,59 @@ public class Login extends javax.swing.JFrame {
     private void textFieldNombreTablaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFieldNombreTablaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_textFieldNombreTablaActionPerformed
+
+    private void botonMostrarUsuariosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonMostrarUsuariosMouseClicked
+        String JDBC_DRIVER = "com.ibm.db2.jcc.DB2Driver";
+        String DB_URL = "jdbc:db2://localhost:25000/INV_DB";
+
+        String USER = "Usuario";
+        String PASS = "admin123";
+
+        Connection conn = null;
+        Statement stmt = null;
+        try {
+            Class.forName(JDBC_DRIVER);
+
+            System.out.println("Connecting to database...");
+            conn = DriverManager.getConnection(DB_URL, USER, PASS);
+
+            System.out.println("Creating statement...");
+            stmt = conn.createStatement();
+            String sql;
+            sql = "SELECT * FROM DB2ADMIN.USUARIO2";
+            ResultSet rs = stmt.executeQuery(sql);
+
+            while (rs.next()) {
+                String nombre = rs.getString("nombre");
+                String apellido = rs.getString("apellido");
+
+                System.out.print("Nombre: " + nombre);
+                System.out.println(", Apellido: " + apellido);
+            }
+            rs.close();
+            stmt.close();
+            conn.close();
+        } catch (SQLException se) {
+            se.printStackTrace();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (stmt != null) {
+                    stmt.close();
+                }
+            } catch (SQLException se2) {
+            }
+            try {
+                if (conn != null) {
+                    conn.close();
+                }
+            } catch (SQLException se) {
+                se.printStackTrace();
+            }
+        }
+
+    }//GEN-LAST:event_botonMostrarUsuariosMouseClicked
 
     /**
      * @param args the command line arguments
@@ -178,10 +244,11 @@ public class Login extends javax.swing.JFrame {
     private Statement stmt = null;
     private static final String JDBC_DRIVER = "com.ibm.db2.jcc.DB2Driver";
     private static final String DB_URL = "jdbc:db2://localhost:25000/INV_DB";
-    private static final String USER = "db2admin";
-    private static final String PASS = "toto1212";
+    private static final String USER = "Usuario";
+    private static final String PASS = "admin123";
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton botonMostrarUsuarios;
     private javax.swing.JButton crearTabla;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField textFieldNombreTabla;
