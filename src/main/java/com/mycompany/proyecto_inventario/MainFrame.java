@@ -265,7 +265,7 @@ public class MainFrame extends javax.swing.JFrame {
     public void inicializarImagenes(){
         try {
             Image imagenGuardar = ImageIO.read(getClass().getResource("/icon/ibm_logo.png"));
-            jLabel1.setIcon(new ImageIcon(imagenGuardar.getScaledInstance(25, 25, java.awt.Image.SCALE_SMOOTH)));
+            //jLabel1.setIcon(new ImageIcon(imagenGuardar.getScaledInstance(25, 25, java.awt.Image.SCALE_SMOOTH)));
         } catch (IOException ex) {
     
         }
