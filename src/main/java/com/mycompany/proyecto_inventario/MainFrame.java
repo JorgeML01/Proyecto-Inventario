@@ -41,6 +41,8 @@ public class MainFrame extends javax.swing.JFrame {
         labelExit2 = new javax.swing.JLabel();
         button_Login = new javax.swing.JButton();
         JPanel_Blanco_Login = new javax.swing.JPanel();
+        textField_user = new javax.swing.JTextField();
+        textfield_password = new javax.swing.JPasswordField();
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
@@ -86,20 +88,34 @@ public class MainFrame extends javax.swing.JFrame {
             .addGap(0, 475, Short.MAX_VALUE)
         );
 
+        textField_user.setText("jTextField1");
+
+        textfield_password.setText("jPasswordField1");
+        textfield_password.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textfield_passwordActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(JPanel_Blanco_Login, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 84, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 66, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(labelExit2)
                         .addGap(21, 21, 21))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(textfield_password, javax.swing.GroupLayout.DEFAULT_SIZE, 142, Short.MAX_VALUE)
+                            .addComponent(textField_user))
+                        .addGap(46, 46, 46))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(button_Login, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(65, 65, 65))))
+                        .addGap(66, 66, 66))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -107,8 +123,12 @@ public class MainFrame extends javax.swing.JFrame {
                 .addGap(16, 16, 16)
                 .addComponent(labelExit2, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(textField_user, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(37, 37, 37)
+                .addComponent(textfield_password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(41, 41, 41)
                 .addComponent(button_Login)
-                .addGap(88, 88, 88))
+                .addGap(99, 99, 99))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(JPanel_Blanco_Login, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
@@ -170,9 +190,23 @@ public class MainFrame extends javax.swing.JFrame {
 
     private void button_LoginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button_LoginMouseClicked
         //Para entrar en la ventana de log in o indicar si ha puesto mal usuario/contraseña.
-        this.jTabbedPane1.setSelectedIndex(1);
+        if(loginCorrecto(this.textField_user.getText(), this.textfield_password.getText())){
+            this.jTabbedPane1.setSelectedIndex(1);
+            //Quitamos los errores que tenía del login incorrecto en caso de que esté.
+        }else{
+            //Mostramos mensaje de error al intentar logearse.
+        }
     }//GEN-LAST:event_button_LoginMouseClicked
+
+    private void textfield_passwordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textfield_passwordActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textfield_passwordActionPerformed
     
+    // Función para verificar si el usuario existe.
+    private boolean loginCorrecto(String user, String password){
+        
+        return false;
+    }
     
     /**
      * @param args the command line arguments
@@ -219,5 +253,7 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JLabel labelExit2;
+    private javax.swing.JTextField textField_user;
+    private javax.swing.JPasswordField textfield_password;
     // End of variables declaration//GEN-END:variables
 }
