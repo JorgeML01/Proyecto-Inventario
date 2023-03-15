@@ -58,8 +58,18 @@ public class MainFrame extends javax.swing.JFrame {
         panel_principal = new javax.swing.JPanel();
         label_welcome = new javax.swing.JLabel();
         button_logout = new javax.swing.JButton();
-        testButton = new javax.swing.JButton();
-        buttonTest2 = new javax.swing.JButton();
+        button_kardex = new javax.swing.JButton();
+        button_productos = new javax.swing.JButton();
+        button_facturas = new javax.swing.JButton();
+        button_compras = new javax.swing.JButton();
+        button_ajustes = new javax.swing.JButton();
+        button_clientes = new javax.swing.JButton();
+        button_proveedores = new javax.swing.JButton();
+        button_usuarios = new javax.swing.JButton();
+        button_roles = new javax.swing.JButton();
+        button_privilegios = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel6 = new javax.swing.JLabel();
         panel_sign_up = new javax.swing.JPanel();
         label_sign_up_panel = new javax.swing.JLabel();
         panel_blanco_signup = new javax.swing.JPanel();
@@ -73,9 +83,33 @@ public class MainFrame extends javax.swing.JFrame {
         jComboBox2 = new javax.swing.JComboBox<>();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jPanel4 = new javax.swing.JPanel();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        panel_productos = new javax.swing.JPanel();
+        label_sign_up_panel1 = new javax.swing.JLabel();
+        regresar = new javax.swing.JButton();
+        panel_kardex = new javax.swing.JPanel();
+        label_sign_up_panel2 = new javax.swing.JLabel();
+        regresar1 = new javax.swing.JButton();
+        panel_privilegio = new javax.swing.JPanel();
+        label_sign_up_panel3 = new javax.swing.JLabel();
+        regresar2 = new javax.swing.JButton();
+        panel_rol = new javax.swing.JPanel();
+        label_sign_up_panel4 = new javax.swing.JLabel();
+        regresar3 = new javax.swing.JButton();
+        panel_compras = new javax.swing.JPanel();
+        label_sign_up_panel5 = new javax.swing.JLabel();
+        regresar4 = new javax.swing.JButton();
+        panel_ajustes = new javax.swing.JPanel();
+        label_sign_up_panel6 = new javax.swing.JLabel();
+        regresar5 = new javax.swing.JButton();
+        panel_facturas = new javax.swing.JPanel();
+        label_sign_up_panel7 = new javax.swing.JLabel();
+        regresar6 = new javax.swing.JButton();
+        panel_proveedores = new javax.swing.JPanel();
+        label_sign_up_panel8 = new javax.swing.JLabel();
+        regresar7 = new javax.swing.JButton();
+        panel_clientes = new javax.swing.JPanel();
+        label_sign_up_panel9 = new javax.swing.JLabel();
+        regresar8 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -211,7 +245,7 @@ public class MainFrame extends javax.swing.JFrame {
         panel_principal.setBackground(new java.awt.Color(0, 153, 153));
         panel_principal.setForeground(new java.awt.Color(51, 255, 204));
 
-        label_welcome.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        label_welcome.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         label_welcome.setForeground(new java.awt.Color(255, 255, 255));
         label_welcome.setText("WELCOME BACK!");
 
@@ -224,56 +258,205 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
 
-        testButton.setText("jButton1");
-        testButton.addMouseListener(new java.awt.event.MouseAdapter() {
+        button_kardex.setBackground(new java.awt.Color(0, 51, 51));
+        button_kardex.setForeground(new java.awt.Color(255, 255, 255));
+        button_kardex.setText("KARDEX");
+        button_kardex.setPreferredSize(new java.awt.Dimension(100, 22));
+        button_kardex.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                testButtonMouseClicked(evt);
-            }
-        });
-        testButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                testButtonActionPerformed(evt);
+                button_kardexMouseClicked(evt);
             }
         });
 
-        buttonTest2.setText("TABLE");
-        buttonTest2.addMouseListener(new java.awt.event.MouseAdapter() {
+        button_productos.setBackground(new java.awt.Color(0, 51, 51));
+        button_productos.setForeground(new java.awt.Color(255, 255, 255));
+        button_productos.setText("PRODUCTOS");
+        button_productos.setPreferredSize(new java.awt.Dimension(100, 22));
+        button_productos.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                buttonTest2MouseClicked(evt);
+                button_productosMouseClicked(evt);
             }
         });
+        button_productos.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                button_productosKeyPressed(evt);
+            }
+        });
+
+        button_facturas.setBackground(new java.awt.Color(0, 51, 51));
+        button_facturas.setForeground(new java.awt.Color(255, 255, 255));
+        button_facturas.setText("FACTURAS");
+        button_facturas.setPreferredSize(new java.awt.Dimension(100, 22));
+        button_facturas.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                button_facturasMouseClicked(evt);
+            }
+        });
+        button_facturas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button_facturasActionPerformed(evt);
+            }
+        });
+
+        button_compras.setBackground(new java.awt.Color(0, 51, 51));
+        button_compras.setForeground(new java.awt.Color(255, 255, 255));
+        button_compras.setText("COMPRAS");
+        button_compras.setPreferredSize(new java.awt.Dimension(100, 22));
+        button_compras.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                button_comprasMouseClicked(evt);
+            }
+        });
+
+        button_ajustes.setBackground(new java.awt.Color(0, 51, 51));
+        button_ajustes.setForeground(new java.awt.Color(255, 255, 255));
+        button_ajustes.setText("AJUSTES");
+        button_ajustes.setPreferredSize(new java.awt.Dimension(100, 22));
+        button_ajustes.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                button_ajustesMouseClicked(evt);
+            }
+        });
+
+        button_clientes.setBackground(new java.awt.Color(0, 51, 51));
+        button_clientes.setForeground(new java.awt.Color(255, 255, 255));
+        button_clientes.setText("CLIENTES");
+        button_clientes.setPreferredSize(new java.awt.Dimension(100, 22));
+        button_clientes.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                button_clientesMouseClicked(evt);
+            }
+        });
+
+        button_proveedores.setBackground(new java.awt.Color(0, 51, 51));
+        button_proveedores.setForeground(new java.awt.Color(255, 255, 255));
+        button_proveedores.setText("PROVEEDORES");
+        button_proveedores.setPreferredSize(new java.awt.Dimension(100, 22));
+        button_proveedores.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                button_proveedoresMouseClicked(evt);
+            }
+        });
+
+        button_usuarios.setBackground(new java.awt.Color(0, 51, 51));
+        button_usuarios.setForeground(new java.awt.Color(255, 255, 255));
+        button_usuarios.setText("USUARIOS");
+        button_usuarios.setPreferredSize(new java.awt.Dimension(100, 22));
+        button_usuarios.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                button_usuariosMouseClicked(evt);
+            }
+        });
+
+        button_roles.setBackground(new java.awt.Color(0, 51, 51));
+        button_roles.setForeground(new java.awt.Color(255, 255, 255));
+        button_roles.setText("ROLES");
+        button_roles.setPreferredSize(new java.awt.Dimension(100, 22));
+        button_roles.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                button_rolesMouseClicked(evt);
+            }
+        });
+
+        button_privilegios.setBackground(new java.awt.Color(0, 51, 51));
+        button_privilegios.setForeground(new java.awt.Color(255, 255, 255));
+        button_privilegios.setText("PRIVILEGIOS");
+        button_privilegios.setPreferredSize(new java.awt.Dimension(100, 22));
+        button_privilegios.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                button_privilegiosMouseClicked(evt);
+            }
+        });
+
+        jPanel1.setBackground(new java.awt.Color(0, 51, 51));
+        jPanel1.setForeground(new java.awt.Color(0, 102, 102));
+
+        jLabel6.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel6.setFont(new java.awt.Font("Script MT Bold", 3, 48)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setText("DB2");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(377, 377, 377))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(14, 14, 14)
+                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(17, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout panel_principalLayout = new javax.swing.GroupLayout(panel_principal);
         panel_principal.setLayout(panel_principalLayout);
         panel_principalLayout.setHorizontalGroup(
             panel_principalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panel_principalLayout.createSequentialGroup()
+                .addGap(84, 84, 84)
+                .addGroup(panel_principalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(button_kardex, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(button_clientes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
+                .addGroup(panel_principalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(panel_principalLayout.createSequentialGroup()
+                        .addComponent(button_productos, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(59, 59, 59)
+                        .addComponent(button_facturas, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(71, 71, 71))
+                    .addGroup(panel_principalLayout.createSequentialGroup()
+                        .addComponent(button_proveedores, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(51, 51, 51)
+                        .addComponent(button_usuarios, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(77, 77, 77)))
+                .addGap(17, 17, 17)
+                .addGroup(panel_principalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(panel_principalLayout.createSequentialGroup()
+                        .addComponent(button_compras, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(69, 69, 69)
+                        .addComponent(button_ajustes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(35, 35, 35))
+                    .addGroup(panel_principalLayout.createSequentialGroup()
+                        .addComponent(button_roles, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(60, 60, 60)
+                        .addComponent(button_privilegios, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(33, 33, 33))))
+            .addGroup(panel_principalLayout.createSequentialGroup()
                 .addComponent(button_logout)
                 .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(panel_principalLayout.createSequentialGroup()
-                .addGap(55, 55, 55)
-                .addComponent(testButton)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_principalLayout.createSequentialGroup()
-                .addContainerGap(365, Short.MAX_VALUE)
-                .addGroup(panel_principalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_principalLayout.createSequentialGroup()
-                        .addComponent(label_welcome)
-                        .addGap(346, 346, 346))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_principalLayout.createSequentialGroup()
-                        .addComponent(buttonTest2)
-                        .addGap(400, 400, 400))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(label_welcome)
+                .addGap(291, 291, 291))
         );
         panel_principalLayout.setVerticalGroup(
             panel_principalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panel_principalLayout.createSequentialGroup()
-                .addGap(16, 16, 16)
+                .addGap(39, 39, 39)
                 .addComponent(label_welcome, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(9, 9, 9)
-                .addComponent(testButton)
-                .addGap(114, 114, 114)
-                .addComponent(buttonTest2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 208, Short.MAX_VALUE)
+                .addGap(29, 29, 29)
+                .addGroup(panel_principalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(button_kardex, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(button_productos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(button_facturas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(button_compras, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(button_ajustes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(31, 31, 31)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(59, 59, 59)
+                .addGroup(panel_principalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(button_clientes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(button_proveedores, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(button_usuarios, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(button_roles, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(button_privilegios, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 111, Short.MAX_VALUE)
                 .addComponent(button_logout))
         );
 
@@ -406,41 +589,347 @@ public class MainFrame extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("signup", panel_sign_up);
 
-        jPanel4.setBackground(new java.awt.Color(0, 153, 153));
+        panel_productos.setBackground(new java.awt.Color(0, 153, 153));
 
-        jTable1.setBackground(new java.awt.Color(0, 102, 102));
-        jTable1.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
+        label_sign_up_panel1.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
+        label_sign_up_panel1.setForeground(new java.awt.Color(255, 255, 255));
+        label_sign_up_panel1.setText("PRODUCTOS");
 
-            },
-            new String [] {
-                "usuario_unico", "clave"
+        regresar.setBackground(new java.awt.Color(0, 51, 51));
+        regresar.setForeground(new java.awt.Color(255, 255, 255));
+        regresar.setText("Regresar");
+        regresar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                regresarMouseClicked(evt);
             }
-        ));
-        jTable1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jTable1.setEnabled(false);
-        jTable1.setGridColor(new java.awt.Color(0, 0, 0));
-        jTable1.setSelectionBackground(new java.awt.Color(204, 0, 0));
-        jScrollPane2.setViewportView(jTable1);
+        });
 
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 455, Short.MAX_VALUE))
+        javax.swing.GroupLayout panel_productosLayout = new javax.swing.GroupLayout(panel_productos);
+        panel_productos.setLayout(panel_productosLayout);
+        panel_productosLayout.setHorizontalGroup(
+            panel_productosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_productosLayout.createSequentialGroup()
+                .addContainerGap(321, Short.MAX_VALUE)
+                .addComponent(label_sign_up_panel1)
+                .addGap(299, 299, 299))
+            .addGroup(panel_productosLayout.createSequentialGroup()
+                .addComponent(regresar)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addContainerGap(299, Short.MAX_VALUE)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+        panel_productosLayout.setVerticalGroup(
+            panel_productosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panel_productosLayout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addComponent(label_sign_up_panel1, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 362, Short.MAX_VALUE)
+                .addComponent(regresar))
         );
 
-        jTabbedPane1.addTab("testJtable", jPanel4);
+        jTabbedPane1.addTab("productos", panel_productos);
+
+        panel_kardex.setBackground(new java.awt.Color(0, 153, 153));
+
+        label_sign_up_panel2.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
+        label_sign_up_panel2.setForeground(new java.awt.Color(255, 255, 255));
+        label_sign_up_panel2.setText("KARDEX");
+
+        regresar1.setBackground(new java.awt.Color(0, 51, 51));
+        regresar1.setForeground(new java.awt.Color(255, 255, 255));
+        regresar1.setText("Regresar");
+        regresar1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                regresar1MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout panel_kardexLayout = new javax.swing.GroupLayout(panel_kardex);
+        panel_kardex.setLayout(panel_kardexLayout);
+        panel_kardexLayout.setHorizontalGroup(
+            panel_kardexLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_kardexLayout.createSequentialGroup()
+                .addContainerGap(390, Short.MAX_VALUE)
+                .addComponent(label_sign_up_panel2)
+                .addGap(329, 329, 329))
+            .addGroup(panel_kardexLayout.createSequentialGroup()
+                .addComponent(regresar1)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        panel_kardexLayout.setVerticalGroup(
+            panel_kardexLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panel_kardexLayout.createSequentialGroup()
+                .addGap(17, 17, 17)
+                .addComponent(label_sign_up_panel2, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 363, Short.MAX_VALUE)
+                .addComponent(regresar1))
+        );
+
+        jTabbedPane1.addTab("kardex", panel_kardex);
+
+        panel_privilegio.setBackground(new java.awt.Color(0, 153, 153));
+
+        label_sign_up_panel3.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
+        label_sign_up_panel3.setForeground(new java.awt.Color(255, 255, 255));
+        label_sign_up_panel3.setText("PRIVILEGIOS");
+
+        regresar2.setBackground(new java.awt.Color(0, 51, 51));
+        regresar2.setForeground(new java.awt.Color(255, 255, 255));
+        regresar2.setText("Regresar");
+        regresar2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                regresar2MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout panel_privilegioLayout = new javax.swing.GroupLayout(panel_privilegio);
+        panel_privilegio.setLayout(panel_privilegioLayout);
+        panel_privilegioLayout.setHorizontalGroup(
+            panel_privilegioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_privilegioLayout.createSequentialGroup()
+                .addContainerGap(293, Short.MAX_VALUE)
+                .addComponent(label_sign_up_panel3)
+                .addGap(329, 329, 329))
+            .addGroup(panel_privilegioLayout.createSequentialGroup()
+                .addComponent(regresar2)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        panel_privilegioLayout.setVerticalGroup(
+            panel_privilegioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panel_privilegioLayout.createSequentialGroup()
+                .addGap(17, 17, 17)
+                .addComponent(label_sign_up_panel3, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 363, Short.MAX_VALUE)
+                .addComponent(regresar2))
+        );
+
+        jTabbedPane1.addTab("privilegio", panel_privilegio);
+
+        panel_rol.setBackground(new java.awt.Color(0, 153, 153));
+
+        label_sign_up_panel4.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
+        label_sign_up_panel4.setForeground(new java.awt.Color(255, 255, 255));
+        label_sign_up_panel4.setText("ROLES");
+
+        regresar3.setBackground(new java.awt.Color(0, 51, 51));
+        regresar3.setForeground(new java.awt.Color(255, 255, 255));
+        regresar3.setText("Regresar");
+        regresar3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                regresar3MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout panel_rolLayout = new javax.swing.GroupLayout(panel_rol);
+        panel_rol.setLayout(panel_rolLayout);
+        panel_rolLayout.setHorizontalGroup(
+            panel_rolLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_rolLayout.createSequentialGroup()
+                .addContainerGap(365, Short.MAX_VALUE)
+                .addComponent(label_sign_up_panel4)
+                .addGap(397, 397, 397))
+            .addGroup(panel_rolLayout.createSequentialGroup()
+                .addComponent(regresar3)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        panel_rolLayout.setVerticalGroup(
+            panel_rolLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panel_rolLayout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addComponent(label_sign_up_panel4, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 362, Short.MAX_VALUE)
+                .addComponent(regresar3))
+        );
+
+        jTabbedPane1.addTab("rol", panel_rol);
+
+        panel_compras.setBackground(new java.awt.Color(0, 153, 153));
+
+        label_sign_up_panel5.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
+        label_sign_up_panel5.setForeground(new java.awt.Color(255, 255, 255));
+        label_sign_up_panel5.setText("COMPRAS");
+
+        regresar4.setBackground(new java.awt.Color(0, 51, 51));
+        regresar4.setForeground(new java.awt.Color(255, 255, 255));
+        regresar4.setText("Regresar");
+        regresar4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                regresar4MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout panel_comprasLayout = new javax.swing.GroupLayout(panel_compras);
+        panel_compras.setLayout(panel_comprasLayout);
+        panel_comprasLayout.setHorizontalGroup(
+            panel_comprasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_comprasLayout.createSequentialGroup()
+                .addContainerGap(338, Short.MAX_VALUE)
+                .addComponent(label_sign_up_panel5)
+                .addGap(336, 336, 336))
+            .addGroup(panel_comprasLayout.createSequentialGroup()
+                .addComponent(regresar4)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        panel_comprasLayout.setVerticalGroup(
+            panel_comprasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panel_comprasLayout.createSequentialGroup()
+                .addGap(16, 16, 16)
+                .addComponent(label_sign_up_panel5, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 364, Short.MAX_VALUE)
+                .addComponent(regresar4))
+        );
+
+        jTabbedPane1.addTab("compras", panel_compras);
+
+        panel_ajustes.setBackground(new java.awt.Color(0, 153, 153));
+
+        label_sign_up_panel6.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
+        label_sign_up_panel6.setForeground(new java.awt.Color(255, 255, 255));
+        label_sign_up_panel6.setText("AJUSTES");
+
+        regresar5.setBackground(new java.awt.Color(0, 51, 51));
+        regresar5.setForeground(new java.awt.Color(255, 255, 255));
+        regresar5.setText("Regresar");
+        regresar5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                regresar5MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout panel_ajustesLayout = new javax.swing.GroupLayout(panel_ajustes);
+        panel_ajustes.setLayout(panel_ajustesLayout);
+        panel_ajustesLayout.setHorizontalGroup(
+            panel_ajustesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_ajustesLayout.createSequentialGroup()
+                .addContainerGap(373, Short.MAX_VALUE)
+                .addComponent(label_sign_up_panel6)
+                .addGap(336, 336, 336))
+            .addGroup(panel_ajustesLayout.createSequentialGroup()
+                .addComponent(regresar5)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        panel_ajustesLayout.setVerticalGroup(
+            panel_ajustesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panel_ajustesLayout.createSequentialGroup()
+                .addGap(16, 16, 16)
+                .addComponent(label_sign_up_panel6, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 364, Short.MAX_VALUE)
+                .addComponent(regresar5))
+        );
+
+        jTabbedPane1.addTab("ajustes", panel_ajustes);
+
+        panel_facturas.setBackground(new java.awt.Color(0, 153, 153));
+
+        label_sign_up_panel7.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
+        label_sign_up_panel7.setForeground(new java.awt.Color(255, 255, 255));
+        label_sign_up_panel7.setText("FACTURAS");
+
+        regresar6.setBackground(new java.awt.Color(0, 51, 51));
+        regresar6.setForeground(new java.awt.Color(255, 255, 255));
+        regresar6.setText("Regresar");
+        regresar6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                regresar6MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout panel_facturasLayout = new javax.swing.GroupLayout(panel_facturas);
+        panel_facturas.setLayout(panel_facturasLayout);
+        panel_facturasLayout.setHorizontalGroup(
+            panel_facturasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_facturasLayout.createSequentialGroup()
+                .addContainerGap(327, Short.MAX_VALUE)
+                .addComponent(label_sign_up_panel7)
+                .addGap(336, 336, 336))
+            .addGroup(panel_facturasLayout.createSequentialGroup()
+                .addComponent(regresar6)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        panel_facturasLayout.setVerticalGroup(
+            panel_facturasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panel_facturasLayout.createSequentialGroup()
+                .addGap(16, 16, 16)
+                .addComponent(label_sign_up_panel7, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 364, Short.MAX_VALUE)
+                .addComponent(regresar6))
+        );
+
+        jTabbedPane1.addTab("facturas", panel_facturas);
+
+        panel_proveedores.setBackground(new java.awt.Color(0, 153, 153));
+
+        label_sign_up_panel8.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
+        label_sign_up_panel8.setForeground(new java.awt.Color(255, 255, 255));
+        label_sign_up_panel8.setText("PROVEEDORES");
+
+        regresar7.setBackground(new java.awt.Color(0, 51, 51));
+        regresar7.setForeground(new java.awt.Color(255, 255, 255));
+        regresar7.setText("Regresar");
+        regresar7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                regresar7MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout panel_proveedoresLayout = new javax.swing.GroupLayout(panel_proveedores);
+        panel_proveedores.setLayout(panel_proveedoresLayout);
+        panel_proveedoresLayout.setHorizontalGroup(
+            panel_proveedoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_proveedoresLayout.createSequentialGroup()
+                .addContainerGap(308, Short.MAX_VALUE)
+                .addComponent(label_sign_up_panel8)
+                .addGap(264, 264, 264))
+            .addGroup(panel_proveedoresLayout.createSequentialGroup()
+                .addComponent(regresar7)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        panel_proveedoresLayout.setVerticalGroup(
+            panel_proveedoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panel_proveedoresLayout.createSequentialGroup()
+                .addGap(16, 16, 16)
+                .addComponent(label_sign_up_panel8, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 364, Short.MAX_VALUE)
+                .addComponent(regresar7))
+        );
+
+        jTabbedPane1.addTab("proveedores", panel_proveedores);
+
+        panel_clientes.setBackground(new java.awt.Color(0, 153, 153));
+
+        label_sign_up_panel9.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
+        label_sign_up_panel9.setForeground(new java.awt.Color(255, 255, 255));
+        label_sign_up_panel9.setText("CLIENTES");
+
+        regresar8.setBackground(new java.awt.Color(0, 51, 51));
+        regresar8.setForeground(new java.awt.Color(255, 255, 255));
+        regresar8.setText("Regresar");
+        regresar8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                regresar8MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout panel_clientesLayout = new javax.swing.GroupLayout(panel_clientes);
+        panel_clientes.setLayout(panel_clientesLayout);
+        panel_clientesLayout.setHorizontalGroup(
+            panel_clientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_clientesLayout.createSequentialGroup()
+                .addContainerGap(356, Short.MAX_VALUE)
+                .addComponent(label_sign_up_panel9)
+                .addGap(336, 336, 336))
+            .addGroup(panel_clientesLayout.createSequentialGroup()
+                .addComponent(regresar8)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        panel_clientesLayout.setVerticalGroup(
+            panel_clientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panel_clientesLayout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addComponent(label_sign_up_panel9, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 358, Short.MAX_VALUE)
+                .addComponent(regresar8))
+        );
+
+        jTabbedPane1.addTab("clientes", panel_clientes);
 
         getContentPane().add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -31, -1, 490));
 
@@ -517,62 +1006,89 @@ public class MainFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBox2ActionPerformed
 
-    private void testButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_testButtonMouseClicked
-        //TEST.
-        String usuariosRecords = funciones.read_usuario();
-        System.out.println(usuariosRecords);
-    }//GEN-LAST:event_testButtonMouseClicked
-
-    private void testButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_testButtonActionPerformed
+    private void button_facturasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_facturasActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_testButtonActionPerformed
+    }//GEN-LAST:event_button_facturasActionPerformed
 
-    private void buttonTest2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonTest2MouseClicked
-       this.jTabbedPane1.setSelectedIndex(3);
-       
-       //Creo que algo así tendría que ser el read entonces.
+    private void button_kardexMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button_kardexMouseClicked
+        this.jTabbedPane1.setSelectedIndex(4);
+    }//GEN-LAST:event_button_kardexMouseClicked
 
-       //Aquí voy a conectarlo.
-        //Atributos para la conexión a la base de datos.
-        String JDBC_DRIVER = "com.ibm.db2.jcc.DB2Driver";
-        String DB_URL = "jdbc:db2://localhost:25000/INV_DB";
-        String USER = "Usuario";
-        String PASS = "admin123";
-        
-        
-        try (Connection conn = DriverManager.getConnection(DB_URL, USER, PASS); CallableStatement stmt = conn.prepareCall("{call sp_usuario_read}")) {
-            stmt.execute();
-            ResultSet rs = stmt.getResultSet();
-            ResultSetMetaData rsmd = rs.getMetaData();
-            StringBuilder sb = new StringBuilder();
-            
-            DefaultTableModel model = (DefaultTableModel) this.jTable1.getModel();
-            int cantidad_registros = rsmd.getColumnCount();
-            String[] colName = new String[cantidad_registros];
-            
-            for (int i = 0; i < cantidad_registros; i++) {
-                colName[i] = rsmd.getColumnName(i+1);
-            }
-            model.setColumnIdentifiers(colName);
-            
-            String usuario_unico;
-            String clave;
-            
-            while (rs.next()) {
-                usuario_unico = rs.getString(1);
-                clave = rs.getString(2);
-                String[] row = {usuario_unico, clave};
-                model.addRow(row);
-            }
-            
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        
-        
-        
-       
-    }//GEN-LAST:event_buttonTest2MouseClicked
+    private void button_productosKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_button_productosKeyPressed
+        //this.jTabbedPane1.setSelectedIndex(3);
+    }//GEN-LAST:event_button_productosKeyPressed
+
+    private void button_facturasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button_facturasMouseClicked
+        this.jTabbedPane1.setSelectedIndex(9);
+    }//GEN-LAST:event_button_facturasMouseClicked
+
+    private void button_productosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button_productosMouseClicked
+        this.jTabbedPane1.setSelectedIndex(3);
+    }//GEN-LAST:event_button_productosMouseClicked
+
+    private void button_comprasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button_comprasMouseClicked
+        this.jTabbedPane1.setSelectedIndex(7);
+    }//GEN-LAST:event_button_comprasMouseClicked
+
+    private void button_ajustesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button_ajustesMouseClicked
+        this.jTabbedPane1.setSelectedIndex(8);
+    }//GEN-LAST:event_button_ajustesMouseClicked
+
+    private void button_clientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button_clientesMouseClicked
+        this.jTabbedPane1.setSelectedIndex(11);
+    }//GEN-LAST:event_button_clientesMouseClicked
+
+    private void button_proveedoresMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button_proveedoresMouseClicked
+        this.jTabbedPane1.setSelectedIndex(10);
+    }//GEN-LAST:event_button_proveedoresMouseClicked
+
+    private void button_usuariosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button_usuariosMouseClicked
+        this.jTabbedPane1.setSelectedIndex(2);
+    }//GEN-LAST:event_button_usuariosMouseClicked
+
+    private void button_rolesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button_rolesMouseClicked
+        this.jTabbedPane1.setSelectedIndex(6);
+    }//GEN-LAST:event_button_rolesMouseClicked
+
+    private void button_privilegiosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button_privilegiosMouseClicked
+        this.jTabbedPane1.setSelectedIndex(5);
+    }//GEN-LAST:event_button_privilegiosMouseClicked
+
+    private void regresarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_regresarMouseClicked
+        this.jTabbedPane1.setSelectedIndex(1);
+    }//GEN-LAST:event_regresarMouseClicked
+
+    private void regresar1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_regresar1MouseClicked
+        this.jTabbedPane1.setSelectedIndex(1);
+    }//GEN-LAST:event_regresar1MouseClicked
+
+    private void regresar2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_regresar2MouseClicked
+        this.jTabbedPane1.setSelectedIndex(1);
+    }//GEN-LAST:event_regresar2MouseClicked
+
+    private void regresar3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_regresar3MouseClicked
+        this.jTabbedPane1.setSelectedIndex(1);
+    }//GEN-LAST:event_regresar3MouseClicked
+
+    private void regresar4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_regresar4MouseClicked
+        this.jTabbedPane1.setSelectedIndex(1);
+    }//GEN-LAST:event_regresar4MouseClicked
+
+    private void regresar5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_regresar5MouseClicked
+        this.jTabbedPane1.setSelectedIndex(1);
+    }//GEN-LAST:event_regresar5MouseClicked
+
+    private void regresar6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_regresar6MouseClicked
+        this.jTabbedPane1.setSelectedIndex(1);
+    }//GEN-LAST:event_regresar6MouseClicked
+
+    private void regresar7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_regresar7MouseClicked
+        this.jTabbedPane1.setSelectedIndex(1);
+    }//GEN-LAST:event_regresar7MouseClicked
+
+    private void regresar8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_regresar8MouseClicked
+        this.jTabbedPane1.setSelectedIndex(1);
+    }//GEN-LAST:event_regresar8MouseClicked
 
     // Función para verificar si el usuario existe.
     private boolean loginCorrecto(String user, String password) {
@@ -651,10 +1167,19 @@ public class MainFrame extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel JPanel_Blanco_Login;
-    private javax.swing.JButton buttonTest2;
+    private javax.swing.JButton button_ajustes;
+    private javax.swing.JButton button_clientes;
+    private javax.swing.JButton button_compras;
+    private javax.swing.JButton button_facturas;
+    private javax.swing.JButton button_kardex;
     private javax.swing.JButton button_login;
     private javax.swing.JButton button_logout;
+    private javax.swing.JButton button_privilegios;
+    private javax.swing.JButton button_productos;
+    private javax.swing.JButton button_proveedores;
     private javax.swing.JButton button_regresar_signUp;
+    private javax.swing.JButton button_roles;
+    private javax.swing.JButton button_usuarios;
     private javax.swing.JTextField field_password_nueva;
     private javax.swing.JTextField field_user_nuevo;
     private javax.swing.JButton jButton2;
@@ -665,19 +1190,44 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTable jTable1;
     private javax.swing.JLabel label_login_text;
     private javax.swing.JLabel label_sign_up_panel;
+    private javax.swing.JLabel label_sign_up_panel1;
+    private javax.swing.JLabel label_sign_up_panel2;
+    private javax.swing.JLabel label_sign_up_panel3;
+    private javax.swing.JLabel label_sign_up_panel4;
+    private javax.swing.JLabel label_sign_up_panel5;
+    private javax.swing.JLabel label_sign_up_panel6;
+    private javax.swing.JLabel label_sign_up_panel7;
+    private javax.swing.JLabel label_sign_up_panel8;
+    private javax.swing.JLabel label_sign_up_panel9;
     private javax.swing.JLabel label_signup;
     private javax.swing.JLabel label_welcome;
+    private javax.swing.JPanel panel_ajustes;
     private javax.swing.JPanel panel_blanco_signup;
+    private javax.swing.JPanel panel_clientes;
+    private javax.swing.JPanel panel_compras;
+    private javax.swing.JPanel panel_facturas;
+    private javax.swing.JPanel panel_kardex;
     private javax.swing.JPanel panel_login;
     private javax.swing.JPanel panel_principal;
+    private javax.swing.JPanel panel_privilegio;
+    private javax.swing.JPanel panel_productos;
+    private javax.swing.JPanel panel_proveedores;
+    private javax.swing.JPanel panel_rol;
     private javax.swing.JPanel panel_sign_up;
-    private javax.swing.JButton testButton;
+    private javax.swing.JButton regresar;
+    private javax.swing.JButton regresar1;
+    private javax.swing.JButton regresar2;
+    private javax.swing.JButton regresar3;
+    private javax.swing.JButton regresar4;
+    private javax.swing.JButton regresar5;
+    private javax.swing.JButton regresar6;
+    private javax.swing.JButton regresar7;
+    private javax.swing.JButton regresar8;
     private javax.swing.JPasswordField textfield_password;
     private javax.swing.JTextField textfield_user;
     // End of variables declaration//GEN-END:variables
