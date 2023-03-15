@@ -95,6 +95,9 @@ public class MainFrame extends javax.swing.JFrame {
         panel_rol = new javax.swing.JPanel();
         label_sign_up_panel4 = new javax.swing.JLabel();
         regresar3 = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        table_roles = new javax.swing.JTable();
+        button_refresh = new javax.swing.JButton();
         panel_compras = new javax.swing.JPanel();
         label_sign_up_panel5 = new javax.swing.JLabel();
         regresar4 = new javax.swing.JButton();
@@ -718,25 +721,49 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
 
+        table_roles.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "id_rol", "nombre"
+            }
+        ));
+        jScrollPane1.setViewportView(table_roles);
+
+        button_refresh.setText("Refresh");
+        button_refresh.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                button_refreshMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout panel_rolLayout = new javax.swing.GroupLayout(panel_rol);
         panel_rol.setLayout(panel_rolLayout);
         panel_rolLayout.setHorizontalGroup(
             panel_rolLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_rolLayout.createSequentialGroup()
-                .addContainerGap(365, Short.MAX_VALUE)
-                .addComponent(label_sign_up_panel4)
-                .addGap(397, 397, 397))
             .addGroup(panel_rolLayout.createSequentialGroup()
                 .addComponent(regresar3)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 305, Short.MAX_VALUE)
+                .addComponent(button_refresh)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(panel_rolLayout.createSequentialGroup()
+                .addGap(379, 379, 379)
+                .addComponent(label_sign_up_panel4)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         panel_rolLayout.setVerticalGroup(
             panel_rolLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panel_rolLayout.createSequentialGroup()
                 .addGap(18, 18, 18)
                 .addComponent(label_sign_up_panel4, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 362, Short.MAX_VALUE)
-                .addComponent(regresar3))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 233, Short.MAX_VALUE)
+                .addGroup(panel_rolLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_rolLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(regresar3)
+                        .addComponent(button_refresh))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
 
         jTabbedPane1.addTab("rol", panel_rol);
@@ -940,14 +967,6 @@ public class MainFrame extends javax.swing.JFrame {
         //Para entrar en la ventana de log in o indicar si ha puesto mal usuario/contraseña.
         if (!loginCorrecto(this.textfield_user.getText(), this.textfield_password.getText())) {
             this.jTabbedPane1.setSelectedIndex(1);
-            //Quitamos los errores que tenía del login incorrecto en caso de que esté.
-
-            URL url = getClass().getResource("ibm_logo.png");
-            if (url == null) {
-                System.out.println("No se encontró el archivo de imagen");
-            } else {
-                System.out.println("La ruta del archivo es: " + url.toString());
-            }
 
         } else {
             //Mostramos mensaje de error al intentar logearse.
@@ -1048,6 +1067,7 @@ public class MainFrame extends javax.swing.JFrame {
 
     private void button_rolesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button_rolesMouseClicked
         this.jTabbedPane1.setSelectedIndex(6);
+        this.cargarTablaRoles();
     }//GEN-LAST:event_button_rolesMouseClicked
 
     private void button_privilegiosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button_privilegiosMouseClicked
@@ -1089,6 +1109,10 @@ public class MainFrame extends javax.swing.JFrame {
     private void regresar8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_regresar8MouseClicked
         this.jTabbedPane1.setSelectedIndex(1);
     }//GEN-LAST:event_regresar8MouseClicked
+    
+    private void button_refreshMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button_refreshMouseClicked
+        this.cargarTablaRoles();
+    }//GEN-LAST:event_button_refreshMouseClicked
 
     // Función para verificar si el usuario existe.
     private boolean loginCorrecto(String user, String password) {
@@ -1127,6 +1151,43 @@ public class MainFrame extends javax.swing.JFrame {
         }
     }
 
+    public void cargarTablaRoles(){
+        //Cargamos la tabla.
+        try (Connection conn = DriverManager.getConnection(funciones.getDB_URL(), funciones.getUSER(), funciones.getPASS()); CallableStatement stmt = conn.prepareCall("{call sp_rol_read}")) {
+            stmt.execute();
+            ResultSet rs = stmt.getResultSet();
+            ResultSetMetaData rsmd = rs.getMetaData();
+            StringBuilder sb = new StringBuilder();
+            
+            DefaultTableModel model = (DefaultTableModel) this.table_roles.getModel();
+            
+            //Vaciamos la table.
+            model.setRowCount(0);
+            
+            int cantidad_registros = rsmd.getColumnCount();
+            String[] colName = new String[cantidad_registros];
+            
+            for (int i = 0; i < cantidad_registros; i++) {
+                colName[i] = rsmd.getColumnName(i+1);
+            }
+            model.setColumnIdentifiers(colName);
+            
+            String id_rol;
+            String nombre;
+            
+            while (rs.next()) {
+                id_rol = rs.getString(1);
+                nombre = rs.getString(2);
+                String[] row = {id_rol, nombre};
+                model.addRow(row);
+            }
+            
+        } catch (SQLException e) {
+            System.out.println("No se ha conectado!");
+        }
+    }
+    
+    
     /**
      * @param args the command line arguments
      */
@@ -1162,7 +1223,7 @@ public class MainFrame extends javax.swing.JFrame {
         });
     }
 
-    Function funciones = new Function();
+    Function funciones = new Function();    
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -1177,6 +1238,7 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JButton button_privilegios;
     private javax.swing.JButton button_productos;
     private javax.swing.JButton button_proveedores;
+    private javax.swing.JButton button_refresh;
     private javax.swing.JButton button_regresar_signUp;
     private javax.swing.JButton button_roles;
     private javax.swing.JButton button_usuarios;
@@ -1192,6 +1254,7 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JLabel label_login_text;
     private javax.swing.JLabel label_sign_up_panel;
@@ -1228,6 +1291,7 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JButton regresar6;
     private javax.swing.JButton regresar7;
     private javax.swing.JButton regresar8;
+    private javax.swing.JTable table_roles;
     private javax.swing.JPasswordField textfield_password;
     private javax.swing.JTextField textfield_user;
     // End of variables declaration//GEN-END:variables

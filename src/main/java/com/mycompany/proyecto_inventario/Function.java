@@ -8,11 +8,29 @@ import java.sql.SQLException;
 
 public class Function {
 
+    
     //Atributos para la conexión a la base de datos.
     private static final String JDBC_DRIVER = "com.ibm.db2.jcc.DB2Driver";
     private static final String DB_URL = "jdbc:db2://localhost:25000/INV_DB";
     private static final String USER = "Usuario";
     private static final String PASS = "admin123";
+    
+    //Getters.
+    public String getJDBC_DRIVER() {
+        return JDBC_DRIVER;
+    }
+
+    public String getDB_URL() {
+        return DB_URL;
+    }
+
+    public String getUSER() {
+        return USER;
+    }
+
+    public String getPASS() {
+        return PASS;
+    }
 
     //CREATES.
     public void create_rol() {
