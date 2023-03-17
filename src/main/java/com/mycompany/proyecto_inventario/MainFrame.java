@@ -7,7 +7,6 @@ package com.mycompany.proyecto_inventario;
 import java.awt.Color;
 import java.awt.Image;
 import java.io.IOException;
-import java.net.URL;
 import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -16,7 +15,6 @@ import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import javax.imageio.ImageIO;
 import javax.swing.table.DefaultTableModel;
-
 
 /**
  *
@@ -48,6 +46,7 @@ public class MainFrame extends javax.swing.JFrame {
 
         jLabel12 = new javax.swing.JLabel();
         jButton4 = new javax.swing.JButton();
+        jCheckBox1 = new javax.swing.JCheckBox();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         panel_login = new javax.swing.JPanel();
         button_login = new javax.swing.JButton();
@@ -85,15 +84,27 @@ public class MainFrame extends javax.swing.JFrame {
         jComboBox2 = new javax.swing.JComboBox<>();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
+        jScrollPane10 = new javax.swing.JScrollPane();
+        table_usuarios = new javax.swing.JTable();
+        button_refresh_signup = new javax.swing.JButton();
         panel_productos = new javax.swing.JPanel();
         label_sign_up_panel1 = new javax.swing.JLabel();
         regresar = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        table_productos = new javax.swing.JTable();
+        button_refresh2 = new javax.swing.JButton();
         panel_kardex = new javax.swing.JPanel();
         label_sign_up_panel2 = new javax.swing.JLabel();
         regresar1 = new javax.swing.JButton();
+        button_refresh8 = new javax.swing.JButton();
+        jScrollPane9 = new javax.swing.JScrollPane();
+        table_kardex = new javax.swing.JTable();
         panel_privilegio = new javax.swing.JPanel();
         label_sign_up_panel3 = new javax.swing.JLabel();
         regresar2 = new javax.swing.JButton();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        table_privilegios = new javax.swing.JTable();
+        button_refresh1 = new javax.swing.JButton();
         panel_rol = new javax.swing.JPanel();
         label_sign_up_panel4 = new javax.swing.JLabel();
         regresar3 = new javax.swing.JButton();
@@ -120,24 +131,41 @@ public class MainFrame extends javax.swing.JFrame {
         panel_compras = new javax.swing.JPanel();
         label_sign_up_panel5 = new javax.swing.JLabel();
         regresar4 = new javax.swing.JButton();
+        button_refresh3 = new javax.swing.JButton();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        table_compras = new javax.swing.JTable();
         panel_ajustes = new javax.swing.JPanel();
         label_sign_up_panel6 = new javax.swing.JLabel();
         regresar5 = new javax.swing.JButton();
+        button_refresh4 = new javax.swing.JButton();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        table_ajustes = new javax.swing.JTable();
         panel_facturas = new javax.swing.JPanel();
         label_sign_up_panel7 = new javax.swing.JLabel();
         regresar6 = new javax.swing.JButton();
+        button_refresh5 = new javax.swing.JButton();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        table_facturas = new javax.swing.JTable();
         panel_proveedores = new javax.swing.JPanel();
         label_sign_up_panel8 = new javax.swing.JLabel();
         regresar7 = new javax.swing.JButton();
+        button_refresh6 = new javax.swing.JButton();
+        jScrollPane7 = new javax.swing.JScrollPane();
+        table_proveedores = new javax.swing.JTable();
         panel_clientes = new javax.swing.JPanel();
         label_sign_up_panel9 = new javax.swing.JLabel();
         regresar8 = new javax.swing.JButton();
+        button_refresh7 = new javax.swing.JButton();
+        jScrollPane8 = new javax.swing.JScrollPane();
+        table_clientes = new javax.swing.JTable();
 
         jLabel12.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(255, 255, 255));
         jLabel12.setText("Actualizar rol");
 
         jButton4.setText("Ok");
+
+        jCheckBox1.setText("jCheckBox1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -509,24 +537,36 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
 
+        jButton2.setBackground(new java.awt.Color(0, 53, 53));
+        jButton2.setForeground(new java.awt.Color(255, 255, 255));
+        jButton2.setText("Sign up");
+
         javax.swing.GroupLayout panel_blanco_signupLayout = new javax.swing.GroupLayout(panel_blanco_signup);
         panel_blanco_signup.setLayout(panel_blanco_signupLayout);
         panel_blanco_signupLayout.setHorizontalGroup(
             panel_blanco_signupLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panel_blanco_signupLayout.createSequentialGroup()
                 .addComponent(button_regresar_signUp)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(0, 832, Short.MAX_VALUE))
+            .addGroup(panel_blanco_signupLayout.createSequentialGroup()
+                .addGap(412, 412, 412)
+                .addComponent(jButton2)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         panel_blanco_signupLayout.setVerticalGroup(
             panel_blanco_signupLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_blanco_signupLayout.createSequentialGroup()
-                .addGap(0, 78, Short.MAX_VALUE)
+                .addContainerGap(38, Short.MAX_VALUE)
+                .addComponent(jButton2)
+                .addGap(18, 18, 18)
                 .addComponent(button_regresar_signUp))
         );
 
-        jButton2.setBackground(new java.awt.Color(0, 53, 53));
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("Sign up");
+        field_user_nuevo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                field_user_nuevoActionPerformed(evt);
+            }
+        });
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
@@ -553,65 +593,83 @@ public class MainFrame extends javax.swing.JFrame {
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Privilegio");
 
+        table_usuarios.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "usuario_unico", "clave"
+            }
+        ));
+        jScrollPane10.setViewportView(table_usuarios);
+
+        button_refresh_signup.setText("Refresh");
+        button_refresh_signup.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                button_refresh_signupMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout panel_sign_upLayout = new javax.swing.GroupLayout(panel_sign_up);
         panel_sign_up.setLayout(panel_sign_upLayout);
         panel_sign_upLayout.setHorizontalGroup(
             panel_sign_upLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(panel_blanco_signup, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(panel_sign_upLayout.createSequentialGroup()
-                .addContainerGap(234, Short.MAX_VALUE)
+                .addGap(20, 20, 20)
                 .addGroup(panel_sign_upLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(panel_sign_upLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(field_password_nueva, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel2))
                     .addComponent(field_user_nuevo, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(205, 205, 205)
-                .addGroup(panel_sign_upLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(panel_sign_upLayout.createSequentialGroup()
-                        .addGroup(panel_sign_upLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.LEADING))
-                        .addGap(216, 216, 216))))
-            .addGroup(panel_sign_upLayout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addGroup(panel_sign_upLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel5)
+                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(panel_sign_upLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panel_sign_upLayout.createSequentialGroup()
-                        .addGap(360, 360, 360)
-                        .addComponent(label_sign_up_panel))
-                    .addGroup(panel_sign_upLayout.createSequentialGroup()
-                        .addGap(417, 417, 417)
-                        .addComponent(jButton2)))
-                .addGap(138, 138, 138))
+                        .addGap(70, 70, 70)
+                        .addComponent(label_sign_up_panel)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_sign_upLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_sign_upLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(button_refresh_signup)
+                .addGap(193, 193, 193))
         );
         panel_sign_upLayout.setVerticalGroup(
             panel_sign_upLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panel_sign_upLayout.createSequentialGroup()
                 .addGap(21, 21, 21)
                 .addComponent(label_sign_up_panel, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(panel_sign_upLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(27, 27, 27)
+                .addGroup(panel_sign_upLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(panel_sign_upLayout.createSequentialGroup()
-                        .addGap(13, 13, 13)
-                        .addComponent(jLabel2)
+                        .addGroup(panel_sign_upLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel4))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(field_user_nuevo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(panel_sign_upLayout.createSequentialGroup()
-                        .addGap(5, 5, 5)
-                        .addComponent(jLabel4)
+                        .addGroup(panel_sign_upLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(field_user_nuevo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(60, 60, 60)
+                        .addGroup(panel_sign_upLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel5))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(60, 60, 60)
-                .addGroup(panel_sign_upLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel5))
+                        .addGroup(panel_sign_upLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(field_password_nueva, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(panel_sign_upLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(field_password_nueva, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 80, Short.MAX_VALUE)
-                .addComponent(jButton2)
-                .addGap(18, 18, 18)
+                .addComponent(button_refresh_signup)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 78, Short.MAX_VALUE)
                 .addComponent(panel_blanco_signup, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -632,6 +690,23 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
 
+        table_productos.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "id_rol", "nombre"
+            }
+        ));
+        jScrollPane2.setViewportView(table_productos);
+
+        button_refresh2.setText("Refresh");
+        button_refresh2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                button_refresh2MouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout panel_productosLayout = new javax.swing.GroupLayout(panel_productos);
         panel_productos.setLayout(panel_productosLayout);
         panel_productosLayout.setHorizontalGroup(
@@ -642,15 +717,23 @@ public class MainFrame extends javax.swing.JFrame {
                 .addGap(299, 299, 299))
             .addGroup(panel_productosLayout.createSequentialGroup()
                 .addComponent(regresar)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(button_refresh2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         panel_productosLayout.setVerticalGroup(
             panel_productosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panel_productosLayout.createSequentialGroup()
                 .addGap(18, 18, 18)
                 .addComponent(label_sign_up_panel1, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 362, Short.MAX_VALUE)
-                .addComponent(regresar))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 251, Short.MAX_VALUE)
+                .addGroup(panel_productosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(regresar, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_productosLayout.createSequentialGroup()
+                        .addComponent(button_refresh2)
+                        .addContainerGap())))
         );
 
         jTabbedPane1.addTab("productos", panel_productos);
@@ -670,6 +753,23 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
 
+        button_refresh8.setText("Refresh");
+        button_refresh8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                button_refresh8MouseClicked(evt);
+            }
+        });
+
+        table_kardex.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "id_rol", "nombre"
+            }
+        ));
+        jScrollPane9.setViewportView(table_kardex);
+
         javax.swing.GroupLayout panel_kardexLayout = new javax.swing.GroupLayout(panel_kardex);
         panel_kardex.setLayout(panel_kardexLayout);
         panel_kardexLayout.setHorizontalGroup(
@@ -680,15 +780,21 @@ public class MainFrame extends javax.swing.JFrame {
                 .addGap(329, 329, 329))
             .addGroup(panel_kardexLayout.createSequentialGroup()
                 .addComponent(regresar1)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(button_refresh8)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         panel_kardexLayout.setVerticalGroup(
             panel_kardexLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panel_kardexLayout.createSequentialGroup()
                 .addGap(17, 17, 17)
                 .addComponent(label_sign_up_panel2, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 363, Short.MAX_VALUE)
-                .addComponent(regresar1))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 252, Short.MAX_VALUE)
+                .addGroup(panel_kardexLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(regresar1, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jScrollPane9, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(button_refresh8, javax.swing.GroupLayout.Alignment.TRAILING)))
         );
 
         jTabbedPane1.addTab("kardex", panel_kardex);
@@ -708,6 +814,23 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
 
+        table_privilegios.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "id_privilegio", "nombre"
+            }
+        ));
+        jScrollPane3.setViewportView(table_privilegios);
+
+        button_refresh1.setText("Refresh");
+        button_refresh1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                button_refresh1MouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout panel_privilegioLayout = new javax.swing.GroupLayout(panel_privilegio);
         panel_privilegio.setLayout(panel_privilegioLayout);
         panel_privilegioLayout.setHorizontalGroup(
@@ -718,15 +841,23 @@ public class MainFrame extends javax.swing.JFrame {
                 .addGap(329, 329, 329))
             .addGroup(panel_privilegioLayout.createSequentialGroup()
                 .addComponent(regresar2)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(button_refresh1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         panel_privilegioLayout.setVerticalGroup(
             panel_privilegioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panel_privilegioLayout.createSequentialGroup()
                 .addGap(17, 17, 17)
                 .addComponent(label_sign_up_panel3, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 363, Short.MAX_VALUE)
-                .addComponent(regresar2))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 252, Short.MAX_VALUE)
+                .addGroup(panel_privilegioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(regresar2, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_privilegioLayout.createSequentialGroup()
+                        .addComponent(button_refresh1)
+                        .addContainerGap())))
         );
 
         jTabbedPane1.addTab("privilegio", panel_privilegio);
@@ -987,6 +1118,23 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
 
+        button_refresh3.setText("Refresh");
+        button_refresh3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                button_refresh3MouseClicked(evt);
+            }
+        });
+
+        table_compras.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "id_rol", "nombre"
+            }
+        ));
+        jScrollPane4.setViewportView(table_compras);
+
         javax.swing.GroupLayout panel_comprasLayout = new javax.swing.GroupLayout(panel_compras);
         panel_compras.setLayout(panel_comprasLayout);
         panel_comprasLayout.setHorizontalGroup(
@@ -997,15 +1145,21 @@ public class MainFrame extends javax.swing.JFrame {
                 .addGap(336, 336, 336))
             .addGroup(panel_comprasLayout.createSequentialGroup()
                 .addComponent(regresar4)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(button_refresh3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         panel_comprasLayout.setVerticalGroup(
             panel_comprasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panel_comprasLayout.createSequentialGroup()
                 .addGap(16, 16, 16)
                 .addComponent(label_sign_up_panel5, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 364, Short.MAX_VALUE)
-                .addComponent(regresar4))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 253, Short.MAX_VALUE)
+                .addGroup(panel_comprasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(regresar4, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jScrollPane4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(button_refresh3, javax.swing.GroupLayout.Alignment.TRAILING)))
         );
 
         jTabbedPane1.addTab("compras", panel_compras);
@@ -1025,6 +1179,23 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
 
+        button_refresh4.setText("Refresh");
+        button_refresh4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                button_refresh4MouseClicked(evt);
+            }
+        });
+
+        table_ajustes.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "id_rol", "nombre"
+            }
+        ));
+        jScrollPane5.setViewportView(table_ajustes);
+
         javax.swing.GroupLayout panel_ajustesLayout = new javax.swing.GroupLayout(panel_ajustes);
         panel_ajustes.setLayout(panel_ajustesLayout);
         panel_ajustesLayout.setHorizontalGroup(
@@ -1035,15 +1206,21 @@ public class MainFrame extends javax.swing.JFrame {
                 .addGap(336, 336, 336))
             .addGroup(panel_ajustesLayout.createSequentialGroup()
                 .addComponent(regresar5)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(button_refresh4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         panel_ajustesLayout.setVerticalGroup(
             panel_ajustesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panel_ajustesLayout.createSequentialGroup()
                 .addGap(16, 16, 16)
                 .addComponent(label_sign_up_panel6, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 364, Short.MAX_VALUE)
-                .addComponent(regresar5))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 253, Short.MAX_VALUE)
+                .addGroup(panel_ajustesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(regresar5, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jScrollPane5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(button_refresh4, javax.swing.GroupLayout.Alignment.TRAILING)))
         );
 
         jTabbedPane1.addTab("ajustes", panel_ajustes);
@@ -1063,6 +1240,23 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
 
+        button_refresh5.setText("Refresh");
+        button_refresh5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                button_refresh5MouseClicked(evt);
+            }
+        });
+
+        table_facturas.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "id_rol", "nombre"
+            }
+        ));
+        jScrollPane6.setViewportView(table_facturas);
+
         javax.swing.GroupLayout panel_facturasLayout = new javax.swing.GroupLayout(panel_facturas);
         panel_facturas.setLayout(panel_facturasLayout);
         panel_facturasLayout.setHorizontalGroup(
@@ -1073,15 +1267,21 @@ public class MainFrame extends javax.swing.JFrame {
                 .addGap(336, 336, 336))
             .addGroup(panel_facturasLayout.createSequentialGroup()
                 .addComponent(regresar6)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(button_refresh5)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         panel_facturasLayout.setVerticalGroup(
             panel_facturasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panel_facturasLayout.createSequentialGroup()
                 .addGap(16, 16, 16)
                 .addComponent(label_sign_up_panel7, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 364, Short.MAX_VALUE)
-                .addComponent(regresar6))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 253, Short.MAX_VALUE)
+                .addGroup(panel_facturasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(regresar6, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jScrollPane6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(button_refresh5, javax.swing.GroupLayout.Alignment.TRAILING)))
         );
 
         jTabbedPane1.addTab("facturas", panel_facturas);
@@ -1101,6 +1301,23 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
 
+        button_refresh6.setText("Refresh");
+        button_refresh6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                button_refresh6MouseClicked(evt);
+            }
+        });
+
+        table_proveedores.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "id_rol", "nombre"
+            }
+        ));
+        jScrollPane7.setViewportView(table_proveedores);
+
         javax.swing.GroupLayout panel_proveedoresLayout = new javax.swing.GroupLayout(panel_proveedores);
         panel_proveedores.setLayout(panel_proveedoresLayout);
         panel_proveedoresLayout.setHorizontalGroup(
@@ -1111,15 +1328,22 @@ public class MainFrame extends javax.swing.JFrame {
                 .addGap(264, 264, 264))
             .addGroup(panel_proveedoresLayout.createSequentialGroup()
                 .addComponent(regresar7)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(button_refresh6)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         panel_proveedoresLayout.setVerticalGroup(
             panel_proveedoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panel_proveedoresLayout.createSequentialGroup()
                 .addGap(16, 16, 16)
                 .addComponent(label_sign_up_panel8, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 364, Short.MAX_VALUE)
-                .addComponent(regresar7))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 253, Short.MAX_VALUE)
+                .addGroup(panel_proveedoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(regresar7, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jScrollPane7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(button_refresh6, javax.swing.GroupLayout.Alignment.TRAILING)))
         );
 
         jTabbedPane1.addTab("proveedores", panel_proveedores);
@@ -1139,6 +1363,35 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
 
+        button_refresh7.setText("Refresh");
+        button_refresh7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                button_refresh7MouseClicked(evt);
+            }
+        });
+
+        table_clientes.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+        table_clientes.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "id_cliente", "nombre", "fecha_creacion", "fecha_ultima_actualizacion", "usuario_creo", "usuario_actualizo"
+            }
+        ));
+        table_clientes.setAutoResizeMode(0);
+        table_clientes.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        table_clientes.setEnabled(false);
+        jScrollPane8.setViewportView(table_clientes);
+        if (table_clientes.getColumnModel().getColumnCount() > 0) {
+            table_clientes.getColumnModel().getColumn(0).setMinWidth(80);
+            table_clientes.getColumnModel().getColumn(1).setMinWidth(80);
+            table_clientes.getColumnModel().getColumn(2).setMinWidth(100);
+            table_clientes.getColumnModel().getColumn(3).setMinWidth(180);
+            table_clientes.getColumnModel().getColumn(4).setMinWidth(100);
+            table_clientes.getColumnModel().getColumn(5).setMinWidth(130);
+        }
+
         javax.swing.GroupLayout panel_clientesLayout = new javax.swing.GroupLayout(panel_clientes);
         panel_clientes.setLayout(panel_clientesLayout);
         panel_clientesLayout.setHorizontalGroup(
@@ -1149,15 +1402,22 @@ public class MainFrame extends javax.swing.JFrame {
                 .addGap(336, 336, 336))
             .addGroup(panel_clientesLayout.createSequentialGroup()
                 .addComponent(regresar8)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(button_refresh7)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 414, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         panel_clientesLayout.setVerticalGroup(
             panel_clientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panel_clientesLayout.createSequentialGroup()
                 .addGap(22, 22, 22)
                 .addComponent(label_sign_up_panel9, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 358, Short.MAX_VALUE)
-                .addComponent(regresar8))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 247, Short.MAX_VALUE)
+                .addGroup(panel_clientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_clientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(regresar8)
+                        .addComponent(button_refresh7))
+                    .addComponent(jScrollPane8, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
 
         jTabbedPane1.addTab("clientes", panel_clientes);
@@ -1219,6 +1479,7 @@ public class MainFrame extends javax.swing.JFrame {
 
     private void label_signupMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_label_signupMouseClicked
         this.inicializarSignUp();
+        this.cargarTablaUsuarios();
     }//GEN-LAST:event_label_signupMouseClicked
 
     private void button_regresar_signUpMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button_regresar_signUpMouseClicked
@@ -1259,6 +1520,7 @@ public class MainFrame extends javax.swing.JFrame {
 
     private void button_clientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button_clientesMouseClicked
         this.jTabbedPane1.setSelectedIndex(11);
+        this.cargarTablaClientes();
     }//GEN-LAST:event_button_clientesMouseClicked
 
     private void button_proveedoresMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button_proveedoresMouseClicked
@@ -1267,6 +1529,7 @@ public class MainFrame extends javax.swing.JFrame {
 
     private void button_usuariosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button_usuariosMouseClicked
         this.jTabbedPane1.setSelectedIndex(2);
+        this.cargarTablaUsuarios();
     }//GEN-LAST:event_button_usuariosMouseClicked
 
     private void button_rolesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button_rolesMouseClicked
@@ -1276,6 +1539,7 @@ public class MainFrame extends javax.swing.JFrame {
 
     private void button_privilegiosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button_privilegiosMouseClicked
         this.jTabbedPane1.setSelectedIndex(5);
+        this.cargarTablaPrivilegios();
     }//GEN-LAST:event_button_privilegiosMouseClicked
 
     private void regresarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_regresarMouseClicked
@@ -1313,7 +1577,7 @@ public class MainFrame extends javax.swing.JFrame {
     private void regresar8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_regresar8MouseClicked
         this.jTabbedPane1.setSelectedIndex(1);
     }//GEN-LAST:event_regresar8MouseClicked
-    
+
     private void button_refreshMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button_refreshMouseClicked
         this.cargarTablaRoles();
     }//GEN-LAST:event_button_refreshMouseClicked
@@ -1322,18 +1586,58 @@ public class MainFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
 
+    private void button_refresh1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button_refresh1MouseClicked
+        this.cargarTablaPrivilegios();
+    }//GEN-LAST:event_button_refresh1MouseClicked
+
+    private void button_refresh2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button_refresh2MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_button_refresh2MouseClicked
+
+    private void button_refresh3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button_refresh3MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_button_refresh3MouseClicked
+
+    private void button_refresh4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button_refresh4MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_button_refresh4MouseClicked
+
+    private void button_refresh5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button_refresh5MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_button_refresh5MouseClicked
+
+    private void button_refresh6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button_refresh6MouseClicked
+        this.cargarTablaPrivilegios();
+    }//GEN-LAST:event_button_refresh6MouseClicked
+
+    private void button_refresh7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button_refresh7MouseClicked
+        this.cargarTablaClientes();
+    }//GEN-LAST:event_button_refresh7MouseClicked
+
+    private void button_refresh8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button_refresh8MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_button_refresh8MouseClicked
+
+    private void field_user_nuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_field_user_nuevoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_field_user_nuevoActionPerformed
+
+    private void button_refresh_signupMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button_refresh_signupMouseClicked
+        this.cargarTablaUsuarios();
+    }//GEN-LAST:event_button_refresh_signupMouseClicked
+
     // Función para verificar si el usuario existe.
     private boolean loginCorrecto(String user, String password) {
 
         return false;
     }
-    
-    private boolean signupCorrecto(){
-        
+
+    private boolean signupCorrecto() {
+
         return false;
     }
 
-    private void inicializarLogIn(){
+    private void inicializarLogIn() {
         this.jTabbedPane1.setSelectedIndex(0);
 
         //Incializamos los valores del login de nuevo.
@@ -1342,13 +1646,13 @@ public class MainFrame extends javax.swing.JFrame {
         this.textfield_user.setText("Ingrese su usuario");
         this.textfield_user.setForeground(Color.GRAY);
     }
-    
-    private void inicializarSignUp(){
+
+    private void inicializarSignUp() {
         this.jTabbedPane1.setSelectedIndex(2);
         this.field_user_nuevo.setText("");
         this.field_password_nueva.setText("");
     }
-    
+
     // Funcion para agregar algunas imágenes.
     public void inicializarImagenes() {
         try {
@@ -1359,43 +1663,159 @@ public class MainFrame extends javax.swing.JFrame {
         }
     }
 
-    public void cargarTablaRoles(){
+    public void cargarTablaRoles() {
         //Cargamos la tabla.
         try (Connection conn = DriverManager.getConnection(funciones.getDB_URL(), funciones.getUSER(), funciones.getPASS()); CallableStatement stmt = conn.prepareCall("{call sp_rol_read}")) {
             stmt.execute();
             ResultSet rs = stmt.getResultSet();
             ResultSetMetaData rsmd = rs.getMetaData();
             StringBuilder sb = new StringBuilder();
-            
+
             DefaultTableModel model = (DefaultTableModel) this.table_roles.getModel();
-            
+
             //Vaciamos la table.
             model.setRowCount(0);
-            
+
             int cantidad_registros = rsmd.getColumnCount();
             String[] colName = new String[cantidad_registros];
-            
+
             for (int i = 0; i < cantidad_registros; i++) {
-                colName[i] = rsmd.getColumnName(i+1);
+                colName[i] = rsmd.getColumnName(i + 1);
             }
             model.setColumnIdentifiers(colName);
-            
+
             String id_rol;
             String nombre;
-            
+
             while (rs.next()) {
                 id_rol = rs.getString(1);
                 nombre = rs.getString(2);
                 String[] row = {id_rol, nombre};
                 model.addRow(row);
             }
-            
+
         } catch (SQLException e) {
             System.out.println("No se ha conectado!");
         }
     }
-    
-    
+
+    public void cargarTablaUsuarios() {
+        //Cargamos la tabla.
+        try (Connection conn = DriverManager.getConnection(funciones.getDB_URL(), funciones.getUSER(), funciones.getPASS()); CallableStatement stmt = conn.prepareCall("{call sp_usuario_read}")) {
+            stmt.execute();
+            ResultSet rs = stmt.getResultSet();
+            ResultSetMetaData rsmd = rs.getMetaData();
+            StringBuilder sb = new StringBuilder();
+
+            DefaultTableModel model = (DefaultTableModel) this.table_usuarios.getModel();
+
+            //Vaciamos la table.
+            model.setRowCount(0);
+
+            int cantidad_registros = rsmd.getColumnCount();
+            String[] colName = new String[cantidad_registros];
+
+            for (int i = 0; i < cantidad_registros; i++) {
+                colName[i] = rsmd.getColumnName(i + 1);
+            }
+            model.setColumnIdentifiers(colName);
+
+            String usuario_unico;
+            String clave;
+
+            while (rs.next()) {
+                usuario_unico = rs.getString(1);
+                clave = rs.getString(2);
+                String[] row = {usuario_unico, clave};
+                model.addRow(row);
+            }
+
+        } catch (SQLException e) {
+            System.out.println("No se ha conectado!");
+        }
+    }
+
+    public void cargarTablaPrivilegios() {
+        //Cargamos la tabla.
+        try (Connection conn = DriverManager.getConnection(funciones.getDB_URL(), funciones.getUSER(), funciones.getPASS()); CallableStatement stmt = conn.prepareCall("{call sp_privilegio_read}")) {
+            stmt.execute();
+            ResultSet rs = stmt.getResultSet();
+            ResultSetMetaData rsmd = rs.getMetaData();
+            StringBuilder sb = new StringBuilder();
+
+            DefaultTableModel model = (DefaultTableModel) this.table_privilegios.getModel();
+
+            //Vaciamos la table.
+            model.setRowCount(0);
+
+            int cantidad_registros = rsmd.getColumnCount();
+            String[] colName = new String[cantidad_registros];
+
+            for (int i = 0; i < cantidad_registros; i++) {
+                colName[i] = rsmd.getColumnName(i + 1);
+            }
+            model.setColumnIdentifiers(colName);
+
+            String id_privilegio;
+            String nombre;
+
+            while (rs.next()) {
+                id_privilegio = rs.getString(1);
+                nombre = rs.getString(2);
+                String[] row = {id_privilegio, nombre};
+                model.addRow(row);
+            }
+
+        } catch (SQLException e) {
+            System.out.println("No se ha conectado!");
+        }
+    }
+
+    public void cargarTablaClientes() {
+        //Cargamos la tabla.
+        try (Connection conn = DriverManager.getConnection(funciones.getDB_URL(), funciones.getUSER(), funciones.getPASS()); CallableStatement stmt = conn.prepareCall("{call sp_cliente_read}")) {
+            stmt.execute();
+            ResultSet rs = stmt.getResultSet();
+            ResultSetMetaData rsmd = rs.getMetaData();
+            StringBuilder sb = new StringBuilder();
+
+            DefaultTableModel model = (DefaultTableModel) this.table_clientes.getModel();
+
+            //Vaciamos la table.
+            model.setRowCount(0);
+
+            int cantidad_registros = rsmd.getColumnCount();
+            String[] colName = new String[cantidad_registros];
+
+            for (int i = 0; i < cantidad_registros; i++) {
+                colName[i] = rsmd.getColumnName(i + 1);
+            }
+            model.setColumnIdentifiers(colName);
+
+            String id_cliente;
+            String nombre;
+            String fecha_creacion;
+            String fecha_actualizacion;
+            String usuario_creo;
+            String usuario_actualizo;
+
+            while (rs.next()) {
+
+                id_cliente = rs.getString(1);
+                nombre = rs.getString(2);
+                fecha_creacion = rs.getString(3);
+                fecha_actualizacion = rs.getString(4);
+                usuario_creo = rs.getString(5);
+                usuario_actualizo = rs.getString(6);
+                String[] row = {id_cliente, nombre, fecha_creacion, fecha_actualizacion, usuario_creo, usuario_actualizo};
+                model.addRow(row);
+            }
+
+        } catch (SQLException e) {
+            System.out.println("No se ha conectado!");
+        }
+    }
+
     /**
      * @param args the command line arguments
      */
@@ -1431,8 +1851,8 @@ public class MainFrame extends javax.swing.JFrame {
         });
     }
 
-    Function funciones = new Function();    
-    
+    Function funciones = new Function();
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel JPanel_Blanco_Login;
@@ -1447,6 +1867,15 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JButton button_productos;
     private javax.swing.JButton button_proveedores;
     private javax.swing.JButton button_refresh;
+    private javax.swing.JButton button_refresh1;
+    private javax.swing.JButton button_refresh2;
+    private javax.swing.JButton button_refresh3;
+    private javax.swing.JButton button_refresh4;
+    private javax.swing.JButton button_refresh5;
+    private javax.swing.JButton button_refresh6;
+    private javax.swing.JButton button_refresh7;
+    private javax.swing.JButton button_refresh8;
+    private javax.swing.JButton button_refresh_signup;
     private javax.swing.JButton button_regresar_signUp;
     private javax.swing.JButton button_roles;
     private javax.swing.JButton button_usuarios;
@@ -1457,6 +1886,7 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
+    private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JLabel jLabel1;
@@ -1478,6 +1908,15 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane10;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane6;
+    private javax.swing.JScrollPane jScrollPane7;
+    private javax.swing.JScrollPane jScrollPane8;
+    private javax.swing.JScrollPane jScrollPane9;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField4;
@@ -1518,7 +1957,16 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JButton regresar6;
     private javax.swing.JButton regresar7;
     private javax.swing.JButton regresar8;
+    private javax.swing.JTable table_ajustes;
+    private javax.swing.JTable table_clientes;
+    private javax.swing.JTable table_compras;
+    private javax.swing.JTable table_facturas;
+    private javax.swing.JTable table_kardex;
+    private javax.swing.JTable table_privilegios;
+    private javax.swing.JTable table_productos;
+    private javax.swing.JTable table_proveedores;
     private javax.swing.JTable table_roles;
+    private javax.swing.JTable table_usuarios;
     private javax.swing.JPasswordField textfield_password;
     private javax.swing.JTextField textfield_user;
     // End of variables declaration//GEN-END:variables
