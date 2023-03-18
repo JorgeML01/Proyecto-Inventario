@@ -92,7 +92,7 @@ public class MainFrame extends javax.swing.JFrame {
         regresar = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         table_productos = new javax.swing.JTable();
-        button_refresh2 = new javax.swing.JButton();
+        button_refresh_productos = new javax.swing.JButton();
         panel_kardex = new javax.swing.JPanel();
         label_sign_up_panel2 = new javax.swing.JLabel();
         regresar1 = new javax.swing.JButton();
@@ -695,15 +695,26 @@ public class MainFrame extends javax.swing.JFrame {
 
             },
             new String [] {
-                "id_rol", "nombre"
+                "codigo_producto", "categoria", "estado", "existencia", "precio", "marca", "costo", "nombre", "fecha_creacion", "fecha_ultima_actualizacion", "usuario_creo", "usuario_actualizo"
             }
         ));
+        table_productos.setAutoResizeMode(0);
         jScrollPane2.setViewportView(table_productos);
+        if (table_productos.getColumnModel().getColumnCount() > 0) {
+            table_productos.getColumnModel().getColumn(0).setMinWidth(180);
+            table_productos.getColumnModel().getColumn(1).setMinWidth(180);
+            table_productos.getColumnModel().getColumn(2).setMinWidth(180);
+            table_productos.getColumnModel().getColumn(3).setMinWidth(180);
+            table_productos.getColumnModel().getColumn(8).setMinWidth(180);
+            table_productos.getColumnModel().getColumn(9).setMinWidth(200);
+            table_productos.getColumnModel().getColumn(10).setMinWidth(180);
+            table_productos.getColumnModel().getColumn(11).setMinWidth(180);
+        }
 
-        button_refresh2.setText("Refresh");
-        button_refresh2.addMouseListener(new java.awt.event.MouseAdapter() {
+        button_refresh_productos.setText("Refresh");
+        button_refresh_productos.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                button_refresh2MouseClicked(evt);
+                button_refresh_productosMouseClicked(evt);
             }
         });
 
@@ -718,7 +729,7 @@ public class MainFrame extends javax.swing.JFrame {
             .addGroup(panel_productosLayout.createSequentialGroup()
                 .addComponent(regresar)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(button_refresh2)
+                .addComponent(button_refresh_productos)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -732,7 +743,7 @@ public class MainFrame extends javax.swing.JFrame {
                     .addComponent(regresar, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_productosLayout.createSequentialGroup()
-                        .addComponent(button_refresh2)
+                        .addComponent(button_refresh_productos)
                         .addContainerGap())))
         );
 
@@ -1319,11 +1330,15 @@ public class MainFrame extends javax.swing.JFrame {
         table_proveedores.setAutoResizeMode(0);
         jScrollPane7.setViewportView(table_proveedores);
         if (table_proveedores.getColumnModel().getColumnCount() > 0) {
-            table_proveedores.getColumnModel().getColumn(0).setMinWidth(150);
-            table_proveedores.getColumnModel().getColumn(2).setMinWidth(180);
-            table_proveedores.getColumnModel().getColumn(6).setMinWidth(180);
-            table_proveedores.getColumnModel().getColumn(7).setMinWidth(100);
-            table_proveedores.getColumnModel().getColumn(8).setMinWidth(150);
+            table_proveedores.getColumnModel().getColumn(0).setMinWidth(180);
+            table_proveedores.getColumnModel().getColumn(1).setMinWidth(180);
+            table_proveedores.getColumnModel().getColumn(2).setMinWidth(200);
+            table_proveedores.getColumnModel().getColumn(3).setMinWidth(180);
+            table_proveedores.getColumnModel().getColumn(4).setMinWidth(180);
+            table_proveedores.getColumnModel().getColumn(5).setMinWidth(200);
+            table_proveedores.getColumnModel().getColumn(6).setMinWidth(200);
+            table_proveedores.getColumnModel().getColumn(7).setMinWidth(180);
+            table_proveedores.getColumnModel().getColumn(8).setMinWidth(180);
         }
 
         javax.swing.GroupLayout panel_proveedoresLayout = new javax.swing.GroupLayout(panel_proveedores);
@@ -1516,6 +1531,7 @@ public class MainFrame extends javax.swing.JFrame {
 
     private void button_productosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button_productosMouseClicked
         this.jTabbedPane1.setSelectedIndex(3);
+        this.cargarTablaProductos();
     }//GEN-LAST:event_button_productosMouseClicked
 
     private void button_comprasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button_comprasMouseClicked
@@ -1599,9 +1615,9 @@ public class MainFrame extends javax.swing.JFrame {
         this.cargarTablaPrivilegios();
     }//GEN-LAST:event_button_refresh_privilegiosMouseClicked
 
-    private void button_refresh2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button_refresh2MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_button_refresh2MouseClicked
+    private void button_refresh_productosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button_refresh_productosMouseClicked
+        this.cargarTablaProductos();
+    }//GEN-LAST:event_button_refresh_productosMouseClicked
 
     private void button_refresh3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button_refresh3MouseClicked
         // TODO add your handling code here:
@@ -1707,7 +1723,7 @@ public class MainFrame extends javax.swing.JFrame {
             System.out.println("No se ha conectado!");
         }
     }
-    
+
     public void cargarTablaUsuarios() {
         //Cargamos la tabla.
         try (Connection conn = DriverManager.getConnection(funciones.getDB_URL(), funciones.getUSER(), funciones.getPASS()); CallableStatement stmt = conn.prepareCall("{call sp_usuario_read}")) {
@@ -1824,8 +1840,7 @@ public class MainFrame extends javax.swing.JFrame {
             System.out.println("No se ha conectado!");
         }
     }
-    
-    
+
     // Falta arreglar esto.
     public void cargarTablaProveedores() {
         //Cargamos la tabla.
@@ -1869,9 +1884,67 @@ public class MainFrame extends javax.swing.JFrame {
                 fecha_ultima_actualizacion = rs.getString(7);
                 usuario_creo = rs.getString(8);
                 usuario_actualizo = rs.getString(9);
-                
+
                 String[] row = {codigo_proveedor, nombre, nombre_contacto_principal, estado, direccion, fecha_creacion, fecha_ultima_actualizacion, usuario_creo, usuario_actualizo};
                 model.addRow(row);
+            }
+
+        } catch (SQLException e) {
+            System.out.println("No se ha conectado!");
+        }
+    }
+
+    public void cargarTablaProductos() {
+        //Cargamos la tabla.
+        try (Connection conn = DriverManager.getConnection(funciones.getDB_URL(), funciones.getUSER(), funciones.getPASS()); CallableStatement stmt = conn.prepareCall("{call sp_producto_read}")) {
+            stmt.execute();
+            ResultSet rs = stmt.getResultSet();
+            ResultSetMetaData rsmd = rs.getMetaData();
+            StringBuilder sb = new StringBuilder();
+
+            DefaultTableModel model = (DefaultTableModel) this.table_productos.getModel();
+
+            //Vaciamos la table.
+            model.setRowCount(0);
+
+            int cantidad_registros = rsmd.getColumnCount();
+            String[] colName = new String[cantidad_registros];
+
+            for (int i = 0; i < cantidad_registros; i++) {
+                colName[i] = rsmd.getColumnName(i + 1);
+            }
+            model.setColumnIdentifiers(colName);
+
+            String codigo_producto;
+            String categoria;
+            String estado;
+            String existencia;
+            String precio;
+            String marca;
+            String costo;
+            String nombre;
+            String fecha_creacion;
+            String fecha_ultimma_actualizacion;
+            String usuario_creo;
+            String usuario_actualizo;
+
+            while (rs.next()) {
+                codigo_producto = rs.getString(1);
+                categoria = rs.getString(2);
+                estado = rs.getString(3);
+                existencia = rs.getString(4);
+                precio = rs.getString(5);
+                marca = rs.getString(6);
+                costo = rs.getString(7);
+                nombre = rs.getString(8);
+                fecha_creacion = rs.getString(9);
+                fecha_ultimma_actualizacion = rs.getString(10);
+                usuario_creo = rs.getString(11);
+                usuario_actualizo = rs.getString(12);
+                
+                String[] row = {codigo_producto, categoria, estado, existencia, precio, marca, costo, nombre, fecha_creacion, fecha_ultimma_actualizacion, usuario_creo, usuario_actualizo};
+                model.addRow(row);
+                
             }
 
         } catch (SQLException e) {
@@ -1929,13 +2002,13 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JButton button_privilegios;
     private javax.swing.JButton button_productos;
     private javax.swing.JButton button_proveedores;
-    private javax.swing.JButton button_refresh2;
     private javax.swing.JButton button_refresh3;
     private javax.swing.JButton button_refresh4;
     private javax.swing.JButton button_refresh5;
     private javax.swing.JButton button_refresh8;
     private javax.swing.JButton button_refresh_clientes;
     private javax.swing.JButton button_refresh_privilegios;
+    private javax.swing.JButton button_refresh_productos;
     private javax.swing.JButton button_refresh_proveedores;
     private javax.swing.JButton button_refresh_roles;
     private javax.swing.JButton button_refresh_signup;
