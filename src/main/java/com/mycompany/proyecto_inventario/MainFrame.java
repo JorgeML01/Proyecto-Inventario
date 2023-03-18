@@ -104,13 +104,13 @@ public class MainFrame extends javax.swing.JFrame {
         regresar2 = new javax.swing.JButton();
         jScrollPane3 = new javax.swing.JScrollPane();
         table_privilegios = new javax.swing.JTable();
-        button_refresh1 = new javax.swing.JButton();
+        button_refresh_privilegios = new javax.swing.JButton();
         panel_rol = new javax.swing.JPanel();
         label_sign_up_panel4 = new javax.swing.JLabel();
         regresar3 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         table_roles = new javax.swing.JTable();
-        button_refresh = new javax.swing.JButton();
+        button_refresh_roles = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jTextField1 = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
@@ -149,13 +149,13 @@ public class MainFrame extends javax.swing.JFrame {
         panel_proveedores = new javax.swing.JPanel();
         label_sign_up_panel8 = new javax.swing.JLabel();
         regresar7 = new javax.swing.JButton();
-        button_refresh6 = new javax.swing.JButton();
+        button_refresh_proveedores = new javax.swing.JButton();
         jScrollPane7 = new javax.swing.JScrollPane();
         table_proveedores = new javax.swing.JTable();
         panel_clientes = new javax.swing.JPanel();
         label_sign_up_panel9 = new javax.swing.JLabel();
         regresar8 = new javax.swing.JButton();
-        button_refresh7 = new javax.swing.JButton();
+        button_refresh_clientes = new javax.swing.JButton();
         jScrollPane8 = new javax.swing.JScrollPane();
         table_clientes = new javax.swing.JTable();
 
@@ -824,10 +824,10 @@ public class MainFrame extends javax.swing.JFrame {
         ));
         jScrollPane3.setViewportView(table_privilegios);
 
-        button_refresh1.setText("Refresh");
-        button_refresh1.addMouseListener(new java.awt.event.MouseAdapter() {
+        button_refresh_privilegios.setText("Refresh");
+        button_refresh_privilegios.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                button_refresh1MouseClicked(evt);
+                button_refresh_privilegiosMouseClicked(evt);
             }
         });
 
@@ -842,7 +842,7 @@ public class MainFrame extends javax.swing.JFrame {
             .addGroup(panel_privilegioLayout.createSequentialGroup()
                 .addComponent(regresar2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(button_refresh1)
+                .addComponent(button_refresh_privilegios)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -856,7 +856,7 @@ public class MainFrame extends javax.swing.JFrame {
                     .addComponent(regresar2, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jScrollPane3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_privilegioLayout.createSequentialGroup()
-                        .addComponent(button_refresh1)
+                        .addComponent(button_refresh_privilegios)
                         .addContainerGap())))
         );
 
@@ -887,10 +887,10 @@ public class MainFrame extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(table_roles);
 
-        button_refresh.setText("Refresh");
-        button_refresh.addMouseListener(new java.awt.event.MouseAdapter() {
+        button_refresh_roles.setText("Refresh");
+        button_refresh_roles.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                button_refreshMouseClicked(evt);
+                button_refresh_rolesMouseClicked(evt);
             }
         });
 
@@ -1060,7 +1060,7 @@ public class MainFrame extends javax.swing.JFrame {
                                 .addComponent(jLabel10)))
                         .addGap(23, 23, 23)))
                 .addGap(66, 66, 66)
-                .addComponent(button_refresh)
+                .addComponent(button_refresh_roles)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(panel_rolLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1083,7 +1083,7 @@ public class MainFrame extends javax.swing.JFrame {
                     .addGroup(panel_rolLayout.createSequentialGroup()
                         .addGap(187, 187, 187)
                         .addGroup(panel_rolLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(button_refresh)
+                            .addComponent(button_refresh_roles)
                             .addComponent(regresar3)))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_rolLayout.createSequentialGroup()
                         .addGap(76, 76, 76)
@@ -1301,10 +1301,10 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
 
-        button_refresh6.setText("Refresh");
-        button_refresh6.addMouseListener(new java.awt.event.MouseAdapter() {
+        button_refresh_proveedores.setText("Refresh");
+        button_refresh_proveedores.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                button_refresh6MouseClicked(evt);
+                button_refresh_proveedoresMouseClicked(evt);
             }
         });
 
@@ -1313,10 +1313,18 @@ public class MainFrame extends javax.swing.JFrame {
 
             },
             new String [] {
-                "id_rol", "nombre"
+                "codigo_proveedor", "nombre", "nombre_contacto_principal", "estado", "direccion", "fecha_creacion", "fecha_ultima_actualizacion", "usuario_creo", "usuario_actualizo"
             }
         ));
+        table_proveedores.setAutoResizeMode(0);
         jScrollPane7.setViewportView(table_proveedores);
+        if (table_proveedores.getColumnModel().getColumnCount() > 0) {
+            table_proveedores.getColumnModel().getColumn(0).setMinWidth(150);
+            table_proveedores.getColumnModel().getColumn(2).setMinWidth(180);
+            table_proveedores.getColumnModel().getColumn(6).setMinWidth(180);
+            table_proveedores.getColumnModel().getColumn(7).setMinWidth(100);
+            table_proveedores.getColumnModel().getColumn(8).setMinWidth(150);
+        }
 
         javax.swing.GroupLayout panel_proveedoresLayout = new javax.swing.GroupLayout(panel_proveedores);
         panel_proveedores.setLayout(panel_proveedoresLayout);
@@ -1329,7 +1337,7 @@ public class MainFrame extends javax.swing.JFrame {
             .addGroup(panel_proveedoresLayout.createSequentialGroup()
                 .addComponent(regresar7)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(button_refresh6)
+                .addComponent(button_refresh_proveedores)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -1343,7 +1351,7 @@ public class MainFrame extends javax.swing.JFrame {
                 .addGroup(panel_proveedoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(regresar7, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jScrollPane7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(button_refresh6, javax.swing.GroupLayout.Alignment.TRAILING)))
+                    .addComponent(button_refresh_proveedores, javax.swing.GroupLayout.Alignment.TRAILING)))
         );
 
         jTabbedPane1.addTab("proveedores", panel_proveedores);
@@ -1363,10 +1371,10 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
 
-        button_refresh7.setText("Refresh");
-        button_refresh7.addMouseListener(new java.awt.event.MouseAdapter() {
+        button_refresh_clientes.setText("Refresh");
+        button_refresh_clientes.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                button_refresh7MouseClicked(evt);
+                button_refresh_clientesMouseClicked(evt);
             }
         });
 
@@ -1403,7 +1411,7 @@ public class MainFrame extends javax.swing.JFrame {
             .addGroup(panel_clientesLayout.createSequentialGroup()
                 .addComponent(regresar8)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(button_refresh7)
+                .addComponent(button_refresh_clientes)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 414, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -1416,7 +1424,7 @@ public class MainFrame extends javax.swing.JFrame {
                 .addGroup(panel_clientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_clientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(regresar8)
-                        .addComponent(button_refresh7))
+                        .addComponent(button_refresh_clientes))
                     .addComponent(jScrollPane8, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
 
@@ -1525,6 +1533,7 @@ public class MainFrame extends javax.swing.JFrame {
 
     private void button_proveedoresMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button_proveedoresMouseClicked
         this.jTabbedPane1.setSelectedIndex(10);
+        this.cargarTablaProveedores();
     }//GEN-LAST:event_button_proveedoresMouseClicked
 
     private void button_usuariosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button_usuariosMouseClicked
@@ -1578,17 +1587,17 @@ public class MainFrame extends javax.swing.JFrame {
         this.jTabbedPane1.setSelectedIndex(1);
     }//GEN-LAST:event_regresar8MouseClicked
 
-    private void button_refreshMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button_refreshMouseClicked
+    private void button_refresh_rolesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button_refresh_rolesMouseClicked
         this.cargarTablaRoles();
-    }//GEN-LAST:event_button_refreshMouseClicked
+    }//GEN-LAST:event_button_refresh_rolesMouseClicked
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
 
-    private void button_refresh1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button_refresh1MouseClicked
+    private void button_refresh_privilegiosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button_refresh_privilegiosMouseClicked
         this.cargarTablaPrivilegios();
-    }//GEN-LAST:event_button_refresh1MouseClicked
+    }//GEN-LAST:event_button_refresh_privilegiosMouseClicked
 
     private void button_refresh2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button_refresh2MouseClicked
         // TODO add your handling code here:
@@ -1606,13 +1615,13 @@ public class MainFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_button_refresh5MouseClicked
 
-    private void button_refresh6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button_refresh6MouseClicked
-        this.cargarTablaPrivilegios();
-    }//GEN-LAST:event_button_refresh6MouseClicked
+    private void button_refresh_proveedoresMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button_refresh_proveedoresMouseClicked
+        this.cargarTablaProveedores();
+    }//GEN-LAST:event_button_refresh_proveedoresMouseClicked
 
-    private void button_refresh7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button_refresh7MouseClicked
+    private void button_refresh_clientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button_refresh_clientesMouseClicked
         this.cargarTablaClientes();
-    }//GEN-LAST:event_button_refresh7MouseClicked
+    }//GEN-LAST:event_button_refresh_clientesMouseClicked
 
     private void button_refresh8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button_refresh8MouseClicked
         // TODO add your handling code here:
@@ -1698,7 +1707,7 @@ public class MainFrame extends javax.swing.JFrame {
             System.out.println("No se ha conectado!");
         }
     }
-
+    
     public void cargarTablaUsuarios() {
         //Cargamos la tabla.
         try (Connection conn = DriverManager.getConnection(funciones.getDB_URL(), funciones.getUSER(), funciones.getPASS()); CallableStatement stmt = conn.prepareCall("{call sp_usuario_read}")) {
@@ -1815,6 +1824,60 @@ public class MainFrame extends javax.swing.JFrame {
             System.out.println("No se ha conectado!");
         }
     }
+    
+    
+    // Falta arreglar esto.
+    public void cargarTablaProveedores() {
+        //Cargamos la tabla.
+        try (Connection conn = DriverManager.getConnection(funciones.getDB_URL(), funciones.getUSER(), funciones.getPASS()); CallableStatement stmt = conn.prepareCall("{call sp_proveedor_read}")) {
+            stmt.execute();
+            ResultSet rs = stmt.getResultSet();
+            ResultSetMetaData rsmd = rs.getMetaData();
+            StringBuilder sb = new StringBuilder();
+
+            DefaultTableModel model = (DefaultTableModel) this.table_proveedores.getModel();
+
+            //Vaciamos la table.
+            model.setRowCount(0);
+
+            int cantidad_registros = rsmd.getColumnCount();
+            String[] colName = new String[cantidad_registros];
+
+            for (int i = 0; i < cantidad_registros; i++) {
+                colName[i] = rsmd.getColumnName(i + 1);
+            }
+            model.setColumnIdentifiers(colName);
+
+            String codigo_proveedor;
+            String nombre;
+            String nombre_contacto_principal;
+            String estado;
+            String direccion;
+            String fecha_creacion;
+            String fecha_ultima_actualizacion;
+            String usuario_creo;
+            String usuario_actualizo;
+
+            while (rs.next()) {
+
+                codigo_proveedor = rs.getString(1);
+                nombre = rs.getString(2);
+                nombre_contacto_principal = rs.getString(3);
+                estado = rs.getString(4);
+                direccion = rs.getString(5);
+                fecha_creacion = rs.getString(6);
+                fecha_ultima_actualizacion = rs.getString(7);
+                usuario_creo = rs.getString(8);
+                usuario_actualizo = rs.getString(9);
+                
+                String[] row = {codigo_proveedor, nombre, nombre_contacto_principal, estado, direccion, fecha_creacion, fecha_ultima_actualizacion, usuario_creo, usuario_actualizo};
+                model.addRow(row);
+            }
+
+        } catch (SQLException e) {
+            System.out.println("No se ha conectado!");
+        }
+    }
 
     /**
      * @param args the command line arguments
@@ -1866,15 +1929,15 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JButton button_privilegios;
     private javax.swing.JButton button_productos;
     private javax.swing.JButton button_proveedores;
-    private javax.swing.JButton button_refresh;
-    private javax.swing.JButton button_refresh1;
     private javax.swing.JButton button_refresh2;
     private javax.swing.JButton button_refresh3;
     private javax.swing.JButton button_refresh4;
     private javax.swing.JButton button_refresh5;
-    private javax.swing.JButton button_refresh6;
-    private javax.swing.JButton button_refresh7;
     private javax.swing.JButton button_refresh8;
+    private javax.swing.JButton button_refresh_clientes;
+    private javax.swing.JButton button_refresh_privilegios;
+    private javax.swing.JButton button_refresh_proveedores;
+    private javax.swing.JButton button_refresh_roles;
     private javax.swing.JButton button_refresh_signup;
     private javax.swing.JButton button_regresar_signUp;
     private javax.swing.JButton button_roles;
