@@ -55,7 +55,6 @@ public class MainFrame extends javax.swing.JFrame {
         textfield_user = new javax.swing.JTextField();
         textfield_password = new javax.swing.JPasswordField();
         label_login_text = new javax.swing.JLabel();
-        label_signup = new javax.swing.JLabel();
         panel_principal = new javax.swing.JPanel();
         label_welcome = new javax.swing.JLabel();
         button_logout = new javax.swing.JButton();
@@ -131,21 +130,24 @@ public class MainFrame extends javax.swing.JFrame {
         panel_compras = new javax.swing.JPanel();
         label_sign_up_panel5 = new javax.swing.JLabel();
         regresar4 = new javax.swing.JButton();
-        button_refresh3 = new javax.swing.JButton();
+        button_refresh_compras = new javax.swing.JButton();
         jScrollPane4 = new javax.swing.JScrollPane();
         table_compras = new javax.swing.JTable();
+        buttun_detalles_compras_panel = new javax.swing.JButton();
         panel_ajustes = new javax.swing.JPanel();
         label_sign_up_panel6 = new javax.swing.JLabel();
         regresar5 = new javax.swing.JButton();
-        button_refresh4 = new javax.swing.JButton();
+        button_refresh_ajustes = new javax.swing.JButton();
         jScrollPane5 = new javax.swing.JScrollPane();
         table_ajustes = new javax.swing.JTable();
+        buttun_detalles_ajustes_panel = new javax.swing.JButton();
         panel_facturas = new javax.swing.JPanel();
         label_sign_up_panel7 = new javax.swing.JLabel();
         regresar6 = new javax.swing.JButton();
-        button_refresh5 = new javax.swing.JButton();
+        button_refresh_facturas = new javax.swing.JButton();
         jScrollPane6 = new javax.swing.JScrollPane();
         table_facturas = new javax.swing.JTable();
+        buttun_detalles_facturas_panel = new javax.swing.JButton();
         panel_proveedores = new javax.swing.JPanel();
         label_sign_up_panel8 = new javax.swing.JLabel();
         regresar7 = new javax.swing.JButton();
@@ -158,6 +160,24 @@ public class MainFrame extends javax.swing.JFrame {
         button_refresh_clientes = new javax.swing.JButton();
         jScrollPane8 = new javax.swing.JScrollPane();
         table_clientes = new javax.swing.JTable();
+        jPanel5 = new javax.swing.JPanel();
+        button_refresh_detalle_ajustes = new javax.swing.JButton();
+        jScrollPane11 = new javax.swing.JScrollPane();
+        table_detalle_ajustes = new javax.swing.JTable();
+        label_sign_up_panel10 = new javax.swing.JLabel();
+        button_regresar_d_ajustes = new javax.swing.JButton();
+        jPanel6 = new javax.swing.JPanel();
+        label_sign_up_panel11 = new javax.swing.JLabel();
+        button_regresar_d_facturas = new javax.swing.JButton();
+        button_refresh_detalle_facturas = new javax.swing.JButton();
+        jScrollPane12 = new javax.swing.JScrollPane();
+        table_detalle_ajustes1 = new javax.swing.JTable();
+        jPanel7 = new javax.swing.JPanel();
+        label_sign_up_panel12 = new javax.swing.JLabel();
+        button_regresar_d_compras = new javax.swing.JButton();
+        button_refresh_detalle_compras = new javax.swing.JButton();
+        jScrollPane13 = new javax.swing.JScrollPane();
+        table_detalle_ajustes2 = new javax.swing.JTable();
 
         jLabel12.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(255, 255, 255));
@@ -245,15 +265,6 @@ public class MainFrame extends javax.swing.JFrame {
         label_login_text.setForeground(new java.awt.Color(255, 255, 255));
         label_login_text.setText("LOG IN");
 
-        label_signup.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
-        label_signup.setForeground(new java.awt.Color(255, 255, 255));
-        label_signup.setText("Sign up");
-        label_signup.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                label_signupMouseClicked(evt);
-            }
-        });
-
         javax.swing.GroupLayout panel_loginLayout = new javax.swing.GroupLayout(panel_login);
         panel_login.setLayout(panel_loginLayout);
         panel_loginLayout.setHorizontalGroup(
@@ -272,10 +283,7 @@ public class MainFrame extends javax.swing.JFrame {
                         .addGap(66, 66, 66))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_loginLayout.createSequentialGroup()
                         .addComponent(label_login_text)
-                        .addGap(95, 95, 95))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_loginLayout.createSequentialGroup()
-                        .addComponent(label_signup)
-                        .addGap(98, 98, 98))))
+                        .addGap(95, 95, 95))))
         );
         panel_loginLayout.setVerticalGroup(
             panel_loginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -288,12 +296,10 @@ public class MainFrame extends javax.swing.JFrame {
                 .addComponent(textfield_password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(41, 41, 41)
                 .addComponent(button_login)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(label_signup)
-                .addGap(77, 77, 77))
+                .addGap(99, 99, 99))
             .addGroup(panel_loginLayout.createSequentialGroup()
                 .addComponent(JPanel_Blanco_Login, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(0, 30, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("login", panel_login);
@@ -512,7 +518,7 @@ public class MainFrame extends javax.swing.JFrame {
                     .addComponent(button_usuarios, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(button_roles, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(button_privilegios, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 111, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 141, Short.MAX_VALUE)
                 .addComponent(button_logout))
         );
 
@@ -669,7 +675,7 @@ public class MainFrame extends javax.swing.JFrame {
                     .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(button_refresh_signup)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 78, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 108, Short.MAX_VALUE)
                 .addComponent(panel_blanco_signup, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -738,7 +744,7 @@ public class MainFrame extends javax.swing.JFrame {
             .addGroup(panel_productosLayout.createSequentialGroup()
                 .addGap(18, 18, 18)
                 .addComponent(label_sign_up_panel1, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 251, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 281, Short.MAX_VALUE)
                 .addGroup(panel_productosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(regresar, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -801,7 +807,7 @@ public class MainFrame extends javax.swing.JFrame {
             .addGroup(panel_kardexLayout.createSequentialGroup()
                 .addGap(17, 17, 17)
                 .addComponent(label_sign_up_panel2, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 252, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 282, Short.MAX_VALUE)
                 .addGroup(panel_kardexLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(regresar1, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jScrollPane9, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -862,7 +868,7 @@ public class MainFrame extends javax.swing.JFrame {
             .addGroup(panel_privilegioLayout.createSequentialGroup()
                 .addGap(17, 17, 17)
                 .addComponent(label_sign_up_panel3, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 252, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 282, Short.MAX_VALUE)
                 .addGroup(panel_privilegioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(regresar2, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jScrollPane3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -943,7 +949,7 @@ public class MainFrame extends javax.swing.JFrame {
                 .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton1)
-                .addContainerGap(29, Short.MAX_VALUE))
+                .addContainerGap(59, Short.MAX_VALUE))
         );
 
         jPanel3.setBackground(new java.awt.Color(0, 51, 51));
@@ -1129,10 +1135,10 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
 
-        button_refresh3.setText("Refresh");
-        button_refresh3.addMouseListener(new java.awt.event.MouseAdapter() {
+        button_refresh_compras.setText("Refresh");
+        button_refresh_compras.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                button_refresh3MouseClicked(evt);
+                button_refresh_comprasMouseClicked(evt);
             }
         });
 
@@ -1141,36 +1147,67 @@ public class MainFrame extends javax.swing.JFrame {
 
             },
             new String [] {
-                "id_rol", "nombre"
+                "id_compra", "codigo_proveedor", "fecha_compra", "fabricante", "total", "fecha_creacion", "fecha_ultima_actualizacion", "usuario_creo", "usuario_actualizo"
             }
         ));
+        table_compras.setAutoResizeMode(0);
         jScrollPane4.setViewportView(table_compras);
+        if (table_compras.getColumnModel().getColumnCount() > 0) {
+            table_compras.getColumnModel().getColumn(0).setMinWidth(180);
+            table_compras.getColumnModel().getColumn(1).setMinWidth(200);
+            table_compras.getColumnModel().getColumn(2).setMinWidth(200);
+            table_compras.getColumnModel().getColumn(3).setMinWidth(200);
+            table_compras.getColumnModel().getColumn(4).setMinWidth(200);
+            table_compras.getColumnModel().getColumn(5).setMinWidth(200);
+            table_compras.getColumnModel().getColumn(6).setMinWidth(200);
+            table_compras.getColumnModel().getColumn(7).setMinWidth(200);
+            table_compras.getColumnModel().getColumn(8).setMinWidth(200);
+        }
+
+        buttun_detalles_compras_panel.setText("Detalles de compras");
+        buttun_detalles_compras_panel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                buttun_detalles_compras_panelMouseClicked(evt);
+            }
+        });
+        buttun_detalles_compras_panel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttun_detalles_compras_panelActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout panel_comprasLayout = new javax.swing.GroupLayout(panel_compras);
         panel_compras.setLayout(panel_comprasLayout);
         panel_comprasLayout.setHorizontalGroup(
             panel_comprasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_comprasLayout.createSequentialGroup()
-                .addContainerGap(338, Short.MAX_VALUE)
-                .addComponent(label_sign_up_panel5)
-                .addGap(336, 336, 336))
             .addGroup(panel_comprasLayout.createSequentialGroup()
                 .addComponent(regresar4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(button_refresh3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 299, Short.MAX_VALUE)
+                .addComponent(button_refresh_compras)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_comprasLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(panel_comprasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_comprasLayout.createSequentialGroup()
+                        .addComponent(label_sign_up_panel5)
+                        .addGap(336, 336, 336))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_comprasLayout.createSequentialGroup()
+                        .addComponent(buttun_detalles_compras_panel)
+                        .addGap(159, 159, 159))))
         );
         panel_comprasLayout.setVerticalGroup(
             panel_comprasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panel_comprasLayout.createSequentialGroup()
                 .addGap(16, 16, 16)
                 .addComponent(label_sign_up_panel5, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 253, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 232, Short.MAX_VALUE)
+                .addComponent(buttun_detalles_compras_panel)
+                .addGap(29, 29, 29)
                 .addGroup(panel_comprasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(regresar4, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jScrollPane4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(button_refresh3, javax.swing.GroupLayout.Alignment.TRAILING)))
+                    .addComponent(button_refresh_compras, javax.swing.GroupLayout.Alignment.TRAILING)))
         );
 
         jTabbedPane1.addTab("compras", panel_compras);
@@ -1190,10 +1227,10 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
 
-        button_refresh4.setText("Refresh");
-        button_refresh4.addMouseListener(new java.awt.event.MouseAdapter() {
+        button_refresh_ajustes.setText("Refresh");
+        button_refresh_ajustes.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                button_refresh4MouseClicked(evt);
+                button_refresh_ajustesMouseClicked(evt);
             }
         });
 
@@ -1202,36 +1239,61 @@ public class MainFrame extends javax.swing.JFrame {
 
             },
             new String [] {
-                "id_rol", "nombre"
+                "id_ajuste", "fecha", "entrada", "salida", "fecha_creacion", "fecha_ultima_actualizacion", "usuario_creo", "usuario_actualizo"
             }
         ));
+        table_ajustes.setAutoResizeMode(0);
         jScrollPane5.setViewportView(table_ajustes);
+        if (table_ajustes.getColumnModel().getColumnCount() > 0) {
+            table_ajustes.getColumnModel().getColumn(0).setMinWidth(200);
+            table_ajustes.getColumnModel().getColumn(1).setMinWidth(200);
+            table_ajustes.getColumnModel().getColumn(2).setMinWidth(200);
+            table_ajustes.getColumnModel().getColumn(3).setMinWidth(200);
+            table_ajustes.getColumnModel().getColumn(4).setMinWidth(200);
+            table_ajustes.getColumnModel().getColumn(5).setMinWidth(200);
+            table_ajustes.getColumnModel().getColumn(6).setMinWidth(200);
+            table_ajustes.getColumnModel().getColumn(7).setMinWidth(200);
+        }
+
+        buttun_detalles_ajustes_panel.setText("Detalles de ajustes");
+        buttun_detalles_ajustes_panel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                buttun_detalles_ajustes_panelMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout panel_ajustesLayout = new javax.swing.GroupLayout(panel_ajustes);
         panel_ajustes.setLayout(panel_ajustesLayout);
         panel_ajustesLayout.setHorizontalGroup(
             panel_ajustesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_ajustesLayout.createSequentialGroup()
-                .addContainerGap(373, Short.MAX_VALUE)
-                .addComponent(label_sign_up_panel6)
-                .addGap(336, 336, 336))
             .addGroup(panel_ajustesLayout.createSequentialGroup()
                 .addComponent(regresar5)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(button_refresh4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 299, Short.MAX_VALUE)
+                .addComponent(button_refresh_ajustes)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_ajustesLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(panel_ajustesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_ajustesLayout.createSequentialGroup()
+                        .addComponent(label_sign_up_panel6)
+                        .addGap(336, 336, 336))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_ajustesLayout.createSequentialGroup()
+                        .addComponent(buttun_detalles_ajustes_panel)
+                        .addGap(144, 144, 144))))
         );
         panel_ajustesLayout.setVerticalGroup(
             panel_ajustesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panel_ajustesLayout.createSequentialGroup()
                 .addGap(16, 16, 16)
                 .addComponent(label_sign_up_panel6, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 253, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 230, Short.MAX_VALUE)
+                .addComponent(buttun_detalles_ajustes_panel)
+                .addGap(31, 31, 31)
                 .addGroup(panel_ajustesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(regresar5, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jScrollPane5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(button_refresh4, javax.swing.GroupLayout.Alignment.TRAILING)))
+                    .addComponent(button_refresh_ajustes, javax.swing.GroupLayout.Alignment.TRAILING)))
         );
 
         jTabbedPane1.addTab("ajustes", panel_ajustes);
@@ -1251,10 +1313,10 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
 
-        button_refresh5.setText("Refresh");
-        button_refresh5.addMouseListener(new java.awt.event.MouseAdapter() {
+        button_refresh_facturas.setText("Refresh");
+        button_refresh_facturas.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                button_refresh5MouseClicked(evt);
+                button_refresh_facturasMouseClicked(evt);
             }
         });
 
@@ -1263,36 +1325,64 @@ public class MainFrame extends javax.swing.JFrame {
 
             },
             new String [] {
-                "id_rol", "nombre"
+                "numero_factura", "id_cliente", "descuento", "subtotal", "total", "impuesto", "fecha", "fecha_creacion", "fecha_ultima_actualizacion", "usuario_creo", "usuario_actualizo"
             }
         ));
+        table_facturas.setAutoResizeMode(0);
         jScrollPane6.setViewportView(table_facturas);
+        if (table_facturas.getColumnModel().getColumnCount() > 0) {
+            table_facturas.getColumnModel().getColumn(0).setMinWidth(200);
+            table_facturas.getColumnModel().getColumn(1).setMinWidth(200);
+            table_facturas.getColumnModel().getColumn(2).setMinWidth(200);
+            table_facturas.getColumnModel().getColumn(3).setMinWidth(200);
+            table_facturas.getColumnModel().getColumn(4).setMinWidth(200);
+            table_facturas.getColumnModel().getColumn(5).setMinWidth(200);
+            table_facturas.getColumnModel().getColumn(6).setMinWidth(200);
+            table_facturas.getColumnModel().getColumn(7).setMinWidth(200);
+            table_facturas.getColumnModel().getColumn(8).setMinWidth(200);
+            table_facturas.getColumnModel().getColumn(9).setMinWidth(200);
+            table_facturas.getColumnModel().getColumn(10).setMinWidth(200);
+        }
+
+        buttun_detalles_facturas_panel.setText("Detalles de facturas");
+        buttun_detalles_facturas_panel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                buttun_detalles_facturas_panelMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout panel_facturasLayout = new javax.swing.GroupLayout(panel_facturas);
         panel_facturas.setLayout(panel_facturasLayout);
         panel_facturasLayout.setHorizontalGroup(
             panel_facturasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_facturasLayout.createSequentialGroup()
-                .addContainerGap(327, Short.MAX_VALUE)
-                .addComponent(label_sign_up_panel7)
-                .addGap(336, 336, 336))
             .addGroup(panel_facturasLayout.createSequentialGroup()
                 .addComponent(regresar6)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(button_refresh5)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 299, Short.MAX_VALUE)
+                .addComponent(button_refresh_facturas)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_facturasLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(panel_facturasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_facturasLayout.createSequentialGroup()
+                        .addComponent(label_sign_up_panel7)
+                        .addGap(336, 336, 336))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_facturasLayout.createSequentialGroup()
+                        .addComponent(buttun_detalles_facturas_panel)
+                        .addGap(155, 155, 155))))
         );
         panel_facturasLayout.setVerticalGroup(
             panel_facturasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panel_facturasLayout.createSequentialGroup()
                 .addGap(16, 16, 16)
                 .addComponent(label_sign_up_panel7, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 253, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 214, Short.MAX_VALUE)
+                .addComponent(buttun_detalles_facturas_panel)
+                .addGap(47, 47, 47)
                 .addGroup(panel_facturasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(regresar6, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jScrollPane6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(button_refresh5, javax.swing.GroupLayout.Alignment.TRAILING)))
+                    .addComponent(button_refresh_facturas, javax.swing.GroupLayout.Alignment.TRAILING)))
         );
 
         jTabbedPane1.addTab("facturas", panel_facturas);
@@ -1362,7 +1452,7 @@ public class MainFrame extends javax.swing.JFrame {
             .addGroup(panel_proveedoresLayout.createSequentialGroup()
                 .addGap(16, 16, 16)
                 .addComponent(label_sign_up_panel8, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 253, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 283, Short.MAX_VALUE)
                 .addGroup(panel_proveedoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(regresar7, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jScrollPane7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1407,9 +1497,9 @@ public class MainFrame extends javax.swing.JFrame {
         table_clientes.setEnabled(false);
         jScrollPane8.setViewportView(table_clientes);
         if (table_clientes.getColumnModel().getColumnCount() > 0) {
-            table_clientes.getColumnModel().getColumn(0).setMinWidth(80);
-            table_clientes.getColumnModel().getColumn(1).setMinWidth(80);
-            table_clientes.getColumnModel().getColumn(2).setMinWidth(100);
+            table_clientes.getColumnModel().getColumn(0).setMinWidth(180);
+            table_clientes.getColumnModel().getColumn(1).setMinWidth(180);
+            table_clientes.getColumnModel().getColumn(2).setMinWidth(180);
             table_clientes.getColumnModel().getColumn(3).setMinWidth(180);
             table_clientes.getColumnModel().getColumn(4).setMinWidth(100);
             table_clientes.getColumnModel().getColumn(5).setMinWidth(130);
@@ -1435,7 +1525,7 @@ public class MainFrame extends javax.swing.JFrame {
             .addGroup(panel_clientesLayout.createSequentialGroup()
                 .addGap(22, 22, 22)
                 .addComponent(label_sign_up_panel9, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 247, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 277, Short.MAX_VALUE)
                 .addGroup(panel_clientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_clientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(regresar8)
@@ -1444,6 +1534,243 @@ public class MainFrame extends javax.swing.JFrame {
         );
 
         jTabbedPane1.addTab("clientes", panel_clientes);
+
+        jPanel5.setBackground(new java.awt.Color(0, 153, 153));
+
+        button_refresh_detalle_ajustes.setText("Refresh");
+        button_refresh_detalle_ajustes.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                button_refresh_detalle_ajustesMouseClicked(evt);
+            }
+        });
+
+        table_detalle_ajustes.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+        table_detalle_ajustes.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "numero_detalle_ajuste", "id_ajuste", "codigo_producto", "coste_producto", "cantidad", "subtotal"
+            }
+        ));
+        table_detalle_ajustes.setAutoResizeMode(0);
+        table_detalle_ajustes.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        table_detalle_ajustes.setEnabled(false);
+        jScrollPane11.setViewportView(table_detalle_ajustes);
+        if (table_detalle_ajustes.getColumnModel().getColumnCount() > 0) {
+            table_detalle_ajustes.getColumnModel().getColumn(0).setMinWidth(180);
+            table_detalle_ajustes.getColumnModel().getColumn(1).setMinWidth(180);
+            table_detalle_ajustes.getColumnModel().getColumn(2).setMinWidth(180);
+            table_detalle_ajustes.getColumnModel().getColumn(3).setMinWidth(180);
+            table_detalle_ajustes.getColumnModel().getColumn(4).setMinWidth(100);
+            table_detalle_ajustes.getColumnModel().getColumn(5).setMinWidth(130);
+        }
+
+        label_sign_up_panel10.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
+        label_sign_up_panel10.setForeground(new java.awt.Color(255, 255, 255));
+        label_sign_up_panel10.setText("Detalles - Ajustes");
+
+        button_regresar_d_ajustes.setBackground(new java.awt.Color(0, 51, 51));
+        button_regresar_d_ajustes.setForeground(new java.awt.Color(255, 255, 255));
+        button_regresar_d_ajustes.setText("Regresar");
+        button_regresar_d_ajustes.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                button_regresar_d_ajustesMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                        .addComponent(button_regresar_d_ajustes)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(button_refresh_detalle_ajustes)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, 414, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                        .addGap(0, 261, Short.MAX_VALUE)
+                        .addComponent(label_sign_up_panel10)
+                        .addGap(250, 250, 250))))
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                .addGap(33, 33, 33)
+                .addComponent(label_sign_up_panel10, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 260, Short.MAX_VALUE)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(button_refresh_detalle_ajustes)
+                        .addComponent(button_regresar_d_ajustes))
+                    .addComponent(jScrollPane11, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
+        );
+
+        jTabbedPane1.addTab("d_a", jPanel5);
+
+        jPanel6.setBackground(new java.awt.Color(0, 153, 153));
+
+        label_sign_up_panel11.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
+        label_sign_up_panel11.setForeground(new java.awt.Color(255, 255, 255));
+        label_sign_up_panel11.setText("Detalles - Facturas");
+
+        button_regresar_d_facturas.setBackground(new java.awt.Color(0, 51, 51));
+        button_regresar_d_facturas.setForeground(new java.awt.Color(255, 255, 255));
+        button_regresar_d_facturas.setText("Regresar");
+        button_regresar_d_facturas.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                button_regresar_d_facturasMouseClicked(evt);
+            }
+        });
+
+        button_refresh_detalle_facturas.setText("Refresh");
+        button_refresh_detalle_facturas.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                button_refresh_detalle_facturasMouseClicked(evt);
+            }
+        });
+
+        table_detalle_ajustes1.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+        table_detalle_ajustes1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "numero_detalle_factura", "numero_factura", "codigo_producto", "precio_venta", "cantidad", "subtotal"
+            }
+        ));
+        table_detalle_ajustes1.setAutoResizeMode(0);
+        table_detalle_ajustes1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        table_detalle_ajustes1.setEnabled(false);
+        jScrollPane12.setViewportView(table_detalle_ajustes1);
+        if (table_detalle_ajustes1.getColumnModel().getColumnCount() > 0) {
+            table_detalle_ajustes1.getColumnModel().getColumn(0).setMinWidth(180);
+            table_detalle_ajustes1.getColumnModel().getColumn(1).setMinWidth(180);
+            table_detalle_ajustes1.getColumnModel().getColumn(2).setMinWidth(180);
+            table_detalle_ajustes1.getColumnModel().getColumn(3).setMinWidth(180);
+            table_detalle_ajustes1.getColumnModel().getColumn(4).setMinWidth(100);
+            table_detalle_ajustes1.getColumnModel().getColumn(5).setMinWidth(130);
+        }
+
+        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
+        jPanel6.setLayout(jPanel6Layout);
+        jPanel6Layout.setHorizontalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
+                        .addComponent(button_regresar_d_facturas)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(button_refresh_detalle_facturas)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jScrollPane12, javax.swing.GroupLayout.PREFERRED_SIZE, 414, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
+                        .addGap(0, 237, Short.MAX_VALUE)
+                        .addComponent(label_sign_up_panel11)
+                        .addGap(250, 250, 250))))
+        );
+        jPanel6Layout.setVerticalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
+                .addGap(33, 33, 33)
+                .addComponent(label_sign_up_panel11, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 260, Short.MAX_VALUE)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(button_refresh_detalle_facturas)
+                        .addComponent(button_regresar_d_facturas))
+                    .addComponent(jScrollPane12, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
+        );
+
+        jTabbedPane1.addTab("d_f", jPanel6);
+
+        jPanel7.setBackground(new java.awt.Color(0, 153, 153));
+
+        label_sign_up_panel12.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
+        label_sign_up_panel12.setForeground(new java.awt.Color(255, 255, 255));
+        label_sign_up_panel12.setText("Detalles - Compras");
+
+        button_regresar_d_compras.setBackground(new java.awt.Color(0, 51, 51));
+        button_regresar_d_compras.setForeground(new java.awt.Color(255, 255, 255));
+        button_regresar_d_compras.setText("Regresar");
+        button_regresar_d_compras.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                button_regresar_d_comprasMouseClicked(evt);
+            }
+        });
+
+        button_refresh_detalle_compras.setText("Refresh");
+        button_refresh_detalle_compras.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                button_refresh_detalle_comprasMouseClicked(evt);
+            }
+        });
+
+        table_detalle_ajustes2.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+        table_detalle_ajustes2.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "numero_detalle_compra", "id_compra", "codigo_producto", "costo_compra", "subtotal", "cantidad"
+            }
+        ));
+        table_detalle_ajustes2.setAutoResizeMode(0);
+        table_detalle_ajustes2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        table_detalle_ajustes2.setEnabled(false);
+        jScrollPane13.setViewportView(table_detalle_ajustes2);
+        if (table_detalle_ajustes2.getColumnModel().getColumnCount() > 0) {
+            table_detalle_ajustes2.getColumnModel().getColumn(0).setMinWidth(180);
+            table_detalle_ajustes2.getColumnModel().getColumn(1).setMinWidth(180);
+            table_detalle_ajustes2.getColumnModel().getColumn(2).setMinWidth(180);
+            table_detalle_ajustes2.getColumnModel().getColumn(3).setMinWidth(180);
+            table_detalle_ajustes2.getColumnModel().getColumn(4).setMinWidth(100);
+            table_detalle_ajustes2.getColumnModel().getColumn(5).setMinWidth(130);
+        }
+
+        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
+        jPanel7.setLayout(jPanel7Layout);
+        jPanel7Layout.setHorizontalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
+                        .addComponent(button_regresar_d_compras)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(button_refresh_detalle_compras)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jScrollPane13, javax.swing.GroupLayout.PREFERRED_SIZE, 414, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
+                        .addGap(0, 226, Short.MAX_VALUE)
+                        .addComponent(label_sign_up_panel12)
+                        .addGap(250, 250, 250))))
+        );
+        jPanel7Layout.setVerticalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
+                .addGap(33, 33, 33)
+                .addComponent(label_sign_up_panel12, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 260, Short.MAX_VALUE)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(button_refresh_detalle_compras)
+                        .addComponent(button_regresar_d_compras))
+                    .addComponent(jScrollPane13, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
+        );
+
+        jTabbedPane1.addTab("d_c", jPanel7);
 
         getContentPane().add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -31, -1, 490));
 
@@ -1500,13 +1827,9 @@ public class MainFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_button_loginActionPerformed
 
-    private void label_signupMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_label_signupMouseClicked
-        this.inicializarSignUp();
-        this.cargarTablaUsuarios();
-    }//GEN-LAST:event_label_signupMouseClicked
-
     private void button_regresar_signUpMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button_regresar_signUpMouseClicked
-        this.inicializarLogIn();
+        //this.inicializarLogIn();
+        this.jTabbedPane1.setSelectedIndex(1);
     }//GEN-LAST:event_button_regresar_signUpMouseClicked
 
     private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox2ActionPerformed
@@ -1527,6 +1850,7 @@ public class MainFrame extends javax.swing.JFrame {
 
     private void button_facturasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button_facturasMouseClicked
         this.jTabbedPane1.setSelectedIndex(9);
+        this.cargarTablaFacturas();
     }//GEN-LAST:event_button_facturasMouseClicked
 
     private void button_productosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button_productosMouseClicked
@@ -1536,10 +1860,12 @@ public class MainFrame extends javax.swing.JFrame {
 
     private void button_comprasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button_comprasMouseClicked
         this.jTabbedPane1.setSelectedIndex(7);
+        this.cargarTablaCompras();
     }//GEN-LAST:event_button_comprasMouseClicked
 
     private void button_ajustesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button_ajustesMouseClicked
         this.jTabbedPane1.setSelectedIndex(8);
+        this.cargarTablaAjustes();
     }//GEN-LAST:event_button_ajustesMouseClicked
 
     private void button_clientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button_clientesMouseClicked
@@ -1619,17 +1945,17 @@ public class MainFrame extends javax.swing.JFrame {
         this.cargarTablaProductos();
     }//GEN-LAST:event_button_refresh_productosMouseClicked
 
-    private void button_refresh3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button_refresh3MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_button_refresh3MouseClicked
+    private void button_refresh_comprasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button_refresh_comprasMouseClicked
+        this.cargarTablaCompras();
+    }//GEN-LAST:event_button_refresh_comprasMouseClicked
 
-    private void button_refresh4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button_refresh4MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_button_refresh4MouseClicked
+    private void button_refresh_ajustesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button_refresh_ajustesMouseClicked
+        this.cargarTablaAjustes();
+    }//GEN-LAST:event_button_refresh_ajustesMouseClicked
 
-    private void button_refresh5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button_refresh5MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_button_refresh5MouseClicked
+    private void button_refresh_facturasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button_refresh_facturasMouseClicked
+        this.cargarTablaFacturas();
+    }//GEN-LAST:event_button_refresh_facturasMouseClicked
 
     private void button_refresh_proveedoresMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button_refresh_proveedoresMouseClicked
         this.cargarTablaProveedores();
@@ -1650,6 +1976,46 @@ public class MainFrame extends javax.swing.JFrame {
     private void button_refresh_signupMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button_refresh_signupMouseClicked
         this.cargarTablaUsuarios();
     }//GEN-LAST:event_button_refresh_signupMouseClicked
+
+    private void button_refresh_detalle_ajustesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button_refresh_detalle_ajustesMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_button_refresh_detalle_ajustesMouseClicked
+
+    private void buttun_detalles_ajustes_panelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttun_detalles_ajustes_panelMouseClicked
+        this.jTabbedPane1.setSelectedIndex(12);
+    }//GEN-LAST:event_buttun_detalles_ajustes_panelMouseClicked
+
+    private void button_regresar_d_ajustesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button_regresar_d_ajustesMouseClicked
+        this.jTabbedPane1.setSelectedIndex(8);
+    }//GEN-LAST:event_button_regresar_d_ajustesMouseClicked
+
+    private void button_regresar_d_facturasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button_regresar_d_facturasMouseClicked
+        this.jTabbedPane1.setSelectedIndex(9);
+    }//GEN-LAST:event_button_regresar_d_facturasMouseClicked
+
+    private void button_refresh_detalle_facturasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button_refresh_detalle_facturasMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_button_refresh_detalle_facturasMouseClicked
+
+    private void button_regresar_d_comprasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button_regresar_d_comprasMouseClicked
+        this.jTabbedPane1.setSelectedIndex(7);
+    }//GEN-LAST:event_button_regresar_d_comprasMouseClicked
+
+    private void button_refresh_detalle_comprasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button_refresh_detalle_comprasMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_button_refresh_detalle_comprasMouseClicked
+
+    private void buttun_detalles_compras_panelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttun_detalles_compras_panelMouseClicked
+        this.jTabbedPane1.setSelectedIndex(14);
+    }//GEN-LAST:event_buttun_detalles_compras_panelMouseClicked
+
+    private void buttun_detalles_compras_panelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttun_detalles_compras_panelActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_buttun_detalles_compras_panelActionPerformed
+
+    private void buttun_detalles_facturas_panelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttun_detalles_facturas_panelMouseClicked
+        this.jTabbedPane1.setSelectedIndex(13);
+    }//GEN-LAST:event_buttun_detalles_facturas_panelMouseClicked
 
     // Función para verificar si el usuario existe.
     private boolean loginCorrecto(String user, String password) {
@@ -1941,10 +2307,170 @@ public class MainFrame extends javax.swing.JFrame {
                 fecha_ultimma_actualizacion = rs.getString(10);
                 usuario_creo = rs.getString(11);
                 usuario_actualizo = rs.getString(12);
-                
+
                 String[] row = {codigo_producto, categoria, estado, existencia, precio, marca, costo, nombre, fecha_creacion, fecha_ultimma_actualizacion, usuario_creo, usuario_actualizo};
                 model.addRow(row);
-                
+
+            }
+
+        } catch (SQLException e) {
+            System.out.println("No se ha conectado!");
+        }
+    }
+
+    // Falta arreglar esto.
+    public void cargarTablaCompras() {
+        //Cargamos la tabla.
+        try (Connection conn = DriverManager.getConnection(funciones.getDB_URL(), funciones.getUSER(), funciones.getPASS()); CallableStatement stmt = conn.prepareCall("{call sp_compra_read}")) {
+            stmt.execute();
+            ResultSet rs = stmt.getResultSet();
+            ResultSetMetaData rsmd = rs.getMetaData();
+            StringBuilder sb = new StringBuilder();
+
+            DefaultTableModel model = (DefaultTableModel) this.table_compras.getModel();
+
+            //Vaciamos la table.
+            model.setRowCount(0);
+
+            int cantidad_registros = rsmd.getColumnCount();
+            String[] colName = new String[cantidad_registros];
+
+            for (int i = 0; i < cantidad_registros; i++) {
+                colName[i] = rsmd.getColumnName(i + 1);
+            }
+            model.setColumnIdentifiers(colName);
+
+            String id_compra;
+            String codigo_proveedor;
+            String usuario_unico;
+            String fecha_compra;
+            String fabricante;
+            String total;
+            String fecha_creacion;
+            String fecha_ultima_actualizacion;
+            String usuario_creo;
+            String usuario_actualizo;
+
+            while (rs.next()) {
+
+                id_compra = rs.getString(1);
+                codigo_proveedor = rs.getString(2);
+                fecha_compra = rs.getString(3);
+                fabricante = rs.getString(4);
+                total = rs.getString(5);
+                fecha_creacion = rs.getString(6);
+                fecha_ultima_actualizacion = rs.getString(7);
+                usuario_creo = rs.getString(8);
+                usuario_actualizo = rs.getString(9);
+
+                String[] row = {id_compra, codigo_proveedor, fecha_compra, fabricante, total, fecha_creacion, fecha_ultima_actualizacion, usuario_creo, usuario_actualizo};
+                model.addRow(row);
+            }
+
+        } catch (SQLException e) {
+            System.out.println("No se ha conectado!");
+        }
+    }
+
+    public void cargarTablaFacturas() {
+        //Cargamos la tabla.
+        try (Connection conn = DriverManager.getConnection(funciones.getDB_URL(), funciones.getUSER(), funciones.getPASS()); CallableStatement stmt = conn.prepareCall("{call sp_factura_read}")) {
+            stmt.execute();
+            ResultSet rs = stmt.getResultSet();
+            ResultSetMetaData rsmd = rs.getMetaData();
+            StringBuilder sb = new StringBuilder();
+
+            DefaultTableModel model = (DefaultTableModel) this.table_facturas.getModel();
+
+            //Vaciamos la table.
+            model.setRowCount(0);
+
+            int cantidad_registros = rsmd.getColumnCount();
+            String[] colName = new String[cantidad_registros];
+
+            for (int i = 0; i < cantidad_registros; i++) {
+                colName[i] = rsmd.getColumnName(i + 1);
+            }
+            model.setColumnIdentifiers(colName);
+
+            String numero_factura;
+            String id_cliente;
+            String descuento;
+            String subtotal;
+            String total;
+            String impuesto;
+            String fecha;
+            String fecha_creacion;
+            String fecha_ultimma_actualizacion;
+            String usuario_creo;
+            String usuario_actualizo;
+
+            while (rs.next()) {
+                numero_factura = rs.getString(1);
+                id_cliente = rs.getString(2);
+                descuento = rs.getString(3);
+                subtotal = rs.getString(4);
+                total = rs.getString(5);
+                impuesto = rs.getString(6);
+                fecha = rs.getString(7);
+                fecha_creacion = rs.getString(8);
+                fecha_ultimma_actualizacion = rs.getString(9);
+                usuario_creo = rs.getString(10);
+                usuario_actualizo = rs.getString(11);
+
+                String[] row = {numero_factura, id_cliente, descuento, subtotal, total, impuesto, fecha, fecha_creacion, fecha_ultimma_actualizacion, usuario_creo, usuario_actualizo};
+                model.addRow(row);
+
+            }
+
+        } catch (SQLException e) {
+            System.out.println("No se ha conectado!");
+        }
+    }
+
+    public void cargarTablaAjustes() {
+        //Cargamos la tabla.
+        try (Connection conn = DriverManager.getConnection(funciones.getDB_URL(), funciones.getUSER(), funciones.getPASS()); CallableStatement stmt = conn.prepareCall("{call sp_ajuste_read}")) {
+            stmt.execute();
+            ResultSet rs = stmt.getResultSet();
+            ResultSetMetaData rsmd = rs.getMetaData();
+            StringBuilder sb = new StringBuilder();
+
+            DefaultTableModel model = (DefaultTableModel) this.table_ajustes.getModel();
+
+            //Vaciamos la table.
+            model.setRowCount(0);
+
+            int cantidad_registros = rsmd.getColumnCount();
+            String[] colName = new String[cantidad_registros];
+
+            for (int i = 0; i < cantidad_registros; i++) {
+                colName[i] = rsmd.getColumnName(i + 1);
+            }
+            model.setColumnIdentifiers(colName);
+
+            String id_ajuste;
+            String fecha;
+            String entrada;
+            String salida;
+            String fecha_creacion;
+            String fecha_ultimma_actualizacion;
+            String usuario_creo;
+            String usuario_actualizo;
+
+            while (rs.next()) {
+                id_ajuste = rs.getString(1);
+                fecha = rs.getString(2);
+                entrada = rs.getString(3);
+                salida = rs.getString(4);
+                fecha_creacion = rs.getString(5);
+                fecha_ultimma_actualizacion = rs.getString(6);
+                usuario_creo = rs.getString(7);
+                usuario_actualizo = rs.getString(8);
+
+                String[] row = {id_ajuste, fecha, entrada, salida, fecha_creacion, fecha_ultimma_actualizacion, usuario_creo, usuario_actualizo};
+                model.addRow(row);
+
             }
 
         } catch (SQLException e) {
@@ -2002,19 +2528,28 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JButton button_privilegios;
     private javax.swing.JButton button_productos;
     private javax.swing.JButton button_proveedores;
-    private javax.swing.JButton button_refresh3;
-    private javax.swing.JButton button_refresh4;
-    private javax.swing.JButton button_refresh5;
     private javax.swing.JButton button_refresh8;
+    private javax.swing.JButton button_refresh_ajustes;
     private javax.swing.JButton button_refresh_clientes;
+    private javax.swing.JButton button_refresh_compras;
+    private javax.swing.JButton button_refresh_detalle_ajustes;
+    private javax.swing.JButton button_refresh_detalle_compras;
+    private javax.swing.JButton button_refresh_detalle_facturas;
+    private javax.swing.JButton button_refresh_facturas;
     private javax.swing.JButton button_refresh_privilegios;
     private javax.swing.JButton button_refresh_productos;
     private javax.swing.JButton button_refresh_proveedores;
     private javax.swing.JButton button_refresh_roles;
     private javax.swing.JButton button_refresh_signup;
+    private javax.swing.JButton button_regresar_d_ajustes;
+    private javax.swing.JButton button_regresar_d_compras;
+    private javax.swing.JButton button_regresar_d_facturas;
     private javax.swing.JButton button_regresar_signUp;
     private javax.swing.JButton button_roles;
     private javax.swing.JButton button_usuarios;
+    private javax.swing.JButton buttun_detalles_ajustes_panel;
+    private javax.swing.JButton buttun_detalles_compras_panel;
+    private javax.swing.JButton buttun_detalles_facturas_panel;
     private javax.swing.JTextField field_password_nueva;
     private javax.swing.JTextField field_user_nuevo;
     private javax.swing.JButton jButton1;
@@ -2043,8 +2578,14 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel7;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane10;
+    private javax.swing.JScrollPane jScrollPane11;
+    private javax.swing.JScrollPane jScrollPane12;
+    private javax.swing.JScrollPane jScrollPane13;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
@@ -2061,6 +2602,9 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JLabel label_login_text;
     private javax.swing.JLabel label_sign_up_panel;
     private javax.swing.JLabel label_sign_up_panel1;
+    private javax.swing.JLabel label_sign_up_panel10;
+    private javax.swing.JLabel label_sign_up_panel11;
+    private javax.swing.JLabel label_sign_up_panel12;
     private javax.swing.JLabel label_sign_up_panel2;
     private javax.swing.JLabel label_sign_up_panel3;
     private javax.swing.JLabel label_sign_up_panel4;
@@ -2069,7 +2613,6 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JLabel label_sign_up_panel7;
     private javax.swing.JLabel label_sign_up_panel8;
     private javax.swing.JLabel label_sign_up_panel9;
-    private javax.swing.JLabel label_signup;
     private javax.swing.JLabel label_welcome;
     private javax.swing.JPanel panel_ajustes;
     private javax.swing.JPanel panel_blanco_signup;
@@ -2096,6 +2639,9 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JTable table_ajustes;
     private javax.swing.JTable table_clientes;
     private javax.swing.JTable table_compras;
+    private javax.swing.JTable table_detalle_ajustes;
+    private javax.swing.JTable table_detalle_ajustes1;
+    private javax.swing.JTable table_detalle_ajustes2;
     private javax.swing.JTable table_facturas;
     private javax.swing.JTable table_kardex;
     private javax.swing.JTable table_privilegios;
