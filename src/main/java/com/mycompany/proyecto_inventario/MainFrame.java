@@ -14,6 +14,7 @@ import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import javax.imageio.ImageIO;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -121,8 +122,8 @@ public class MainFrame extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         jButton3 = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
-        jTextField4 = new javax.swing.JTextField();
-        jButton5 = new javax.swing.JButton();
+        field_delete_rol = new javax.swing.JTextField();
+        button_delete_rol = new javax.swing.JButton();
         jLabel14 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
@@ -1005,7 +1006,12 @@ public class MainFrame extends javax.swing.JFrame {
 
         jPanel4.setBackground(new java.awt.Color(204, 0, 0));
 
-        jButton5.setText("Ok");
+        button_delete_rol.setText("Ok");
+        button_delete_rol.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                button_delete_rolMouseClicked(evt);
+            }
+        });
 
         jLabel14.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(255, 255, 255));
@@ -1017,7 +1023,7 @@ public class MainFrame extends javax.swing.JFrame {
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
                 .addContainerGap(22, Short.MAX_VALUE)
-                .addComponent(jButton5)
+                .addComponent(button_delete_rol)
                 .addGap(27, 27, 27))
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGap(25, 25, 25)
@@ -1025,7 +1031,7 @@ public class MainFrame extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jTextField4)
+                .addComponent(field_delete_rol)
                 .addContainerGap())
         );
         jPanel4Layout.setVerticalGroup(
@@ -1034,9 +1040,9 @@ public class MainFrame extends javax.swing.JFrame {
                 .addGap(8, 8, 8)
                 .addComponent(jLabel14)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(field_delete_rol, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jButton5)
+                .addComponent(button_delete_rol)
                 .addContainerGap(8, Short.MAX_VALUE))
         );
 
@@ -2020,6 +2026,24 @@ public class MainFrame extends javax.swing.JFrame {
         this.cargarTablaDetallesFacturas();
     }//GEN-LAST:event_button_detalles_facturas_panelMouseClicked
 
+    private void button_delete_rolMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button_delete_rolMouseClicked
+
+        // Botón para borrar un rol.
+        try {
+            int id_rol_delete = Integer.parseInt(this.field_delete_rol.getText());
+            if (this.funciones.delete_rol(id_rol_delete)) {
+                JOptionPane.showMessageDialog(null, "¡Se ha borrado el rol!");
+                this.field_delete_rol.setText("");
+            } else {
+                JOptionPane.showMessageDialog(null, "¡No se pudo borrar!");
+            }
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(null, "¡No se pudo borrar!");
+        }
+
+        this.cargarTablaRoles();
+    }//GEN-LAST:event_button_delete_rolMouseClicked
+
     // Función para verificar si el usuario existe.
     private boolean loginCorrecto(String user, String password) {
 
@@ -2502,25 +2526,22 @@ public class MainFrame extends javax.swing.JFrame {
             }
             model.setColumnIdentifiers(colName);
 
-            
             String numero_detalle_compra;
             String id_compra;
             String codigo_producto;
             String costo_compra;
             String subtotal;
             String cantidad;
-            
-            
 
             while (rs.next()) {
-                
+
                 numero_detalle_compra = rs.getString(1);
                 id_compra = rs.getString(2);
                 codigo_producto = rs.getString(3);
                 costo_compra = rs.getString(4);
                 subtotal = rs.getString(5);
                 cantidad = rs.getString(6);
-                
+
                 String[] row = {numero_detalle_compra, id_compra, codigo_producto, costo_compra, subtotal, cantidad};
                 model.addRow(row);
             }
@@ -2529,7 +2550,7 @@ public class MainFrame extends javax.swing.JFrame {
             System.out.println("No se ha conectado!");
         }
     }
-    
+
     public void cargarTablaDetallesAjustes() {
         //Cargamos la tabla.
         try (Connection conn = DriverManager.getConnection(funciones.getDB_URL(), funciones.getUSER(), funciones.getPASS()); CallableStatement stmt = conn.prepareCall("{call sp_detalle_ajuste_read}")) {
@@ -2551,7 +2572,6 @@ public class MainFrame extends javax.swing.JFrame {
             }
             model.setColumnIdentifiers(colName);
 
-            
             String numero_detalle_ajuste;
             String id_ajuste;
             String codigo_producto;
@@ -2560,14 +2580,14 @@ public class MainFrame extends javax.swing.JFrame {
             String subtotal;
 
             while (rs.next()) {
-                
+
                 numero_detalle_ajuste = rs.getString(1);
                 id_ajuste = rs.getString(2);
                 codigo_producto = rs.getString(3);
                 coste_producto = rs.getString(4);
                 cantidad = rs.getString(5);
                 subtotal = rs.getString(6);
-                
+
                 String[] row = {numero_detalle_ajuste, id_ajuste, codigo_producto, coste_producto, cantidad, subtotal};
                 model.addRow(row);
             }
@@ -2576,8 +2596,8 @@ public class MainFrame extends javax.swing.JFrame {
             System.out.println("No se ha conectado!");
         }
     }
-    
-        public void cargarTablaDetallesFacturas() {
+
+    public void cargarTablaDetallesFacturas() {
         //Cargamos la tabla.
         try (Connection conn = DriverManager.getConnection(funciones.getDB_URL(), funciones.getUSER(), funciones.getPASS()); CallableStatement stmt = conn.prepareCall("{call sp_detalle_factura_read}")) {
             stmt.execute();
@@ -2598,7 +2618,6 @@ public class MainFrame extends javax.swing.JFrame {
             }
             model.setColumnIdentifiers(colName);
 
-            
             String numero_detalle_factura;
             String numero_factura;
             String codigo_producto;
@@ -2607,14 +2626,14 @@ public class MainFrame extends javax.swing.JFrame {
             String subtotal;
 
             while (rs.next()) {
-                
+
                 numero_detalle_factura = rs.getString(1);
                 numero_factura = rs.getString(2);
                 codigo_producto = rs.getString(3);
                 precio_venta = rs.getString(4);
                 cantidad = rs.getString(5);
                 subtotal = rs.getString(6);
-                
+
                 String[] row = {numero_detalle_factura, numero_factura, codigo_producto, precio_venta, cantidad, subtotal};
                 model.addRow(row);
             }
@@ -2623,10 +2642,7 @@ public class MainFrame extends javax.swing.JFrame {
             System.out.println("No se ha conectado!");
         }
     }
-    
-    
-    
-    
+
     /**
      * @param args the command line arguments
      */
@@ -2670,6 +2686,7 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JButton button_ajustes;
     private javax.swing.JButton button_clientes;
     private javax.swing.JButton button_compras;
+    private javax.swing.JButton button_delete_rol;
     private javax.swing.JButton button_detalles_ajustes_panel;
     private javax.swing.JButton button_detalles_compras_panel;
     private javax.swing.JButton button_detalles_facturas_panel;
@@ -2699,13 +2716,13 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JButton button_regresar_signUp;
     private javax.swing.JButton button_roles;
     private javax.swing.JButton button_usuarios;
+    private javax.swing.JTextField field_delete_rol;
     private javax.swing.JTextField field_password_nueva;
     private javax.swing.JTextField field_user_nuevo;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
     private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox2;
@@ -2745,7 +2762,6 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane9;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField6;
     private javax.swing.JLabel label_login_text;

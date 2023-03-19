@@ -8,13 +8,12 @@ import java.sql.SQLException;
 
 public class Function {
 
-    
     //Atributos para la conexión a la base de datos.
     private static final String JDBC_DRIVER = "com.ibm.db2.jcc.DB2Driver";
     private static final String DB_URL = "jdbc:db2://localhost:25000/INV_DB";
     private static final String USER = "Usuario";
     private static final String PASS = "admin123";
-    
+
     //Getters.
     public String getJDBC_DRIVER() {
         return JDBC_DRIVER;
@@ -216,8 +215,16 @@ public class Function {
     }
 
     //DELETE.
-    public void delete_rol() {
-
+    public boolean delete_rol(int id_rol) {
+        try (Connection conn = DriverManager.getConnection(DB_URL, USER, PASS); CallableStatement stmt = conn.prepareCall("{call sp_rol_delete(?)}")) {
+            stmt.setInt(1, id_rol);
+            stmt.execute();
+            return true;
+        } catch (SQLException e) {
+            //e.printStackTrace();
+            System.out.println("ERROR");
+        }
+        return false;
     }
 
     public void delete_privilegio() {
