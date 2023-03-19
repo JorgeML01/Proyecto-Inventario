@@ -4,7 +4,9 @@ import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
+import javax.swing.table.DefaultTableModel;
 
 public class Function {
 
@@ -32,8 +34,16 @@ public class Function {
     }
 
     //CREATES.
-    public void create_rol() {
-
+    public boolean create_rol(int id_rol, String nombre) {
+        try (Connection conn = DriverManager.getConnection(DB_URL, USER, PASS); CallableStatement stmt = conn.prepareCall("{call sp_rol_create (?, ?)}")) {
+            stmt.setInt(1, id_rol);
+            stmt.setString(2, nombre);
+            stmt.execute();
+            return true;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return false;
     }
 
     public void create_privilegio() {
@@ -50,22 +60,6 @@ public class Function {
         }
     }
 
-    public String read_usuario() {
-        try (Connection conn = DriverManager.getConnection(DB_URL, USER, PASS); CallableStatement stmt = conn.prepareCall("{call sp_usuario_read}")) {
-            stmt.execute();
-            ResultSet rs = stmt.getResultSet();
-            StringBuilder sb = new StringBuilder();
-            while (rs.next()) {
-                String usuario_unico = rs.getString("usuario_unico");
-                String clave = rs.getString("clave");
-                sb.append("Usuario único: ").append(usuario_unico).append(", Clave: ").append(clave).append("\n");
-            }
-            return sb.toString();
-        } catch (SQLException e) {
-            e.printStackTrace();
-            return null;
-        }
-    }
 
     public void create_cliente() {
 
@@ -157,60 +151,6 @@ public class Function {
     }
 
     public void update_detalle_compra() {
-
-    }
-
-    //READ
-    public void read_rol() {
-
-    }
-
-    public void read_privilegio() {
-
-    }
-
-    /*
-    public void read_usuario(){
-        
-    }
-     */
-    public void read_cliente() {
-
-    }
-
-    public void read_proveedor() {
-
-    }
-
-    public void read_telefono() {
-
-    }
-
-    public void read_ajuste() {
-
-    }
-
-    public void read_factura() {
-
-    }
-
-    public void read_compra() {
-
-    }
-
-    public void read_producto() {
-
-    }
-
-    public void read_detalle_factura() {
-
-    }
-
-    public void read_detalle_ajuste() {
-
-    }
-
-    public void read_detalle_compra() {
 
     }
 
@@ -330,4 +270,26 @@ public class Function {
 
     }
 
+    public int cantidad_roles(){
+        //Cargamos la tabla.
+        int cantidad_registros = 1;
+        
+        try (Connection conn = DriverManager.getConnection(this.getDB_URL(), this.getUSER(), this.getPASS()); CallableStatement stmt = conn.prepareCall("{call sp_rol_read}")) {
+            stmt.execute();
+            ResultSet rs = stmt.getResultSet();
+            ResultSetMetaData rsmd = rs.getMetaData();
+            cantidad_registros = rsmd.getColumnCount();
+            System.out.println(cantidad_registros);
+            conn.close();
+            return cantidad_registros + 2;
+
+        } catch (SQLException e) {
+            System.out.println("No se ha conectado!");
+        }
+        
+        return cantidad_registros;
+    }
+    
+    
+    
 }

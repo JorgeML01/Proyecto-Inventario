@@ -127,9 +127,9 @@ public class MainFrame extends javax.swing.JFrame {
         table_roles = new javax.swing.JTable();
         button_refresh_roles = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
-        jTextField1 = new javax.swing.JTextField();
+        field_crear_rol = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        button_create_rol = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jTextField5 = new javax.swing.JTextField();
         jTextField6 = new javax.swing.JTextField();
@@ -1135,9 +1135,9 @@ public class MainFrame extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(0, 51, 51));
 
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        field_crear_rol.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                field_crear_rolActionPerformed(evt);
             }
         });
 
@@ -1145,7 +1145,12 @@ public class MainFrame extends javax.swing.JFrame {
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Nombre del rol");
 
-        jButton1.setText("Ok");
+        button_create_rol.setText("Ok");
+        button_create_rol.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                button_create_rolMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -1158,8 +1163,8 @@ public class MainFrame extends javax.swing.JFrame {
                         .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(jPanel2Layout.createSequentialGroup()
                             .addGap(12, 12, 12)
-                            .addComponent(jButton1)))
-                    .addComponent(jTextField1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(button_create_rol)))
+                    .addComponent(field_crear_rol, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(30, 30, 30))
         );
         jPanel2Layout.setVerticalGroup(
@@ -1168,9 +1173,9 @@ public class MainFrame extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel7)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(field_crear_rol, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton1)
+                .addComponent(button_create_rol)
                 .addContainerGap(59, Short.MAX_VALUE))
         );
 
@@ -2456,9 +2461,9 @@ public class MainFrame extends javax.swing.JFrame {
         this.cargarTablaRoles();
     }//GEN-LAST:event_button_refresh_rolesMouseClicked
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void field_crear_rolActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_field_crear_rolActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_field_crear_rolActionPerformed
 
     private void button_refresh_privilegiosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button_refresh_privilegiosMouseClicked
         this.cargarTablaPrivilegios();
@@ -2697,6 +2702,18 @@ public class MainFrame extends javax.swing.JFrame {
 
         this.cargarTablaClientes();
     }//GEN-LAST:event_button_delete_clienteMouseClicked
+
+    private void button_create_rolMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button_create_rolMouseClicked
+        int cantidadRegistros = funciones.cantidad_roles();
+        String nombre = this.field_crear_rol.getText();
+        if(this.funciones.create_rol(cantidadRegistros, nombre)){
+            JOptionPane.showMessageDialog(null, "¡Se ha creado!");
+        }else{
+            JOptionPane.showMessageDialog(null, "¡No se pudo crear!");
+        }
+        this.cargarTablaRoles();
+        this.field_delete_ajuste.setText("");
+    }//GEN-LAST:event_button_create_rolMouseClicked
 
     // Función para verificar si el usuario existe.
     private boolean loginCorrecto(String user, String password) {
@@ -3340,6 +3357,7 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JButton button_ajustes;
     private javax.swing.JButton button_clientes;
     private javax.swing.JButton button_compras;
+    private javax.swing.JButton button_create_rol;
     private javax.swing.JButton button_delete_ajuste;
     private javax.swing.JButton button_delete_cliente;
     private javax.swing.JButton button_delete_compra;
@@ -3379,6 +3397,7 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JButton button_regresar_signUp;
     private javax.swing.JButton button_roles;
     private javax.swing.JButton button_usuarios;
+    private javax.swing.JTextField field_crear_rol;
     private javax.swing.JTextField field_delete_ajuste;
     private javax.swing.JTextField field_delete_cliente;
     private javax.swing.JTextField field_delete_compra;
@@ -3391,7 +3410,6 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JTextField field_delete_rol1;
     private javax.swing.JTextField field_password_nueva;
     private javax.swing.JTextField field_user_nuevo;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
@@ -3459,7 +3477,6 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JScrollPane jScrollPane9;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField6;
     private javax.swing.JLabel label_login_text;
