@@ -227,12 +227,28 @@ public class Function {
         return false;
     }
 
-    public void delete_privilegio() {
-
+    public boolean delete_privilegio(int id_privilegio_delete) {
+        try (Connection conn = DriverManager.getConnection(DB_URL, USER, PASS); CallableStatement stmt = conn.prepareCall("{call sp_privilegio_delete(?)}")) {
+            stmt.setInt(1, id_privilegio_delete);
+            stmt.execute();
+            return true;
+        } catch (SQLException e) {
+            //e.printStackTrace();
+            System.out.println("ERROR");
+        }
+        return false;
     }
 
-    public void delete_usuario() {
-
+    public boolean delete_usuario(String usuario_unico) {
+        try (Connection conn = DriverManager.getConnection(DB_URL, USER, PASS); CallableStatement stmt = conn.prepareCall("{call sp_usuario_delete(?)}")) {
+            stmt.setString(1, usuario_unico);
+            stmt.execute();
+            return true;
+        } catch (SQLException e) {
+            //e.printStackTrace();
+            System.out.println("ERROR");
+        }
+        return false;
     }
 
     public void delete_cliente() {
@@ -251,8 +267,16 @@ public class Function {
 
     }
 
-    public void delete_factura() {
-
+    public boolean delete_factura(int numero_factura) {
+        try (Connection conn = DriverManager.getConnection(DB_URL, USER, PASS); CallableStatement stmt = conn.prepareCall("{call sp_factura_delete(?)}")) {
+            stmt.setInt(1, numero_factura);
+            stmt.execute();
+            return true;
+        } catch (SQLException e) {
+            //e.printStackTrace();
+            System.out.println("ERROR");
+        }
+        return false;
     }
 
     public void delete_compra() {
