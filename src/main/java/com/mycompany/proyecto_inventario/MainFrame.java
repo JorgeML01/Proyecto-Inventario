@@ -145,6 +145,11 @@ public class MainFrame extends javax.swing.JFrame {
         jScrollPane4 = new javax.swing.JScrollPane();
         table_compras = new javax.swing.JTable();
         button_detalles_compras_panel = new javax.swing.JButton();
+        jLabel24 = new javax.swing.JLabel();
+        jPanel13 = new javax.swing.JPanel();
+        field_delete_compra = new javax.swing.JTextField();
+        button_delete_compra = new javax.swing.JButton();
+        jLabel25 = new javax.swing.JLabel();
         panel_ajustes = new javax.swing.JPanel();
         label_sign_up_panel6 = new javax.swing.JLabel();
         regresar5 = new javax.swing.JButton();
@@ -170,6 +175,11 @@ public class MainFrame extends javax.swing.JFrame {
         button_refresh_proveedores = new javax.swing.JButton();
         jScrollPane7 = new javax.swing.JScrollPane();
         table_proveedores = new javax.swing.JTable();
+        jPanel12 = new javax.swing.JPanel();
+        field_delete_proveedor = new javax.swing.JTextField();
+        button_delete_proveedor = new javax.swing.JButton();
+        jLabel22 = new javax.swing.JLabel();
+        jLabel23 = new javax.swing.JLabel();
         panel_clientes = new javax.swing.JPanel();
         label_sign_up_panel9 = new javax.swing.JLabel();
         regresar8 = new javax.swing.JButton();
@@ -1318,6 +1328,52 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
 
+        jLabel24.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel24.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel24.setText("Eliminar compra");
+
+        jPanel13.setBackground(new java.awt.Color(204, 0, 0));
+
+        button_delete_compra.setText("Ok");
+        button_delete_compra.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                button_delete_compraMouseClicked(evt);
+            }
+        });
+
+        jLabel25.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel25.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel25.setText("id_compra");
+
+        javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
+        jPanel13.setLayout(jPanel13Layout);
+        jPanel13Layout.setHorizontalGroup(
+            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel13Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(field_delete_compra)
+                .addContainerGap())
+            .addGroup(jPanel13Layout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addComponent(button_delete_compra)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel13Layout.createSequentialGroup()
+                .addContainerGap(24, Short.MAX_VALUE)
+                .addComponent(jLabel25)
+                .addGap(21, 21, 21))
+        );
+        jPanel13Layout.setVerticalGroup(
+            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel13Layout.createSequentialGroup()
+                .addGap(8, 8, 8)
+                .addComponent(jLabel25)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(field_delete_compra, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(button_delete_compra)
+                .addContainerGap(14, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout panel_comprasLayout = new javax.swing.GroupLayout(panel_compras);
         panel_compras.setLayout(panel_comprasLayout);
         panel_comprasLayout.setHorizontalGroup(
@@ -1336,14 +1392,25 @@ public class MainFrame extends javax.swing.JFrame {
                         .addGap(336, 336, 336))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_comprasLayout.createSequentialGroup()
                         .addComponent(button_detalles_compras_panel)
-                        .addGap(144, 144, 144))))
+                        .addGap(144, 144, 144))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_comprasLayout.createSequentialGroup()
+                        .addGroup(panel_comprasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(panel_comprasLayout.createSequentialGroup()
+                                .addComponent(jPanel13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(14, 14, 14))
+                            .addComponent(jLabel24))
+                        .addGap(23, 23, 23))))
         );
         panel_comprasLayout.setVerticalGroup(
             panel_comprasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panel_comprasLayout.createSequentialGroup()
                 .addGap(16, 16, 16)
                 .addComponent(label_sign_up_panel5, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 243, Short.MAX_VALUE)
+                .addGap(35, 35, 35)
+                .addComponent(jLabel24)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 77, Short.MAX_VALUE)
                 .addComponent(button_detalles_compras_panel)
                 .addGap(18, 18, 18)
                 .addGroup(panel_comprasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1631,28 +1698,89 @@ public class MainFrame extends javax.swing.JFrame {
             table_proveedores.getColumnModel().getColumn(8).setMinWidth(180);
         }
 
+        jPanel12.setBackground(new java.awt.Color(204, 0, 0));
+
+        button_delete_proveedor.setText("Ok");
+        button_delete_proveedor.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                button_delete_proveedorMouseClicked(evt);
+            }
+        });
+
+        jLabel22.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel22.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel22.setText("codigo_proveedor");
+
+        javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
+        jPanel12.setLayout(jPanel12Layout);
+        jPanel12Layout.setHorizontalGroup(
+            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel12Layout.createSequentialGroup()
+                .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel12Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(field_delete_proveedor))
+                    .addGroup(jPanel12Layout.createSequentialGroup()
+                        .addGap(14, 14, 14)
+                        .addComponent(jLabel22)
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel12Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(button_delete_proveedor)
+                .addGap(34, 34, 34))
+        );
+        jPanel12Layout.setVerticalGroup(
+            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel12Layout.createSequentialGroup()
+                .addGap(8, 8, 8)
+                .addComponent(jLabel22)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(field_delete_proveedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(button_delete_proveedor)
+                .addContainerGap(8, Short.MAX_VALUE))
+        );
+
+        jLabel23.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel23.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel23.setText("Eliminar proveedor");
+
         javax.swing.GroupLayout panel_proveedoresLayout = new javax.swing.GroupLayout(panel_proveedores);
         panel_proveedores.setLayout(panel_proveedoresLayout);
         panel_proveedoresLayout.setHorizontalGroup(
             panel_proveedoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_proveedoresLayout.createSequentialGroup()
-                .addContainerGap(308, Short.MAX_VALUE)
-                .addComponent(label_sign_up_panel8)
-                .addGap(264, 264, 264))
             .addGroup(panel_proveedoresLayout.createSequentialGroup()
                 .addComponent(regresar7)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 293, Short.MAX_VALUE)
                 .addComponent(button_refresh_proveedores)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_proveedoresLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(panel_proveedoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_proveedoresLayout.createSequentialGroup()
+                        .addComponent(label_sign_up_panel8)
+                        .addGap(264, 264, 264))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_proveedoresLayout.createSequentialGroup()
+                        .addComponent(jPanel12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(42, 42, 42))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_proveedoresLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel23)
+                .addGap(28, 28, 28))
         );
         panel_proveedoresLayout.setVerticalGroup(
             panel_proveedoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panel_proveedoresLayout.createSequentialGroup()
                 .addGap(16, 16, 16)
                 .addComponent(label_sign_up_panel8, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 283, Short.MAX_VALUE)
+                .addGap(72, 72, 72)
+                .addComponent(jLabel23)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 80, Short.MAX_VALUE)
                 .addGroup(panel_proveedoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(regresar7, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jScrollPane7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -2274,7 +2402,7 @@ public class MainFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_button_delete_usuarioMouseClicked
 
     private void button_delete_facturaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button_delete_facturaMouseClicked
-        // Botón para borrar un usuario.
+        // Botón para borrar una factura.
         try {
             int numero_factura = Integer.parseInt(this.field_delete_factura.getText());
             if (this.funciones.delete_factura(numero_factura)) {
@@ -2289,6 +2417,40 @@ public class MainFrame extends javax.swing.JFrame {
 
         this.cargarTablaFacturas();
     }//GEN-LAST:event_button_delete_facturaMouseClicked
+
+    private void button_delete_proveedorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button_delete_proveedorMouseClicked
+        // Botón para borrar un proveedor.
+        try {
+            int codigo_proveedor = Integer.parseInt(this.field_delete_proveedor.getText());
+            if (this.funciones.delete_proveedor(codigo_proveedor)) {
+                JOptionPane.showMessageDialog(null, "¡Se ha borrado el proveedor!");
+                this.field_delete_proveedor.setText("");
+            } else {
+                JOptionPane.showMessageDialog(null, "¡No se pudo borrar!");
+            }
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(null, "¡No se pudo borrar!");
+        }
+
+        this.cargarTablaProveedores();
+    }//GEN-LAST:event_button_delete_proveedorMouseClicked
+
+    private void button_delete_compraMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button_delete_compraMouseClicked
+        // Botón para borrar una compra.
+        try {
+            int id_compra = Integer.parseInt(this.field_delete_compra.getText());
+            if (this.funciones.delete_compra(id_compra)) {
+                JOptionPane.showMessageDialog(null, "¡Se ha borrado la compra!");
+                this.field_delete_compra.setText("");
+            } else {
+                JOptionPane.showMessageDialog(null, "¡No se pudo borrar!");
+            }
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(null, "¡No se pudo borrar!");
+        }
+
+        this.cargarTablaCompras();
+    }//GEN-LAST:event_button_delete_compraMouseClicked
 
     // Función para verificar si el usuario existe.
     private boolean loginCorrecto(String user, String password) {
@@ -2932,9 +3094,11 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JButton button_ajustes;
     private javax.swing.JButton button_clientes;
     private javax.swing.JButton button_compras;
+    private javax.swing.JButton button_delete_compra;
     private javax.swing.JButton button_delete_factura;
     private javax.swing.JButton button_delete_privilegio;
     private javax.swing.JButton button_delete_privilegio1;
+    private javax.swing.JButton button_delete_proveedor;
     private javax.swing.JButton button_delete_rol;
     private javax.swing.JButton button_delete_usuario;
     private javax.swing.JButton button_detalles_ajustes_panel;
@@ -2966,9 +3130,11 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JButton button_regresar_signUp;
     private javax.swing.JButton button_roles;
     private javax.swing.JButton button_usuarios;
+    private javax.swing.JTextField field_delete_compra;
     private javax.swing.JTextField field_delete_factura;
     private javax.swing.JTextField field_delete_privilegio;
     private javax.swing.JTextField field_delete_privilegio1;
+    private javax.swing.JTextField field_delete_proveedor;
     private javax.swing.JTextField field_delete_rol;
     private javax.swing.JTextField field_delete_rol1;
     private javax.swing.JTextField field_password_nueva;
@@ -2994,6 +3160,10 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -3004,6 +3174,8 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
+    private javax.swing.JPanel jPanel12;
+    private javax.swing.JPanel jPanel13;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;

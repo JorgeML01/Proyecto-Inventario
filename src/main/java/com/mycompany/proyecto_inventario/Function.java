@@ -221,7 +221,6 @@ public class Function {
             stmt.execute();
             return true;
         } catch (SQLException e) {
-            //e.printStackTrace();
             System.out.println("ERROR");
         }
         return false;
@@ -233,7 +232,6 @@ public class Function {
             stmt.execute();
             return true;
         } catch (SQLException e) {
-            //e.printStackTrace();
             System.out.println("ERROR");
         }
         return false;
@@ -245,7 +243,6 @@ public class Function {
             stmt.execute();
             return true;
         } catch (SQLException e) {
-            //e.printStackTrace();
             System.out.println("ERROR");
         }
         return false;
@@ -255,8 +252,15 @@ public class Function {
 
     }
 
-    public void delete_proveedor() {
-
+    public boolean delete_proveedor(int codigo_proveedor) {
+        try (Connection conn = DriverManager.getConnection(DB_URL, USER, PASS); CallableStatement stmt = conn.prepareCall("{call sp_proveedor_delete(?)}")) {
+            stmt.setInt(1, codigo_proveedor);
+            stmt.execute();
+            return true;
+        } catch (SQLException e) {
+            System.out.println("ERROR");
+        }
+        return false;
     }
 
     public void delete_telefono() {
@@ -273,14 +277,20 @@ public class Function {
             stmt.execute();
             return true;
         } catch (SQLException e) {
-            //e.printStackTrace();
             System.out.println("ERROR");
         }
         return false;
     }
 
-    public void delete_compra() {
-
+    public boolean delete_compra(int id_compra) {
+        try (Connection conn = DriverManager.getConnection(DB_URL, USER, PASS); CallableStatement stmt = conn.prepareCall("{call sp_compra_delete(?)}")) {
+            stmt.setInt(1, id_compra);
+            stmt.execute();
+            return true;
+        } catch (SQLException e) {
+            System.out.println("ERROR");
+        }
+        return false;
     }
 
     public void delete_producto() {
