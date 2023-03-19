@@ -1745,7 +1745,7 @@
                               <EmptySpace min="-2" pref="336" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
-                              <Component id="buttun_detalles_compras_panel" min="-2" max="-2" attributes="0"/>
+                              <Component id="button_detalles_compras_panel" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="159" max="-2" attributes="0"/>
                           </Group>
                       </Group>
@@ -1758,7 +1758,7 @@
                       <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
                       <Component id="label_sign_up_panel5" min="-2" pref="73" max="-2" attributes="0"/>
                       <EmptySpace pref="232" max="32767" attributes="0"/>
-                      <Component id="buttun_detalles_compras_panel" min="-2" max="-2" attributes="0"/>
+                      <Component id="button_detalles_compras_panel" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="regresar4" alignment="1" min="-2" max="-2" attributes="0"/>
@@ -1884,13 +1884,13 @@
                 </Component>
               </SubComponents>
             </Container>
-            <Component class="javax.swing.JButton" name="buttun_detalles_compras_panel">
+            <Component class="javax.swing.JButton" name="button_detalles_compras_panel">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Detalles de compras"/>
               </Properties>
               <Events>
-                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="buttun_detalles_compras_panelMouseClicked"/>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttun_detalles_compras_panelActionPerformed"/>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="button_detalles_compras_panelMouseClicked"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="button_detalles_compras_panelActionPerformed"/>
               </Events>
             </Component>
           </SubComponents>
@@ -1927,7 +1927,7 @@
                               <EmptySpace min="-2" pref="336" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
-                              <Component id="buttun_detalles_ajustes_panel" min="-2" max="-2" attributes="0"/>
+                              <Component id="button_detalles_ajustes_panel" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="144" max="-2" attributes="0"/>
                           </Group>
                       </Group>
@@ -1940,7 +1940,7 @@
                       <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
                       <Component id="label_sign_up_panel6" min="-2" pref="73" max="-2" attributes="0"/>
                       <EmptySpace pref="230" max="32767" attributes="0"/>
-                      <Component id="buttun_detalles_ajustes_panel" min="-2" max="-2" attributes="0"/>
+                      <Component id="button_detalles_ajustes_panel" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="regresar5" alignment="1" min="-2" max="-2" attributes="0"/>
@@ -2060,12 +2060,12 @@
                 </Component>
               </SubComponents>
             </Container>
-            <Component class="javax.swing.JButton" name="buttun_detalles_ajustes_panel">
+            <Component class="javax.swing.JButton" name="button_detalles_ajustes_panel">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Detalles de ajustes"/>
               </Properties>
               <Events>
-                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="buttun_detalles_ajustes_panelMouseClicked"/>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="button_detalles_ajustes_panelMouseClicked"/>
               </Events>
             </Component>
           </SubComponents>
@@ -2102,7 +2102,7 @@
                               <EmptySpace min="-2" pref="336" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
-                              <Component id="buttun_detalles_facturas_panel" min="-2" max="-2" attributes="0"/>
+                              <Component id="button_detalles_facturas_panel" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="155" max="-2" attributes="0"/>
                           </Group>
                       </Group>
@@ -2115,7 +2115,7 @@
                       <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
                       <Component id="label_sign_up_panel7" min="-2" pref="73" max="-2" attributes="0"/>
                       <EmptySpace pref="214" max="32767" attributes="0"/>
-                      <Component id="buttun_detalles_facturas_panel" min="-2" max="-2" attributes="0"/>
+                      <Component id="button_detalles_facturas_panel" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="regresar6" alignment="1" min="-2" max="-2" attributes="0"/>
@@ -2253,12 +2253,12 @@
                 </Component>
               </SubComponents>
             </Container>
-            <Component class="javax.swing.JButton" name="buttun_detalles_facturas_panel">
+            <Component class="javax.swing.JButton" name="button_detalles_facturas_panel">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Detalles de facturas"/>
               </Properties>
               <Events>
-                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="buttun_detalles_facturas_panelMouseClicked"/>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="button_detalles_facturas_panelMouseClicked"/>
               </Events>
             </Component>
           </SubComponents>
@@ -2654,7 +2654,7 @@
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
               <SubComponents>
-                <Component class="javax.swing.JTable" name="table_detalle_ajustes">
+                <Component class="javax.swing.JTable" name="table_detalle_ajuste">
                   <Properties>
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                       <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
@@ -2842,7 +2842,7 @@
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
               <SubComponents>
-                <Component class="javax.swing.JTable" name="table_detalle_ajustes1">
+                <Component class="javax.swing.JTable" name="table_detalle_factura">
                   <Properties>
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                       <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
@@ -3005,7 +3005,7 @@
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
               <SubComponents>
-                <Component class="javax.swing.JTable" name="table_detalle_ajustes2">
+                <Component class="javax.swing.JTable" name="table_detalle_compra">
                   <Properties>
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                       <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">

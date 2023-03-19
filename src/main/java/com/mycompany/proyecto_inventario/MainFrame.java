@@ -133,21 +133,21 @@ public class MainFrame extends javax.swing.JFrame {
         button_refresh_compras = new javax.swing.JButton();
         jScrollPane4 = new javax.swing.JScrollPane();
         table_compras = new javax.swing.JTable();
-        buttun_detalles_compras_panel = new javax.swing.JButton();
+        button_detalles_compras_panel = new javax.swing.JButton();
         panel_ajustes = new javax.swing.JPanel();
         label_sign_up_panel6 = new javax.swing.JLabel();
         regresar5 = new javax.swing.JButton();
         button_refresh_ajustes = new javax.swing.JButton();
         jScrollPane5 = new javax.swing.JScrollPane();
         table_ajustes = new javax.swing.JTable();
-        buttun_detalles_ajustes_panel = new javax.swing.JButton();
+        button_detalles_ajustes_panel = new javax.swing.JButton();
         panel_facturas = new javax.swing.JPanel();
         label_sign_up_panel7 = new javax.swing.JLabel();
         regresar6 = new javax.swing.JButton();
         button_refresh_facturas = new javax.swing.JButton();
         jScrollPane6 = new javax.swing.JScrollPane();
         table_facturas = new javax.swing.JTable();
-        buttun_detalles_facturas_panel = new javax.swing.JButton();
+        button_detalles_facturas_panel = new javax.swing.JButton();
         panel_proveedores = new javax.swing.JPanel();
         label_sign_up_panel8 = new javax.swing.JLabel();
         regresar7 = new javax.swing.JButton();
@@ -163,7 +163,7 @@ public class MainFrame extends javax.swing.JFrame {
         jPanel5 = new javax.swing.JPanel();
         button_refresh_detalle_ajustes = new javax.swing.JButton();
         jScrollPane11 = new javax.swing.JScrollPane();
-        table_detalle_ajustes = new javax.swing.JTable();
+        table_detalle_ajuste = new javax.swing.JTable();
         label_sign_up_panel10 = new javax.swing.JLabel();
         button_regresar_d_ajustes = new javax.swing.JButton();
         jPanel6 = new javax.swing.JPanel();
@@ -171,13 +171,13 @@ public class MainFrame extends javax.swing.JFrame {
         button_regresar_d_facturas = new javax.swing.JButton();
         button_refresh_detalle_facturas = new javax.swing.JButton();
         jScrollPane12 = new javax.swing.JScrollPane();
-        table_detalle_ajustes1 = new javax.swing.JTable();
+        table_detalle_factura = new javax.swing.JTable();
         jPanel7 = new javax.swing.JPanel();
         label_sign_up_panel12 = new javax.swing.JLabel();
         button_regresar_d_compras = new javax.swing.JButton();
         button_refresh_detalle_compras = new javax.swing.JButton();
         jScrollPane13 = new javax.swing.JScrollPane();
-        table_detalle_ajustes2 = new javax.swing.JTable();
+        table_detalle_compra = new javax.swing.JTable();
 
         jLabel12.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(255, 255, 255));
@@ -1164,15 +1164,15 @@ public class MainFrame extends javax.swing.JFrame {
             table_compras.getColumnModel().getColumn(8).setMinWidth(200);
         }
 
-        buttun_detalles_compras_panel.setText("Detalles de compras");
-        buttun_detalles_compras_panel.addMouseListener(new java.awt.event.MouseAdapter() {
+        button_detalles_compras_panel.setText("Detalles de compras");
+        button_detalles_compras_panel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                buttun_detalles_compras_panelMouseClicked(evt);
+                button_detalles_compras_panelMouseClicked(evt);
             }
         });
-        buttun_detalles_compras_panel.addActionListener(new java.awt.event.ActionListener() {
+        button_detalles_compras_panel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttun_detalles_compras_panelActionPerformed(evt);
+                button_detalles_compras_panelActionPerformed(evt);
             }
         });
 
@@ -1193,7 +1193,7 @@ public class MainFrame extends javax.swing.JFrame {
                         .addComponent(label_sign_up_panel5)
                         .addGap(336, 336, 336))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_comprasLayout.createSequentialGroup()
-                        .addComponent(buttun_detalles_compras_panel)
+                        .addComponent(button_detalles_compras_panel)
                         .addGap(159, 159, 159))))
         );
         panel_comprasLayout.setVerticalGroup(
@@ -1202,7 +1202,7 @@ public class MainFrame extends javax.swing.JFrame {
                 .addGap(16, 16, 16)
                 .addComponent(label_sign_up_panel5, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 232, Short.MAX_VALUE)
-                .addComponent(buttun_detalles_compras_panel)
+                .addComponent(button_detalles_compras_panel)
                 .addGap(29, 29, 29)
                 .addGroup(panel_comprasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(regresar4, javax.swing.GroupLayout.Alignment.TRAILING)
@@ -1255,10 +1255,10 @@ public class MainFrame extends javax.swing.JFrame {
             table_ajustes.getColumnModel().getColumn(7).setMinWidth(200);
         }
 
-        buttun_detalles_ajustes_panel.setText("Detalles de ajustes");
-        buttun_detalles_ajustes_panel.addMouseListener(new java.awt.event.MouseAdapter() {
+        button_detalles_ajustes_panel.setText("Detalles de ajustes");
+        button_detalles_ajustes_panel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                buttun_detalles_ajustes_panelMouseClicked(evt);
+                button_detalles_ajustes_panelMouseClicked(evt);
             }
         });
 
@@ -1279,7 +1279,7 @@ public class MainFrame extends javax.swing.JFrame {
                         .addComponent(label_sign_up_panel6)
                         .addGap(336, 336, 336))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_ajustesLayout.createSequentialGroup()
-                        .addComponent(buttun_detalles_ajustes_panel)
+                        .addComponent(button_detalles_ajustes_panel)
                         .addGap(144, 144, 144))))
         );
         panel_ajustesLayout.setVerticalGroup(
@@ -1288,7 +1288,7 @@ public class MainFrame extends javax.swing.JFrame {
                 .addGap(16, 16, 16)
                 .addComponent(label_sign_up_panel6, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 230, Short.MAX_VALUE)
-                .addComponent(buttun_detalles_ajustes_panel)
+                .addComponent(button_detalles_ajustes_panel)
                 .addGap(31, 31, 31)
                 .addGroup(panel_ajustesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(regresar5, javax.swing.GroupLayout.Alignment.TRAILING)
@@ -1344,10 +1344,10 @@ public class MainFrame extends javax.swing.JFrame {
             table_facturas.getColumnModel().getColumn(10).setMinWidth(200);
         }
 
-        buttun_detalles_facturas_panel.setText("Detalles de facturas");
-        buttun_detalles_facturas_panel.addMouseListener(new java.awt.event.MouseAdapter() {
+        button_detalles_facturas_panel.setText("Detalles de facturas");
+        button_detalles_facturas_panel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                buttun_detalles_facturas_panelMouseClicked(evt);
+                button_detalles_facturas_panelMouseClicked(evt);
             }
         });
 
@@ -1368,7 +1368,7 @@ public class MainFrame extends javax.swing.JFrame {
                         .addComponent(label_sign_up_panel7)
                         .addGap(336, 336, 336))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_facturasLayout.createSequentialGroup()
-                        .addComponent(buttun_detalles_facturas_panel)
+                        .addComponent(button_detalles_facturas_panel)
                         .addGap(155, 155, 155))))
         );
         panel_facturasLayout.setVerticalGroup(
@@ -1377,7 +1377,7 @@ public class MainFrame extends javax.swing.JFrame {
                 .addGap(16, 16, 16)
                 .addComponent(label_sign_up_panel7, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 214, Short.MAX_VALUE)
-                .addComponent(buttun_detalles_facturas_panel)
+                .addComponent(button_detalles_facturas_panel)
                 .addGap(47, 47, 47)
                 .addGroup(panel_facturasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(regresar6, javax.swing.GroupLayout.Alignment.TRAILING)
@@ -1544,8 +1544,8 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
 
-        table_detalle_ajustes.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
-        table_detalle_ajustes.setModel(new javax.swing.table.DefaultTableModel(
+        table_detalle_ajuste.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+        table_detalle_ajuste.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -1553,17 +1553,17 @@ public class MainFrame extends javax.swing.JFrame {
                 "numero_detalle_ajuste", "id_ajuste", "codigo_producto", "coste_producto", "cantidad", "subtotal"
             }
         ));
-        table_detalle_ajustes.setAutoResizeMode(0);
-        table_detalle_ajustes.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        table_detalle_ajustes.setEnabled(false);
-        jScrollPane11.setViewportView(table_detalle_ajustes);
-        if (table_detalle_ajustes.getColumnModel().getColumnCount() > 0) {
-            table_detalle_ajustes.getColumnModel().getColumn(0).setMinWidth(180);
-            table_detalle_ajustes.getColumnModel().getColumn(1).setMinWidth(180);
-            table_detalle_ajustes.getColumnModel().getColumn(2).setMinWidth(180);
-            table_detalle_ajustes.getColumnModel().getColumn(3).setMinWidth(180);
-            table_detalle_ajustes.getColumnModel().getColumn(4).setMinWidth(100);
-            table_detalle_ajustes.getColumnModel().getColumn(5).setMinWidth(130);
+        table_detalle_ajuste.setAutoResizeMode(0);
+        table_detalle_ajuste.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        table_detalle_ajuste.setEnabled(false);
+        jScrollPane11.setViewportView(table_detalle_ajuste);
+        if (table_detalle_ajuste.getColumnModel().getColumnCount() > 0) {
+            table_detalle_ajuste.getColumnModel().getColumn(0).setMinWidth(180);
+            table_detalle_ajuste.getColumnModel().getColumn(1).setMinWidth(180);
+            table_detalle_ajuste.getColumnModel().getColumn(2).setMinWidth(180);
+            table_detalle_ajuste.getColumnModel().getColumn(3).setMinWidth(180);
+            table_detalle_ajuste.getColumnModel().getColumn(4).setMinWidth(100);
+            table_detalle_ajuste.getColumnModel().getColumn(5).setMinWidth(130);
         }
 
         label_sign_up_panel10.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
@@ -1636,8 +1636,8 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
 
-        table_detalle_ajustes1.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
-        table_detalle_ajustes1.setModel(new javax.swing.table.DefaultTableModel(
+        table_detalle_factura.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+        table_detalle_factura.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -1645,17 +1645,17 @@ public class MainFrame extends javax.swing.JFrame {
                 "numero_detalle_factura", "numero_factura", "codigo_producto", "precio_venta", "cantidad", "subtotal"
             }
         ));
-        table_detalle_ajustes1.setAutoResizeMode(0);
-        table_detalle_ajustes1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        table_detalle_ajustes1.setEnabled(false);
-        jScrollPane12.setViewportView(table_detalle_ajustes1);
-        if (table_detalle_ajustes1.getColumnModel().getColumnCount() > 0) {
-            table_detalle_ajustes1.getColumnModel().getColumn(0).setMinWidth(180);
-            table_detalle_ajustes1.getColumnModel().getColumn(1).setMinWidth(180);
-            table_detalle_ajustes1.getColumnModel().getColumn(2).setMinWidth(180);
-            table_detalle_ajustes1.getColumnModel().getColumn(3).setMinWidth(180);
-            table_detalle_ajustes1.getColumnModel().getColumn(4).setMinWidth(100);
-            table_detalle_ajustes1.getColumnModel().getColumn(5).setMinWidth(130);
+        table_detalle_factura.setAutoResizeMode(0);
+        table_detalle_factura.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        table_detalle_factura.setEnabled(false);
+        jScrollPane12.setViewportView(table_detalle_factura);
+        if (table_detalle_factura.getColumnModel().getColumnCount() > 0) {
+            table_detalle_factura.getColumnModel().getColumn(0).setMinWidth(180);
+            table_detalle_factura.getColumnModel().getColumn(1).setMinWidth(180);
+            table_detalle_factura.getColumnModel().getColumn(2).setMinWidth(180);
+            table_detalle_factura.getColumnModel().getColumn(3).setMinWidth(180);
+            table_detalle_factura.getColumnModel().getColumn(4).setMinWidth(100);
+            table_detalle_factura.getColumnModel().getColumn(5).setMinWidth(130);
         }
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
@@ -1715,8 +1715,8 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
 
-        table_detalle_ajustes2.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
-        table_detalle_ajustes2.setModel(new javax.swing.table.DefaultTableModel(
+        table_detalle_compra.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+        table_detalle_compra.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -1724,17 +1724,17 @@ public class MainFrame extends javax.swing.JFrame {
                 "numero_detalle_compra", "id_compra", "codigo_producto", "costo_compra", "subtotal", "cantidad"
             }
         ));
-        table_detalle_ajustes2.setAutoResizeMode(0);
-        table_detalle_ajustes2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        table_detalle_ajustes2.setEnabled(false);
-        jScrollPane13.setViewportView(table_detalle_ajustes2);
-        if (table_detalle_ajustes2.getColumnModel().getColumnCount() > 0) {
-            table_detalle_ajustes2.getColumnModel().getColumn(0).setMinWidth(180);
-            table_detalle_ajustes2.getColumnModel().getColumn(1).setMinWidth(180);
-            table_detalle_ajustes2.getColumnModel().getColumn(2).setMinWidth(180);
-            table_detalle_ajustes2.getColumnModel().getColumn(3).setMinWidth(180);
-            table_detalle_ajustes2.getColumnModel().getColumn(4).setMinWidth(100);
-            table_detalle_ajustes2.getColumnModel().getColumn(5).setMinWidth(130);
+        table_detalle_compra.setAutoResizeMode(0);
+        table_detalle_compra.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        table_detalle_compra.setEnabled(false);
+        jScrollPane13.setViewportView(table_detalle_compra);
+        if (table_detalle_compra.getColumnModel().getColumnCount() > 0) {
+            table_detalle_compra.getColumnModel().getColumn(0).setMinWidth(180);
+            table_detalle_compra.getColumnModel().getColumn(1).setMinWidth(180);
+            table_detalle_compra.getColumnModel().getColumn(2).setMinWidth(180);
+            table_detalle_compra.getColumnModel().getColumn(3).setMinWidth(180);
+            table_detalle_compra.getColumnModel().getColumn(4).setMinWidth(100);
+            table_detalle_compra.getColumnModel().getColumn(5).setMinWidth(130);
         }
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
@@ -1978,12 +1978,13 @@ public class MainFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_button_refresh_signupMouseClicked
 
     private void button_refresh_detalle_ajustesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button_refresh_detalle_ajustesMouseClicked
-        // TODO add your handling code here:
+        this.cargarTablaDetallesAjustes();
     }//GEN-LAST:event_button_refresh_detalle_ajustesMouseClicked
 
-    private void buttun_detalles_ajustes_panelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttun_detalles_ajustes_panelMouseClicked
+    private void button_detalles_ajustes_panelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button_detalles_ajustes_panelMouseClicked
         this.jTabbedPane1.setSelectedIndex(12);
-    }//GEN-LAST:event_buttun_detalles_ajustes_panelMouseClicked
+        this.cargarTablaDetallesAjustes();
+    }//GEN-LAST:event_button_detalles_ajustes_panelMouseClicked
 
     private void button_regresar_d_ajustesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button_regresar_d_ajustesMouseClicked
         this.jTabbedPane1.setSelectedIndex(8);
@@ -1994,7 +1995,7 @@ public class MainFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_button_regresar_d_facturasMouseClicked
 
     private void button_refresh_detalle_facturasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button_refresh_detalle_facturasMouseClicked
-        // TODO add your handling code here:
+        this.cargarTablaDetallesFacturas();
     }//GEN-LAST:event_button_refresh_detalle_facturasMouseClicked
 
     private void button_regresar_d_comprasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button_regresar_d_comprasMouseClicked
@@ -2002,20 +2003,22 @@ public class MainFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_button_regresar_d_comprasMouseClicked
 
     private void button_refresh_detalle_comprasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button_refresh_detalle_comprasMouseClicked
-        // TODO add your handling code here:
+        this.cargarTablaDetallesCompras();
     }//GEN-LAST:event_button_refresh_detalle_comprasMouseClicked
 
-    private void buttun_detalles_compras_panelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttun_detalles_compras_panelMouseClicked
+    private void button_detalles_compras_panelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button_detalles_compras_panelMouseClicked
         this.jTabbedPane1.setSelectedIndex(14);
-    }//GEN-LAST:event_buttun_detalles_compras_panelMouseClicked
+        this.cargarTablaDetallesCompras();
+    }//GEN-LAST:event_button_detalles_compras_panelMouseClicked
 
-    private void buttun_detalles_compras_panelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttun_detalles_compras_panelActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_buttun_detalles_compras_panelActionPerformed
+    private void button_detalles_compras_panelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_detalles_compras_panelActionPerformed
+        this.cargarTablaDetallesCompras();
+    }//GEN-LAST:event_button_detalles_compras_panelActionPerformed
 
-    private void buttun_detalles_facturas_panelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttun_detalles_facturas_panelMouseClicked
+    private void button_detalles_facturas_panelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button_detalles_facturas_panelMouseClicked
         this.jTabbedPane1.setSelectedIndex(13);
-    }//GEN-LAST:event_buttun_detalles_facturas_panelMouseClicked
+        this.cargarTablaFacturas();
+    }//GEN-LAST:event_button_detalles_facturas_panelMouseClicked
 
     // Función para verificar si el usuario existe.
     private boolean loginCorrecto(String user, String password) {
@@ -2478,6 +2481,152 @@ public class MainFrame extends javax.swing.JFrame {
         }
     }
 
+    public void cargarTablaDetallesCompras() {
+        //Cargamos la tabla.
+        try (Connection conn = DriverManager.getConnection(funciones.getDB_URL(), funciones.getUSER(), funciones.getPASS()); CallableStatement stmt = conn.prepareCall("{call sp_detalle_compra_read}")) {
+            stmt.execute();
+            ResultSet rs = stmt.getResultSet();
+            ResultSetMetaData rsmd = rs.getMetaData();
+            StringBuilder sb = new StringBuilder();
+
+            DefaultTableModel model = (DefaultTableModel) this.table_detalle_compra.getModel();
+
+            //Vaciamos la table.
+            model.setRowCount(0);
+
+            int cantidad_registros = rsmd.getColumnCount();
+            String[] colName = new String[cantidad_registros];
+
+            for (int i = 0; i < cantidad_registros; i++) {
+                colName[i] = rsmd.getColumnName(i + 1);
+            }
+            model.setColumnIdentifiers(colName);
+
+            
+            String numero_detalle_compra;
+            String id_compra;
+            String codigo_producto;
+            String costo_compra;
+            String subtotal;
+            String cantidad;
+            
+            
+
+            while (rs.next()) {
+                
+                numero_detalle_compra = rs.getString(1);
+                id_compra = rs.getString(2);
+                codigo_producto = rs.getString(3);
+                costo_compra = rs.getString(4);
+                subtotal = rs.getString(5);
+                cantidad = rs.getString(6);
+                
+                String[] row = {numero_detalle_compra, id_compra, codigo_producto, costo_compra, subtotal, cantidad};
+                model.addRow(row);
+            }
+
+        } catch (SQLException e) {
+            System.out.println("No se ha conectado!");
+        }
+    }
+    
+    public void cargarTablaDetallesAjustes() {
+        //Cargamos la tabla.
+        try (Connection conn = DriverManager.getConnection(funciones.getDB_URL(), funciones.getUSER(), funciones.getPASS()); CallableStatement stmt = conn.prepareCall("{call sp_detalle_ajuste_read}")) {
+            stmt.execute();
+            ResultSet rs = stmt.getResultSet();
+            ResultSetMetaData rsmd = rs.getMetaData();
+            StringBuilder sb = new StringBuilder();
+
+            DefaultTableModel model = (DefaultTableModel) this.table_detalle_ajuste.getModel();
+
+            //Vaciamos la table.
+            model.setRowCount(0);
+
+            int cantidad_registros = rsmd.getColumnCount();
+            String[] colName = new String[cantidad_registros];
+
+            for (int i = 0; i < cantidad_registros; i++) {
+                colName[i] = rsmd.getColumnName(i + 1);
+            }
+            model.setColumnIdentifiers(colName);
+
+            
+            String numero_detalle_ajuste;
+            String id_ajuste;
+            String codigo_producto;
+            String coste_producto;
+            String cantidad;
+            String subtotal;
+
+            while (rs.next()) {
+                
+                numero_detalle_ajuste = rs.getString(1);
+                id_ajuste = rs.getString(2);
+                codigo_producto = rs.getString(3);
+                coste_producto = rs.getString(4);
+                cantidad = rs.getString(5);
+                subtotal = rs.getString(6);
+                
+                String[] row = {numero_detalle_ajuste, id_ajuste, codigo_producto, coste_producto, cantidad, subtotal};
+                model.addRow(row);
+            }
+
+        } catch (SQLException e) {
+            System.out.println("No se ha conectado!");
+        }
+    }
+    
+        public void cargarTablaDetallesFacturas() {
+        //Cargamos la tabla.
+        try (Connection conn = DriverManager.getConnection(funciones.getDB_URL(), funciones.getUSER(), funciones.getPASS()); CallableStatement stmt = conn.prepareCall("{call sp_detalle_factura_read}")) {
+            stmt.execute();
+            ResultSet rs = stmt.getResultSet();
+            ResultSetMetaData rsmd = rs.getMetaData();
+            StringBuilder sb = new StringBuilder();
+
+            DefaultTableModel model = (DefaultTableModel) this.table_detalle_factura.getModel();
+
+            //Vaciamos la table.
+            model.setRowCount(0);
+
+            int cantidad_registros = rsmd.getColumnCount();
+            String[] colName = new String[cantidad_registros];
+
+            for (int i = 0; i < cantidad_registros; i++) {
+                colName[i] = rsmd.getColumnName(i + 1);
+            }
+            model.setColumnIdentifiers(colName);
+
+            
+            String numero_detalle_factura;
+            String numero_factura;
+            String codigo_producto;
+            String precio_venta;
+            String cantidad;
+            String subtotal;
+
+            while (rs.next()) {
+                
+                numero_detalle_factura = rs.getString(1);
+                numero_factura = rs.getString(2);
+                codigo_producto = rs.getString(3);
+                precio_venta = rs.getString(4);
+                cantidad = rs.getString(5);
+                subtotal = rs.getString(6);
+                
+                String[] row = {numero_detalle_factura, numero_factura, codigo_producto, precio_venta, cantidad, subtotal};
+                model.addRow(row);
+            }
+
+        } catch (SQLException e) {
+            System.out.println("No se ha conectado!");
+        }
+    }
+    
+    
+    
+    
     /**
      * @param args the command line arguments
      */
@@ -2521,6 +2670,9 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JButton button_ajustes;
     private javax.swing.JButton button_clientes;
     private javax.swing.JButton button_compras;
+    private javax.swing.JButton button_detalles_ajustes_panel;
+    private javax.swing.JButton button_detalles_compras_panel;
+    private javax.swing.JButton button_detalles_facturas_panel;
     private javax.swing.JButton button_facturas;
     private javax.swing.JButton button_kardex;
     private javax.swing.JButton button_login;
@@ -2547,9 +2699,6 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JButton button_regresar_signUp;
     private javax.swing.JButton button_roles;
     private javax.swing.JButton button_usuarios;
-    private javax.swing.JButton buttun_detalles_ajustes_panel;
-    private javax.swing.JButton buttun_detalles_compras_panel;
-    private javax.swing.JButton buttun_detalles_facturas_panel;
     private javax.swing.JTextField field_password_nueva;
     private javax.swing.JTextField field_user_nuevo;
     private javax.swing.JButton jButton1;
@@ -2639,9 +2788,9 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JTable table_ajustes;
     private javax.swing.JTable table_clientes;
     private javax.swing.JTable table_compras;
-    private javax.swing.JTable table_detalle_ajustes;
-    private javax.swing.JTable table_detalle_ajustes1;
-    private javax.swing.JTable table_detalle_ajustes2;
+    private javax.swing.JTable table_detalle_ajuste;
+    private javax.swing.JTable table_detalle_compra;
+    private javax.swing.JTable table_detalle_factura;
     private javax.swing.JTable table_facturas;
     private javax.swing.JTable table_kardex;
     private javax.swing.JTable table_privilegios;
