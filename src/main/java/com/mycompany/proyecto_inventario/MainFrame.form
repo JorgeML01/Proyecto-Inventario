@@ -1746,7 +1746,7 @@
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
                               <Component id="button_detalles_compras_panel" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="159" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="144" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -1757,9 +1757,9 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
                       <Component id="label_sign_up_panel5" min="-2" pref="73" max="-2" attributes="0"/>
-                      <EmptySpace pref="232" max="32767" attributes="0"/>
+                      <EmptySpace pref="243" max="32767" attributes="0"/>
                       <Component id="button_detalles_compras_panel" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="regresar4" alignment="1" min="-2" max="-2" attributes="0"/>
                           <Component id="jScrollPane4" alignment="1" min="-2" pref="133" max="-2" attributes="0"/>
@@ -1928,7 +1928,7 @@
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
                               <Component id="button_detalles_ajustes_panel" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="144" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="150" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -1939,9 +1939,9 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
                       <Component id="label_sign_up_panel6" min="-2" pref="73" max="-2" attributes="0"/>
-                      <EmptySpace pref="230" max="32767" attributes="0"/>
+                      <EmptySpace pref="243" max="32767" attributes="0"/>
                       <Component id="button_detalles_ajustes_panel" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="regresar5" alignment="1" min="-2" max="-2" attributes="0"/>
                           <Component id="jScrollPane5" alignment="1" min="-2" pref="133" max="-2" attributes="0"/>
@@ -2103,7 +2103,7 @@
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
                               <Component id="button_detalles_facturas_panel" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="155" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="158" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -2114,9 +2114,9 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
                       <Component id="label_sign_up_panel7" min="-2" pref="73" max="-2" attributes="0"/>
-                      <EmptySpace pref="214" max="32767" attributes="0"/>
+                      <EmptySpace pref="249" max="32767" attributes="0"/>
                       <Component id="button_detalles_facturas_panel" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="regresar6" alignment="1" min="-2" max="-2" attributes="0"/>
                           <Component id="jScrollPane6" alignment="1" min="-2" pref="133" max="-2" attributes="0"/>
