@@ -248,8 +248,15 @@ public class Function {
         return false;
     }
 
-    public void delete_cliente() {
-
+    public boolean delete_cliente(int id_cliente) {
+        try (Connection conn = DriverManager.getConnection(DB_URL, USER, PASS); CallableStatement stmt = conn.prepareCall("{call sp_cliente_delete(?)}")) {
+            stmt.setInt(1, id_cliente);
+            stmt.execute();
+            return true;
+        } catch (SQLException e) {
+            System.out.println("ERROR");
+        }
+        return false;
     }
 
     public boolean delete_proveedor(int codigo_proveedor) {

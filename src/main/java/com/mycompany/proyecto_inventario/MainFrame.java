@@ -196,6 +196,11 @@ public class MainFrame extends javax.swing.JFrame {
         button_refresh_clientes = new javax.swing.JButton();
         jScrollPane8 = new javax.swing.JScrollPane();
         table_clientes = new javax.swing.JTable();
+        jLabel30 = new javax.swing.JLabel();
+        jPanel16 = new javax.swing.JPanel();
+        field_delete_cliente = new javax.swing.JTextField();
+        button_delete_cliente = new javax.swing.JButton();
+        jLabel31 = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
         button_refresh_detalle_ajustes = new javax.swing.JButton();
         jScrollPane11 = new javax.swing.JScrollPane();
@@ -1963,27 +1968,87 @@ public class MainFrame extends javax.swing.JFrame {
             table_clientes.getColumnModel().getColumn(5).setMinWidth(130);
         }
 
+        jLabel30.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel30.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel30.setText("Eliminar cliente");
+
+        jPanel16.setBackground(new java.awt.Color(204, 0, 0));
+
+        button_delete_cliente.setText("Ok");
+        button_delete_cliente.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                button_delete_clienteMouseClicked(evt);
+            }
+        });
+
+        jLabel31.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel31.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel31.setText("id_cliente");
+
+        javax.swing.GroupLayout jPanel16Layout = new javax.swing.GroupLayout(jPanel16);
+        jPanel16.setLayout(jPanel16Layout);
+        jPanel16Layout.setHorizontalGroup(
+            jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel16Layout.createSequentialGroup()
+                .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel16Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(field_delete_cliente))
+                    .addGroup(jPanel16Layout.createSequentialGroup()
+                        .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel16Layout.createSequentialGroup()
+                                .addGap(39, 39, 39)
+                                .addComponent(jLabel31))
+                            .addGroup(jPanel16Layout.createSequentialGroup()
+                                .addGap(41, 41, 41)
+                                .addComponent(button_delete_cliente)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
+        );
+        jPanel16Layout.setVerticalGroup(
+            jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel16Layout.createSequentialGroup()
+                .addGap(8, 8, 8)
+                .addComponent(jLabel31)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(field_delete_cliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(button_delete_cliente)
+                .addContainerGap(14, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout panel_clientesLayout = new javax.swing.GroupLayout(panel_clientes);
         panel_clientes.setLayout(panel_clientesLayout);
         panel_clientesLayout.setHorizontalGroup(
             panel_clientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_clientesLayout.createSequentialGroup()
-                .addContainerGap(356, Short.MAX_VALUE)
-                .addComponent(label_sign_up_panel9)
-                .addGap(336, 336, 336))
             .addGroup(panel_clientesLayout.createSequentialGroup()
                 .addComponent(regresar8)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 337, Short.MAX_VALUE)
                 .addComponent(button_refresh_clientes)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 414, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_clientesLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(panel_clientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_clientesLayout.createSequentialGroup()
+                        .addComponent(label_sign_up_panel9)
+                        .addGap(336, 336, 336))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_clientesLayout.createSequentialGroup()
+                        .addGroup(panel_clientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(jLabel30, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jPanel16, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(45, 45, 45))))
         );
         panel_clientesLayout.setVerticalGroup(
             panel_clientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panel_clientesLayout.createSequentialGroup()
                 .addGap(22, 22, 22)
                 .addComponent(label_sign_up_panel9, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 277, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 91, Short.MAX_VALUE)
+                .addComponent(jLabel30)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(55, 55, 55)
                 .addGroup(panel_clientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_clientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(regresar8)
@@ -2615,6 +2680,23 @@ public class MainFrame extends javax.swing.JFrame {
 
         this.cargarTablaAjustes();
     }//GEN-LAST:event_button_delete_ajusteMouseClicked
+
+    private void button_delete_clienteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button_delete_clienteMouseClicked
+        // Botón para borrar un cliente.
+        try {
+            int id_cliente = Integer.parseInt(this.field_delete_cliente.getText());
+            if (this.funciones.delete_cliente(id_cliente)) {
+                JOptionPane.showMessageDialog(null, "¡Se ha borrado el cliente!");
+                this.field_delete_cliente.setText("");
+            } else {
+                JOptionPane.showMessageDialog(null, "¡No se pudo borrar!");
+            }
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(null, "¡No se pudo borrar!");
+        }
+
+        this.cargarTablaClientes();
+    }//GEN-LAST:event_button_delete_clienteMouseClicked
 
     // Función para verificar si el usuario existe.
     private boolean loginCorrecto(String user, String password) {
@@ -3259,6 +3341,7 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JButton button_clientes;
     private javax.swing.JButton button_compras;
     private javax.swing.JButton button_delete_ajuste;
+    private javax.swing.JButton button_delete_cliente;
     private javax.swing.JButton button_delete_compra;
     private javax.swing.JButton button_delete_factura;
     private javax.swing.JButton button_delete_privilegio;
@@ -3297,6 +3380,7 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JButton button_roles;
     private javax.swing.JButton button_usuarios;
     private javax.swing.JTextField field_delete_ajuste;
+    private javax.swing.JTextField field_delete_cliente;
     private javax.swing.JTextField field_delete_compra;
     private javax.swing.JTextField field_delete_factura;
     private javax.swing.JTextField field_delete_privilegio;
@@ -3337,6 +3421,8 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel30;
+    private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -3350,6 +3436,7 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel13;
     private javax.swing.JPanel jPanel14;
     private javax.swing.JPanel jPanel15;
+    private javax.swing.JPanel jPanel16;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
