@@ -267,8 +267,15 @@ public class Function {
 
     }
 
-    public void delete_ajuste() {
-
+    public boolean delete_ajuste(int id_ajuste) {
+        try (Connection conn = DriverManager.getConnection(DB_URL, USER, PASS); CallableStatement stmt = conn.prepareCall("{call sp_ajuste_delete(?)}")) {
+            stmt.setInt(1, id_ajuste);
+            stmt.execute();
+            return true;
+        } catch (SQLException e) {
+            System.out.println("ERROR");
+        }
+        return false;
     }
 
     public boolean delete_factura(int numero_factura) {
@@ -293,8 +300,15 @@ public class Function {
         return false;
     }
 
-    public void delete_producto() {
-
+    public boolean delete_producto(int codigo_producto) {
+        try (Connection conn = DriverManager.getConnection(DB_URL, USER, PASS); CallableStatement stmt = conn.prepareCall("{call sp_producto_delete(?)}")) {
+            stmt.setInt(1, codigo_producto);
+            stmt.execute();
+            return true;
+        } catch (SQLException e) {
+            System.out.println("ERROR");
+        }
+        return false;
     }
 
     public void delete_detalle_factura() {
