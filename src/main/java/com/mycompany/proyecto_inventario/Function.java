@@ -69,14 +69,16 @@ public class Function {
         return false;
     }
 
-    public void create_usuario(String usuario_unico, String clave) {
+    public boolean create_usuario(String usuario_unico, String clave) {
         try (Connection conn = DriverManager.getConnection(DB_URL, USER, PASS); CallableStatement stmt = conn.prepareCall("{call sp_usuario_create (?, ?)}")) {
             stmt.setString(1, usuario_unico);
             stmt.setString(2, clave);
             stmt.execute();
+            return true;
         } catch (Exception e) {
             e.printStackTrace(); //Sería bueno agregar un mensaje diciendo que no se pudo crear el usuario por ejemplo.
         }
+        return false;
     }
 
     public boolean create_cliente(int id_cliente, String nombre, String fecha_creacion, String usuario_creo) {

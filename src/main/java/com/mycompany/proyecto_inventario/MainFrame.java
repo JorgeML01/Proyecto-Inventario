@@ -91,7 +91,7 @@ public class MainFrame extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jScrollPane10 = new javax.swing.JScrollPane();
         table_usuarios = new javax.swing.JTable();
-        jButton2 = new javax.swing.JButton();
+        button_sign_up_crear = new javax.swing.JButton();
         jPanel10 = new javax.swing.JPanel();
         field_delete_rol1 = new javax.swing.JTextField();
         button_delete_usuario = new javax.swing.JButton();
@@ -745,9 +745,14 @@ public class MainFrame extends javax.swing.JFrame {
         ));
         jScrollPane10.setViewportView(table_usuarios);
 
-        jButton2.setBackground(new java.awt.Color(0, 53, 53));
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("Sign up");
+        button_sign_up_crear.setBackground(new java.awt.Color(0, 53, 53));
+        button_sign_up_crear.setForeground(new java.awt.Color(255, 255, 255));
+        button_sign_up_crear.setText("Sign up");
+        button_sign_up_crear.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                button_sign_up_crearMouseClicked(evt);
+            }
+        });
 
         jPanel10.setBackground(new java.awt.Color(204, 0, 0));
 
@@ -818,7 +823,7 @@ public class MainFrame extends javax.swing.JFrame {
                             .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(panel_sign_upLayout.createSequentialGroup()
                         .addGap(108, 108, 108)
-                        .addComponent(jButton2)))
+                        .addComponent(button_sign_up_crear)))
                 .addGroup(panel_sign_upLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panel_sign_upLayout.createSequentialGroup()
                         .addGap(70, 70, 70)
@@ -861,7 +866,7 @@ public class MainFrame extends javax.swing.JFrame {
                             .addComponent(field_password_nueva, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(29, 29, 29)
-                        .addComponent(jButton2)
+                        .addComponent(button_sign_up_crear)
                         .addGap(0, 108, Short.MAX_VALUE))
                     .addGroup(panel_sign_upLayout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -3834,6 +3839,19 @@ public class MainFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_button_refresh_facturasActionPerformed
 
+    private void button_sign_up_crearMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button_sign_up_crearMouseClicked
+        String nuevo_user = this.field_user_nuevo.getText();
+        String nueva_clave = this.field_password_nueva.getText();
+        if (this.funciones.create_usuario(nuevo_user, nueva_clave)) {
+            JOptionPane.showMessageDialog(null, "¡Se ha creado!");
+        } else {
+            JOptionPane.showMessageDialog(null, "¡No se pudo crear!");
+        }
+        this.cargarTablaUsuarios();
+        this.field_password_nueva.setText("");
+        this.field_user_nuevo.setText("");
+    }//GEN-LAST:event_button_sign_up_crearMouseClicked
+
     private void inicializarLogIn() {
         this.jTabbedPane1.setSelectedIndex(0);
 
@@ -4698,6 +4716,7 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JButton button_regresar_d_facturas;
     private javax.swing.JButton button_regresar_signUp;
     private javax.swing.JButton button_roles;
+    private javax.swing.JButton button_sign_up_crear;
     private javax.swing.JButton button_usuarios;
     private javax.swing.JTextField field_ajuste_create_ajuste;
     private javax.swing.JTextField field_categoria_create_producto;
@@ -4735,7 +4754,6 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JTextField field_precio_create_producto;
     private javax.swing.JTextField field_salida_create_ajuste;
     private javax.swing.JTextField field_user_nuevo;
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
