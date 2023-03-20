@@ -1,0 +1,9 @@
+Recordar que para los que llevan detalles como:
+compras
+ajustes
+factura
+
+Tenemos que mostrar ambas tablas.
+En el CRUD tenemos que mostrar las tablas.
+Recordar que para roles y privilegio por ejemplo, hay que permitir que el usuario pueda escoger varios a la vez en caso
+de ser necesario.
