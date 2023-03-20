@@ -3,9 +3,11 @@ package com.mycompany.proyecto_inventario;
 import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
+import java.util.Random;
 import javax.swing.table.DefaultTableModel;
 
 public class Function {
@@ -15,6 +17,11 @@ public class Function {
     private static final String DB_URL = "jdbc:db2://localhost:25000/INV_DB";
     private static final String USER = "Usuario";
     private static final String PASS = "admin123";
+    private Random random;
+
+    public Function() {
+        random = new Random();
+    }
 
     //Getters.
     public String getJDBC_DRIVER() {
@@ -46,8 +53,16 @@ public class Function {
         return false;
     }
 
-    public void create_privilegio() {
-
+    public boolean create_privilegio(int id_privilegio, String nombre) {
+        try (Connection conn = DriverManager.getConnection(DB_URL, USER, PASS); CallableStatement stmt = conn.prepareCall("{call sp_privilegio_create (?, ?)}")) {
+            stmt.setInt(1, id_privilegio);
+            stmt.setString(2, nombre);
+            stmt.execute();
+            return true;
+        } catch (Exception e) {
+            System.out.println("NO SE HA CONECTADO A PRIVILEGIO!");
+        }
+        return false;
     }
 
     public void create_usuario(String usuario_unico, String clave) {
@@ -59,7 +74,6 @@ public class Function {
             e.printStackTrace(); //Sería bueno agregar un mensaje diciendo que no se pudo crear el usuario por ejemplo.
         }
     }
-
 
     public void create_cliente() {
 
@@ -270,26 +284,40 @@ public class Function {
 
     }
 
-    public int cantidad_roles(){
-        //Cargamos la tabla.
-        int cantidad_registros = 1;
-        
-        try (Connection conn = DriverManager.getConnection(this.getDB_URL(), this.getUSER(), this.getPASS()); CallableStatement stmt = conn.prepareCall("{call sp_rol_read}")) {
-            stmt.execute();
-            ResultSet rs = stmt.getResultSet();
-            ResultSetMetaData rsmd = rs.getMetaData();
-            cantidad_registros = rsmd.getColumnCount();
-            System.out.println(cantidad_registros);
-            conn.close();
-            return cantidad_registros + 2;
+    public int generarID_ROL() {
+        // Generamos un número aleatorio entre 1 y 1000
+        int numeroAleatorio = random.nextInt(998) + 100;
+        int cantidad_registros = 0;
 
+        try (Connection conn = DriverManager.getConnection(this.getDB_URL(), this.getUSER(), this.getPASS()); PreparedStatement stmt = conn.prepareStatement("SELECT COUNT(*) FROM \"USUARIO\".\"rol\"")) {
+            ResultSet rs = stmt.executeQuery();
+            if (rs.next()) {
+                cantidad_registros = rs.getInt(1);
+            }
+            conn.close();
         } catch (SQLException e) {
             System.out.println("No se ha conectado!");
         }
-        
-        return cantidad_registros;
+
+        return cantidad_registros + 1 + numeroAleatorio;
     }
-    
-    
-    
+
+    public int generarID_PRIVILEGIO() {
+        // Generamos un número aleatorio entre 1 y 1000
+        int numeroAleatorio = random.nextInt(998) + 100;
+        int cantidad_registros = 0;
+
+        try (Connection conn = DriverManager.getConnection(this.getDB_URL(), this.getUSER(), this.getPASS()); PreparedStatement stmt = conn.prepareStatement("SELECT COUNT(*) FROM \"USUARIO\".\"privilegio\"")) {
+            ResultSet rs = stmt.executeQuery();
+            if (rs.next()) {
+                cantidad_registros = rs.getInt(1);
+            }
+            conn.close();
+        } catch (SQLException e) {
+            System.out.println("No se ha conectado!");
+        }
+
+        return cantidad_registros + 1 + numeroAleatorio;
+    }
+
 }

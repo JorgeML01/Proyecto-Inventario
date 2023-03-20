@@ -120,6 +120,18 @@ public class MainFrame extends javax.swing.JFrame {
         field_delete_privilegio = new javax.swing.JTextField();
         button_delete_privilegio = new javax.swing.JButton();
         jLabel16 = new javax.swing.JLabel();
+        jLabel32 = new javax.swing.JLabel();
+        jPanel17 = new javax.swing.JPanel();
+        field_crear_privilegio = new javax.swing.JTextField();
+        jLabel33 = new javax.swing.JLabel();
+        button_create_privilegio = new javax.swing.JButton();
+        jPanel18 = new javax.swing.JPanel();
+        jTextField7 = new javax.swing.JTextField();
+        jTextField8 = new javax.swing.JTextField();
+        jLabel34 = new javax.swing.JLabel();
+        jLabel35 = new javax.swing.JLabel();
+        jButton5 = new javax.swing.JButton();
+        jLabel36 = new javax.swing.JLabel();
         panel_rol = new javax.swing.JPanel();
         label_sign_up_panel4 = new javax.swing.JLabel();
         regresar3 = new javax.swing.JButton();
@@ -143,6 +155,7 @@ public class MainFrame extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
+        list1 = new java.awt.List();
         panel_compras = new javax.swing.JPanel();
         label_sign_up_panel5 = new javax.swing.JLabel();
         regresar4 = new javax.swing.JButton();
@@ -1057,46 +1070,180 @@ public class MainFrame extends javax.swing.JFrame {
                 .addContainerGap(8, Short.MAX_VALUE))
         );
 
+        jLabel32.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel32.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel32.setText("Crear privilegio");
+
+        jPanel17.setBackground(new java.awt.Color(0, 51, 51));
+
+        field_crear_privilegio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                field_crear_privilegioActionPerformed(evt);
+            }
+        });
+
+        jLabel33.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel33.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel33.setText("Nombre del privilegio");
+
+        button_create_privilegio.setText("Ok");
+        button_create_privilegio.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                button_create_privilegioMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel17Layout = new javax.swing.GroupLayout(jPanel17);
+        jPanel17.setLayout(jPanel17Layout);
+        jPanel17Layout.setHorizontalGroup(
+            jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel17Layout.createSequentialGroup()
+                .addContainerGap(24, Short.MAX_VALUE)
+                .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel17Layout.createSequentialGroup()
+                            .addComponent(button_create_privilegio)
+                            .addGap(39, 39, 39))
+                        .addComponent(field_crear_privilegio, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel33))
+                .addGap(26, 26, 26))
+        );
+        jPanel17Layout.setVerticalGroup(
+            jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel17Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel33)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(field_crear_privilegio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(button_create_privilegio)
+                .addContainerGap(59, Short.MAX_VALUE))
+        );
+
+        jPanel18.setBackground(new java.awt.Color(0, 51, 51));
+
+        jLabel34.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel34.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel34.setText("id_rol");
+
+        jLabel35.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel35.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel35.setText("Nuevo nombre");
+
+        jButton5.setText("Ok");
+
+        javax.swing.GroupLayout jPanel18Layout = new javax.swing.GroupLayout(jPanel18);
+        jPanel18.setLayout(jPanel18Layout);
+        jPanel18Layout.setHorizontalGroup(
+            jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel18Layout.createSequentialGroup()
+                .addContainerGap(36, Short.MAX_VALUE)
+                .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel18Layout.createSequentialGroup()
+                            .addComponent(jLabel34)
+                            .addGap(70, 70, 70))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel18Layout.createSequentialGroup()
+                            .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel35, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(jPanel18Layout.createSequentialGroup()
+                                    .addGap(6, 6, 6)
+                                    .addComponent(jButton5)))
+                            .addGap(24, 24, 24))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel18Layout.createSequentialGroup()
+                            .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(34, 34, 34)))))
+        );
+        jPanel18Layout.setVerticalGroup(
+            jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel18Layout.createSequentialGroup()
+                .addGap(9, 9, 9)
+                .addComponent(jLabel34)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
+                .addComponent(jLabel35)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButton5)
+                .addContainerGap())
+        );
+
+        jLabel36.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel36.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel36.setText("Actualizar rol");
+
         javax.swing.GroupLayout panel_privilegioLayout = new javax.swing.GroupLayout(panel_privilegio);
         panel_privilegio.setLayout(panel_privilegioLayout);
         panel_privilegioLayout.setHorizontalGroup(
             panel_privilegioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panel_privilegioLayout.createSequentialGroup()
-                .addComponent(regresar2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(button_refresh_privilegios)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_privilegioLayout.createSequentialGroup()
-                .addContainerGap(293, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(label_sign_up_panel3)
+                .addGap(329, 329, 329))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_privilegioLayout.createSequentialGroup()
                 .addGroup(panel_privilegioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panel_privilegioLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(regresar2)
+                        .addGap(71, 71, 71)
+                        .addGroup(panel_privilegioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jPanel17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jPanel18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
+                        .addComponent(button_refresh_privilegios))
+                    .addGroup(panel_privilegioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(panel_privilegioLayout.createSequentialGroup()
+                            .addGap(186, 186, 186)
+                            .addComponent(jLabel36))
+                        .addGroup(panel_privilegioLayout.createSequentialGroup()
+                            .addGap(179, 179, 179)
+                            .addComponent(jLabel32))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(panel_privilegioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_privilegioLayout.createSequentialGroup()
-                        .addComponent(label_sign_up_panel3)
-                        .addGap(329, 329, 329))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_privilegioLayout.createSequentialGroup()
+                        .addGap(137, 137, 137)
                         .addGroup(panel_privilegioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel15)
                             .addGroup(panel_privilegioLayout.createSequentialGroup()
                                 .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(25, 25, 25)))
-                        .addGap(161, 161, 161))))
+                        .addGap(161, 161, 161)))
+                .addContainerGap())
         );
         panel_privilegioLayout.setVerticalGroup(
             panel_privilegioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panel_privilegioLayout.createSequentialGroup()
                 .addGap(17, 17, 17)
                 .addComponent(label_sign_up_panel3, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(60, 60, 60)
-                .addComponent(jLabel15)
-                .addGap(18, 18, 18)
-                .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 79, Short.MAX_VALUE)
-                .addGroup(panel_privilegioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(regresar2, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_privilegioLayout.createSequentialGroup()
-                        .addComponent(button_refresh_privilegios)
-                        .addContainerGap())))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(panel_privilegioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(panel_privilegioLayout.createSequentialGroup()
+                        .addComponent(jLabel15)
+                        .addGap(18, 18, 18)
+                        .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(42, 42, 42))
+                    .addGroup(panel_privilegioLayout.createSequentialGroup()
+                        .addGroup(panel_privilegioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(panel_privilegioLayout.createSequentialGroup()
+                                .addComponent(jLabel32)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jPanel17, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel36)
+                                .addGap(12, 12, 12)
+                                .addComponent(jPanel18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(panel_privilegioLayout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addGroup(panel_privilegioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(button_refresh_privilegios)
+                                    .addComponent(regresar2))))
+                        .addGap(45, 45, 45))))
         );
 
         jTabbedPane1.addTab("privilegio", panel_privilegio);
@@ -1174,9 +1321,9 @@ public class MainFrame extends javax.swing.JFrame {
                 .addComponent(jLabel7)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(field_crear_rol, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addComponent(button_create_rol)
-                .addContainerGap(59, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanel3.setBackground(new java.awt.Color(0, 51, 51));
@@ -1284,6 +1431,9 @@ public class MainFrame extends javax.swing.JFrame {
         jLabel13.setForeground(new java.awt.Color(255, 255, 255));
         jLabel13.setText("Eliminar rol");
 
+        list1.setBackground(new java.awt.Color(255, 153, 153));
+        list1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+
         javax.swing.GroupLayout panel_rolLayout = new javax.swing.GroupLayout(panel_rol);
         panel_rol.setLayout(panel_rolLayout);
         panel_rolLayout.setHorizontalGroup(
@@ -1309,11 +1459,14 @@ public class MainFrame extends javax.swing.JFrame {
                                 .addComponent(jLabel10)))
                         .addGap(23, 23, 23)))
                 .addGap(66, 66, 66)
-                .addComponent(button_refresh_roles)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(panel_rolLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_rolLayout.createSequentialGroup()
+                .addGroup(panel_rolLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(panel_rolLayout.createSequentialGroup()
+                        .addComponent(button_refresh_roles)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(panel_rolLayout.createSequentialGroup()
+                        .addComponent(list1, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(174, 174, 174)
                         .addGroup(panel_rolLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel13))
@@ -1325,24 +1478,26 @@ public class MainFrame extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(label_sign_up_panel4, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(7, 7, 7)
-                .addComponent(jLabel13)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(panel_rolLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(panel_rolLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(panel_rolLayout.createSequentialGroup()
+                        .addComponent(jLabel13)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(187, 187, 187)
                         .addGroup(panel_rolLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(button_refresh_roles)
                             .addComponent(regresar3)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_rolLayout.createSequentialGroup()
-                        .addGap(76, 76, 76)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(67, Short.MAX_VALUE))
             .addGroup(panel_rolLayout.createSequentialGroup()
                 .addGap(94, 94, 94)
                 .addComponent(jLabel10)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(panel_rolLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panel_rolLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(list1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel11)
                 .addGap(12, 12, 12)
@@ -2704,16 +2859,32 @@ public class MainFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_button_delete_clienteMouseClicked
 
     private void button_create_rolMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button_create_rolMouseClicked
-        int cantidadRegistros = funciones.cantidad_roles();
+        int id_rol_nuevo = funciones.generarID_ROL();
         String nombre = this.field_crear_rol.getText();
-        if(this.funciones.create_rol(cantidadRegistros, nombre)){
+        if (this.funciones.create_rol(id_rol_nuevo, nombre)) {
             JOptionPane.showMessageDialog(null, "¡Se ha creado!");
-        }else{
+        } else {
             JOptionPane.showMessageDialog(null, "¡No se pudo crear!");
         }
         this.cargarTablaRoles();
-        this.field_delete_ajuste.setText("");
+        this.field_crear_rol.setText("");
     }//GEN-LAST:event_button_create_rolMouseClicked
+
+    private void field_crear_privilegioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_field_crear_privilegioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_field_crear_privilegioActionPerformed
+
+    private void button_create_privilegioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button_create_privilegioMouseClicked
+        int id_privilegio_nuevo = funciones.generarID_PRIVILEGIO();
+        String nombre = this.field_crear_privilegio.getText();
+        if (this.funciones.create_privilegio(id_privilegio_nuevo, nombre)) {
+            JOptionPane.showMessageDialog(null, "¡Se ha creado!");
+        } else {
+            JOptionPane.showMessageDialog(null, "¡No se pudo crear!");
+        }
+        this.cargarTablaPrivilegios();
+        this.field_crear_privilegio.setText("");
+    }//GEN-LAST:event_button_create_privilegioMouseClicked
 
     // Función para verificar si el usuario existe.
     private boolean loginCorrecto(String user, String password) {
@@ -3357,6 +3528,7 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JButton button_ajustes;
     private javax.swing.JButton button_clientes;
     private javax.swing.JButton button_compras;
+    private javax.swing.JButton button_create_privilegio;
     private javax.swing.JButton button_create_rol;
     private javax.swing.JButton button_delete_ajuste;
     private javax.swing.JButton button_delete_cliente;
@@ -3397,6 +3569,7 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JButton button_regresar_signUp;
     private javax.swing.JButton button_roles;
     private javax.swing.JButton button_usuarios;
+    private javax.swing.JTextField field_crear_privilegio;
     private javax.swing.JTextField field_crear_rol;
     private javax.swing.JTextField field_delete_ajuste;
     private javax.swing.JTextField field_delete_cliente;
@@ -3413,6 +3586,7 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
     private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox2;
@@ -3441,6 +3615,11 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel34;
+    private javax.swing.JLabel jLabel35;
+    private javax.swing.JLabel jLabel36;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -3455,6 +3634,8 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel14;
     private javax.swing.JPanel jPanel15;
     private javax.swing.JPanel jPanel16;
+    private javax.swing.JPanel jPanel17;
+    private javax.swing.JPanel jPanel18;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
@@ -3479,6 +3660,8 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField6;
+    private javax.swing.JTextField jTextField7;
+    private javax.swing.JTextField jTextField8;
     private javax.swing.JLabel label_login_text;
     private javax.swing.JLabel label_sign_up_panel;
     private javax.swing.JLabel label_sign_up_panel1;
@@ -3494,6 +3677,7 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JLabel label_sign_up_panel8;
     private javax.swing.JLabel label_sign_up_panel9;
     private javax.swing.JLabel label_welcome;
+    private java.awt.List list1;
     private javax.swing.JPanel panel_ajustes;
     private javax.swing.JPanel panel_blanco_signup;
     private javax.swing.JPanel panel_clientes;
