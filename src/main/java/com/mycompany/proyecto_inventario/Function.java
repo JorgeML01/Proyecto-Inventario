@@ -2,11 +2,15 @@ package com.mycompany.proyecto_inventario;
 
 import java.sql.CallableStatement;
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
+import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Random;
 import javax.swing.table.DefaultTableModel;
 
@@ -85,12 +89,29 @@ public class Function {
             return true;
         } catch (Exception e) {
             System.out.println("NO SE HA CONECTADO A CLIENTE!");
+            System.out.println("Mensaje de excepción: " + e.getMessage());
+            e.printStackTrace();
         }
         return false;
     }
 
-    public void create_proveedor() {
-
+    public boolean create_proveedor(int codigo_proveedor, String nombre, String nombre_contacto_principal, String estado, String direccion, String fecha_creacion, String usuario_creo) {
+        try (Connection conn = DriverManager.getConnection(DB_URL, USER, PASS); CallableStatement stmt = conn.prepareCall("{call sp_proveedor_create (?, ?, ?, ?, ?, ?, ?)}")) {
+            stmt.setInt(1, codigo_proveedor);
+            stmt.setString(2, nombre);
+            stmt.setString(3, nombre_contacto_principal);
+            stmt.setString(4, estado);
+            stmt.setString(5, direccion);
+            stmt.setString(6, fecha_creacion);
+            stmt.setString(7, usuario_creo);
+            stmt.execute();
+            return true;
+        } catch (Exception e) {
+            System.out.println("NO SE HA CONECTADO A PROVEEDOR!");
+            System.out.println("Mensaje de excepción: " + e.getMessage());
+            e.printStackTrace();
+        }
+        return false;
     }
 
     public void create_telefono() {
@@ -109,8 +130,26 @@ public class Function {
 
     }
 
-    public void create_producto() {
-
+    public boolean create_producto(int codigo_producto, String categoria, String estado, String existencia, double precio, String marca, double costo, String nombre, String fecha_creacion, String usuario_creo) {
+        try (Connection conn = DriverManager.getConnection(DB_URL, USER, PASS); CallableStatement stmt = conn.prepareCall("{call sp_producto_create (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)}")) {
+            stmt.setInt(1, codigo_producto);
+            stmt.setString(2, categoria);
+            stmt.setString(3, estado);
+            stmt.setString(4, existencia);
+            stmt.setDouble(5, precio);
+            stmt.setString(6, marca);
+            stmt.setDouble(7, costo);
+            stmt.setString(8, nombre);
+            stmt.setString(9, fecha_creacion);
+            stmt.setString(10, usuario_creo);
+            stmt.execute();
+            return true;
+        } catch (Exception e) {
+            System.out.println("NO SE HA CONECTADO A PRODUCTO!");
+            System.out.println("Mensaje de excepción: " + e.getMessage());
+            e.printStackTrace();
+        }
+        return false;
     }
 
     public void create_detalle_factura() {
@@ -329,8 +368,8 @@ public class Function {
 
         return cantidad_registros + 1 + numeroAleatorio;
     }
-    
-        public int generarID_CLIENTE() {
+
+    public int generarID_CLIENTE() {
         // Generamos un número aleatorio entre 1 y 1000
         int numeroAleatorio = random.nextInt(998) + 100;
         int cantidad_registros = 0;
@@ -346,6 +385,50 @@ public class Function {
         }
 
         return cantidad_registros + 1 + numeroAleatorio;
+    }
+    
+    public int generarID_PRODUCTO() {
+        // Generamos un número aleatorio entre 1 y 1000
+        int numeroAleatorio = random.nextInt(998) + 100;
+        int cantidad_registros = 0;
+
+        try (Connection conn = DriverManager.getConnection(this.getDB_URL(), this.getUSER(), this.getPASS()); PreparedStatement stmt = conn.prepareStatement("SELECT COUNT(*) FROM \"USUARIO\".\"producto\"")) {
+            ResultSet rs = stmt.executeQuery();
+            if (rs.next()) {
+                cantidad_registros = rs.getInt(1);
+            }
+            conn.close();
+        } catch (SQLException e) {
+            System.out.println("No se ha conectado!");
+        }
+
+        return cantidad_registros + 1 + numeroAleatorio;
+    }
+    
+    public int generarID_PROVEEDOR() {
+        // Generamos un número aleatorio entre 1 y 1000
+        int numeroAleatorio = random.nextInt(998) + 100;
+        int cantidad_registros = 0;
+
+        try (Connection conn = DriverManager.getConnection(this.getDB_URL(), this.getUSER(), this.getPASS()); PreparedStatement stmt = conn.prepareStatement("SELECT COUNT(*) FROM \"USUARIO\".\"proveedor\"")) {
+            ResultSet rs = stmt.executeQuery();
+            if (rs.next()) {
+                cantidad_registros = rs.getInt(1);
+            }
+            conn.close();
+        } catch (SQLException e) {
+            System.out.println("No se ha conectado!");
+        }
+
+        return cantidad_registros + 1 + numeroAleatorio;
+    }
+
+    // Función que retorna la fecha actual en el formato deseado.
+    public String getFormattedDate() {
+        LocalDateTime now = LocalDateTime.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+        String formattedDate = formatter.format(now);
+        return formattedDate;
     }
 
 }
